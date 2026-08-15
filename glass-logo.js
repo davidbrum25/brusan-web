@@ -1,17 +1,45 @@
 /* ==========================================================================
-   BRUSAN · 3D Realistic Glass Logo (Three.js)
-   - High-impact Prominent Scale (Fills central hero space)
-   - Extruded beveled SVG geometry
-   - Physical Glass Material (Transmission, IOR, Refraction, Specular Glints)
-   - Looped breathing & floating animation (no mouse/tap interaction)
+   BRUSAN · 3D Dual-Material Logo (Three.js)
+   - Isotype: Optical Glass with RGB Chromatic Refraction & Dispersion
+   - Wordmark ("BRUSAN"): Satin Metallic Mineral Black with Micro-Noise Texture
+   - High-impact prominent framing & smooth looped breathing animation
    ========================================================================== */
 
 (function () {
   let container, canvas, renderer, scene, camera;
   let logoGroup;
-  let keyLight, goldLight, cobaltLight, fillLight;
+  let keyLight, goldLight, cobaltLight, fillLight, rimLight;
+  let glassMaterial, metallicMaterial;
   let cachedSize = null;
   let isInitialized = false;
+
+  // 1. Procedural Micro-Noise Texture for Metallic Brushed Finish
+  function createMicroNoiseTexture() {
+    const size = 256;
+    const canvas = document.createElement("canvas");
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext("2d");
+    const imgData = ctx.createImageData(size, size);
+    const data = imgData.data;
+
+    for (let i = 0; i < data.length; i += 4) {
+      // High-frequency subtle noise grain
+      const noise = (Math.random() - 0.5) * 60;
+      const val = Math.floor(128 + noise);
+      data[i] = val;
+      data[i + 1] = val;
+      data[i + 2] = val;
+      data[i + 3] = 255;
+    }
+    ctx.putImageData(imgData, 0, 0);
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(6, 6);
+    return texture;
+  }
 
   function initGlassLogo() {
     container = document.getElementById("glass-logo-container");
@@ -25,14 +53,14 @@
     const width = container.clientWidth || window.innerWidth;
     const height = container.clientHeight || 360;
 
-    // 1. Scene setup
+    // 2. Scene setup
     scene = new THREE.Scene();
 
-    // 2. Camera setup
+    // 3. Camera setup
     camera = new THREE.PerspectiveCamera(34, width / height, 0.1, 1000);
     camera.position.set(0, 0, 100);
 
-    // 3. Renderer with transparent background and high DPR support
+    // 4. Renderer setup
     renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
@@ -41,33 +69,111 @@
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.4;
+    renderer.toneMappingExposure = 1.35;
 
     canvas = renderer.domElement;
     canvas.id = "glass-logo-canvas";
     container.appendChild(canvas);
 
-    // 4. Lighting Rig for realistic glass reflections and refractions
-    const ambientLight = new THREE.AmbientLight(0x24201b, 1.4);
+    // 5. Lighting Rig for Glass Refraction & Metallic Sheen
+    const ambientLight = new THREE.AmbientLight(0x24201b, 1.6);
     scene.add(ambientLight);
 
-    keyLight = new THREE.DirectionalLight(0xffffff, 3.2);
-    keyLight.position.set(30, 50, 100);
+    keyLight = new THREE.DirectionalLight(0xffffff, 3.5);
+    keyLight.position.set(40, 60, 100);
     scene.add(keyLight);
 
-    goldLight = new THREE.PointLight(0xd4a359, 4.5, 400);
-    goldLight.position.set(-80, 40, 60);
+    goldLight = new THREE.PointLight(0xd4a359, 5.0, 450);
+    goldLight.position.set(-100, 40, 70);
     scene.add(goldLight);
 
-    cobaltLight = new THREE.PointLight(0x2589bd, 4.5, 400);
-    cobaltLight.position.set(80, -40, 60);
+    cobaltLight = new THREE.PointLight(0x2589bd, 5.0, 450);
+    cobaltLight.position.set(100, -40, 70);
     scene.add(cobaltLight);
 
-    fillLight = new THREE.DirectionalLight(0xf4f1ea, 2.0);
-    fillLight.position.set(0, -60, -40);
+    rimLight = new THREE.DirectionalLight(0xf4f1ea, 2.2);
+    rimLight.position.set(0, -60, -30);
+    scene.add(rimLight);
+
+    fillLight = new THREE.PointLight(0xffffff, 2.0, 300);
+    fillLight.position.set(0, 80, 50);
     scene.add(fillLight);
 
-    // 5. Load and Extrude SVG Logo
+    // 6. Materials definition
+
+    // A. Refractive Glass Material for Isotype with Chromatic RGB Dispersion
+    glassMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0xf4f1ea,
+      emissive: 0x121110,
+      roughness: 0.02,
+      metalness: 0.0,
+      transmission: 0.98, // Full light transmission
+      ior: 1.54,          // Optical glass refractive index
+      reflectivity: 0.95,
+      thickness: 6.5,     // Deep refraction volume
+      specularIntensity: 2.5,
+      specularColor: 0xffffff,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.03,
+      attenuationColor: 0xd4a359,
+      attenuationDistance: 45.0,
+      transparent: true,
+      opacity: 0.96,
+      side: THREE.DoubleSide
+    });
+
+    // Custom Shader Hook for Real RGB Chromatic Dispersion on Glass
+    glassMaterial.onBeforeCompile = function (shader) {
+      shader.uniforms.uTime = { value: 0 };
+
+      shader.fragmentShader = `
+        uniform float uTime;
+      ` + shader.fragmentShader;
+
+      shader.fragmentShader = shader.fragmentShader.replace(
+        '#include <dithering_fragment>',
+        `
+        #include <dithering_fragment>
+
+        // RGB Spectral Decomposition / Chromatic Dispersion across beveled normals
+        vec3 vDir = normalize(vViewPosition);
+        vec3 nDir = normalize(vNormal);
+        float fresnel = pow(1.0 - clamp(dot(-vDir, nDir), 0.0, 1.0), 2.2);
+
+        // Rainbow spectral separation
+        vec3 spectralRGB = vec3(
+          sin(fresnel * 5.0 + uTime * 0.9 + 0.0) * 0.5 + 0.5,
+          sin(fresnel * 5.0 + uTime * 0.9 + 2.09) * 0.5 + 0.5,
+          sin(fresnel * 5.0 + uTime * 0.9 + 4.18) * 0.5 + 0.5
+        );
+
+        // Warm Gold & Cool Cobalt dispersion caustics
+        vec3 goldCaustic = vec3(0.83, 0.64, 0.35);
+        vec3 blueCaustic = vec3(0.15, 0.54, 0.74);
+        vec3 caustics = mix(goldCaustic, blueCaustic, sin(uTime * 0.6 + fresnel * 3.5) * 0.5 + 0.5);
+
+        // Add prismatic highlights to glass edges
+        gl_FragColor.rgb += mix(spectralRGB, caustics, 0.55) * fresnel * 0.95;
+        `
+      );
+
+      glassMaterial.userData.shader = shader;
+    };
+
+    // B. Metallic Black Material for Wordmark "BRUSAN" with micro-noise texture
+    const noiseTexture = createMicroNoiseTexture();
+
+    metallicMaterial = new THREE.MeshStandardMaterial({
+      color: 0x141312,           // Deep mineral graphite black
+      metalness: 0.90,           // Metallic sheen
+      roughness: 0.30,           // Satin rough finish
+      bumpMap: noiseTexture,     // Micro-noise surface grain
+      bumpScale: 0.04,
+      roughnessMap: noiseTexture,
+      side: THREE.DoubleSide
+    });
+
+    // 7. Load and Extrude SVG Logo with Dual Materials
     const loader = new THREE.SVGLoader();
 
     loader.load(
@@ -75,27 +181,6 @@
       function (data) {
         const paths = data.paths;
         logoGroup = new THREE.Group();
-
-        // Realistic Glass Material definition
-        const glassMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0xf6f3ee,
-          emissive: 0x121110,
-          roughness: 0.04,
-          metalness: 0.02,
-          transmission: 0.95, // Optical glass transmission
-          ior: 1.52,          // Standard optical glass IOR
-          reflectivity: 0.92,
-          thickness: 4.5,     // Deep refraction volume
-          specularIntensity: 2.0,
-          specularColor: 0xffffff,
-          clearcoat: 1.0,
-          clearcoatRoughness: 0.04,
-          attenuationColor: 0xd4a359,
-          attenuationDistance: 35.0,
-          transparent: true,
-          opacity: 0.94,
-          side: THREE.DoubleSide
-        });
 
         const extrudeSettings = {
           depth: 4.8,
@@ -114,12 +199,23 @@
           for (let j = 0; j < shapes.length; j++) {
             const shape = shapes[j];
             const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-            const mesh = new THREE.Mesh(geometry, glassMaterial);
+
+            // Compute shape bounding box to distinguish Isotype from "BRUSAN" Wordmark
+            geometry.computeBoundingBox();
+            const minX = geometry.boundingBox.min.x;
+
+            // In SVG space: Isotype lies at X < 40mm, "BRUSAN" letters lie at X >= 40mm
+            const isIsotype = minX < 40.0;
+
+            const mesh = new THREE.Mesh(
+              geometry,
+              isIsotype ? glassMaterial : metallicMaterial
+            );
             logoGroup.add(mesh);
           }
         }
 
-        // Compute overall bounding box to center logo perfectly at (0, 0, 0)
+        // Compute overall bounding box to center entire lockup at (0, 0, 0)
         const box = new THREE.Box3().setFromObject(logoGroup);
         const center = new THREE.Vector3();
         box.getCenter(center);
@@ -127,19 +223,19 @@
         box.getSize(size);
         cachedSize = size;
 
-        // Adjust mesh positions relative to group center and flip SVG Y-axis
+        // Center meshes and flip SVG Y-axis
         logoGroup.position.x = -center.x;
         logoGroup.position.y = center.y;
         logoGroup.position.z = 0;
-        logoGroup.scale.set(1, -1, 1); // SVG Y coordinates point downwards
+        logoGroup.scale.set(1, -1, 1);
 
-        // Parent wrapper to handle rotations and oscillations around true origin
+        // Root wrapper for smooth floating rotation
         const rootWrapper = new THREE.Group();
         rootWrapper.add(logoGroup);
         scene.add(rootWrapper);
         logoGroup = rootWrapper;
 
-        // Scale camera view so logo is large, prominent, and fills 90% of width
+        // Frame camera prominently
         updateCameraFit(size);
 
         if (fallbackImg) {
@@ -151,7 +247,7 @@
       },
       undefined,
       function (error) {
-        console.warn("SVG 3D glass logo load error, falling back to static SVG:", error);
+        console.warn("SVG 3D logo load error, falling back to static SVG:", error);
         if (fallbackImg) fallbackImg.style.display = "block";
       }
     );
@@ -175,7 +271,6 @@
     const vFOV = (camera.fov * Math.PI) / 180;
     const tanHalfFOV = Math.tan(vFOV / 2);
 
-    // Calculate distance to fit prominently (occupying ~90% of container width or ~82% of container height)
     const distanceWidth = (logoWidth / (2 * tanHalfFOV * aspect)) * 1.10;
     const distanceHeight = (logoHeight / (2 * tanHalfFOV)) * 1.25;
 
@@ -197,6 +292,11 @@
 
     const t = time * 0.001;
 
+    // Update chromatic dispersion shader time uniform
+    if (glassMaterial && glassMaterial.userData.shader) {
+      glassMaterial.userData.shader.uniforms.uTime.value = t;
+    }
+
     // Smooth, gentle looped floating movement without user interaction
     if (logoGroup) {
       logoGroup.rotation.y = Math.sin(t * 0.45) * 0.08;
@@ -204,15 +304,15 @@
       logoGroup.position.y = Math.sin(t * 0.65) * 2.8;
     }
 
-    // Orbiting light reflections for dynamic edge glints
+    // Orbiting light reflections for specular refractions & metallic highlights
     if (goldLight && cobaltLight && keyLight) {
-      goldLight.position.x = Math.cos(t * 0.5) * 110;
+      goldLight.position.x = Math.cos(t * 0.5) * 120;
       goldLight.position.y = Math.sin(t * 0.4) * 50 + 15;
 
-      cobaltLight.position.x = -Math.sin(t * 0.45) * 110;
+      cobaltLight.position.x = -Math.sin(t * 0.45) * 120;
       cobaltLight.position.y = Math.cos(t * 0.55) * 50 - 15;
 
-      keyLight.position.x = Math.sin(t * 0.3) * 50 + 25;
+      keyLight.position.x = Math.sin(t * 0.3) * 60 + 25;
     }
 
     renderer.render(scene, camera);
