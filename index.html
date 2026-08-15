@@ -28,12 +28,21 @@
       <canvas id="gl-canvas"></canvas>
     </div>
 
+    <!-- Soft Subtle Film Grain Overlay -->
+    <div class="hero-grain-overlay"></div>
+
     <!-- Header Top Navigation Bar -->
     <div class="container hero-nav">
       <div class="nav-badge">
         <span class="pulse-dot"></span>
-        <span>Social Content, Development, Web/app design</span>
+        <span data-i18n="hero.badge">Social Content, Development, Web/app design</span>
       </div>
+
+      <!-- English/Spanish Language Switcher Button -->
+      <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Cambiar idioma / Switch language" title="Cambiar idioma / Switch language">
+        <i data-lucide="globe"></i>
+        <span id="lang-label">EN</span>
+      </button>
     </div>
 
     <!-- Center Hero Logo (3D Realistic Glass Logo) -->
@@ -50,16 +59,16 @@
 
     <!-- Bottom Hero Narrative & CTA Actions -->
     <div class="container hero-footer-bar">
-      <div class="hero-tagline">
+      <div class="hero-tagline" data-i18n="hero.tagline">
         Conectamos tu <strong>producto</strong> con su audiencia
       </div>
       <div class="hero-actions">
         <a href="#nuestro-portfolio" class="glass-pill">
-          <span>mira nuestro portfolio</span>
+          <span data-i18n="hero.btn.portfolio">mira nuestro portfolio</span>
           <i data-lucide="briefcase"></i>
         </a>
         <a href="#quienes-somos" class="glass-pill secondary">
-          <span>nos queres contactar?</span>
+          <span data-i18n="hero.btn.contact">nos queres contactar?</span>
           <i data-lucide="message-circle"></i>
         </a>
       </div>
@@ -76,14 +85,14 @@
         <!-- Header Bar & Category Filter Tabs -->
         <div class="portfolio-header-bar">
           <h2 class="portfolio-title">
-            nuestro <strong>portfolio</strong>
+            <span data-i18n="portfolio.title">nuestro <strong>portfolio</strong></span>
             <i data-lucide="briefcase"></i>
           </h2>
           <ul class="portfolio-tabs">
-            <li><button class="tab-btn" data-category="reels">reels</button></li>
-            <li><button class="tab-btn active" data-category="Cartelería">Cartelería</button></li>
-            <li><button class="tab-btn" data-category="web">web</button></li>
-            <li><button class="tab-btn" data-category="integral">integral</button></li>
+            <li><button class="tab-btn" data-category="reels" data-i18n="tab.reels">reels</button></li>
+            <li><button class="tab-btn active" data-category="Cartelería" data-i18n="tab.carteleria">cartelería</button></li>
+            <li><button class="tab-btn" data-category="web" data-i18n="tab.web">web</button></li>
+            <li><button class="tab-btn" data-category="integral" data-i18n="tab.integral">integral</button></li>
           </ul>
         </div>
 
@@ -97,8 +106,8 @@
               alt="Cartelería Urbana - QJ Motor"
             >
             <div class="showcase-overlay">
-              <span class="showcase-tag">Cartelería Urbana</span>
-              <h3 class="showcase-title">QJ Motor Gerli — Outdoor Street Poster</h3>
+              <span class="showcase-tag" data-i18n="showcase.tag.1">Cartelería Urbana</span>
+              <h3 class="showcase-title" data-i18n="showcase.title.1">QJ Motor Gerli — Outdoor Street Poster</h3>
             </div>
           </div>
 
@@ -109,8 +118,8 @@
               alt="Digital Poster Panel - QJ Motor"
             >
             <div class="showcase-overlay">
-              <span class="showcase-tag">Totem Digital</span>
-              <h3 class="showcase-title">QJ Motor — GERLI FORT 350</h3>
+              <span class="showcase-tag" data-i18n="showcase.tag.2">Totem Digital</span>
+              <h3 class="showcase-title" data-i18n="showcase.title.2">QJ Motor — GERLI FORT 350</h3>
             </div>
           </div>
 
@@ -121,8 +130,8 @@
               alt="Riverside Screen - QJ Motor"
             >
             <div class="showcase-overlay">
-              <span class="showcase-tag">Pantalla Costanera</span>
-              <h3 class="showcase-title">QJ Motor — Riverside Display</h3>
+              <span class="showcase-tag" data-i18n="showcase.tag.3">Pantalla Costanera</span>
+              <h3 class="showcase-title" data-i18n="showcase.title.3">QJ Motor — Riverside Display</h3>
             </div>
           </div>
 
@@ -137,35 +146,35 @@
               <img src="assets/portfolio/Fort_350_motorcycle_headlight_close-up_2K_202607292037.jpeg" alt="Headlight Detail">
               <div class="accordion-card-content">
                 <span class="accordion-card-label">ON HOVER REVEALS FULL WIDTH IMAGE</span>
-                <span class="accordion-card-desc">Visualización CGI de faros frontales y óptica de alta precisión.</span>
+                <span class="accordion-card-desc" data-i18n="accordion.1.desc">Visualización CGI de faros frontales y óptica de alta precisión.</span>
               </div>
             </div>
             <div class="accordion-card" data-category="reels">
               <img src="assets/portfolio/Fort_350_motorcycle_studio_2K_202607292051.jpeg" alt="Studio Shot">
               <div class="accordion-card-content">
-                <span class="accordion-card-label">Estudio CGI / Reels</span>
-                <span class="accordion-card-desc">Render de estudio con iluminación de contraste para redes sociales.</span>
+                <span class="accordion-card-label" data-i18n="accordion.2.label">Estudio CGI / Reels</span>
+                <span class="accordion-card-desc" data-i18n="accordion.2.desc">Render de estudio con iluminación de contraste para redes sociales.</span>
               </div>
             </div>
             <div class="accordion-card" data-category="web">
               <img src="assets/portfolio/Fort_350_motorcycle_emblem_2K_202607292037.jpeg" alt="Emblem Detail">
               <div class="accordion-card-content">
-                <span class="accordion-card-label">Identidad & Emblem</span>
-                <span class="accordion-card-desc">Detalle de marca y relieves metálicos en 3D.</span>
+                <span class="accordion-card-label" data-i18n="accordion.3.label">Identidad & Emblem</span>
+                <span class="accordion-card-desc" data-i18n="accordion.3.desc">Detalle de marca y relieves metálicos en 3D.</span>
               </div>
             </div>
             <div class="accordion-card" data-category="integral">
               <img src="assets/portfolio/Brake_disc_and_rim_motorcycle_202607292037.jpeg" alt="Brake & Rim Detail">
               <div class="accordion-card-content">
-                <span class="accordion-card-label">Campaña Integral</span>
-                <span class="accordion-card-desc">Producción técnica de llanta y sistema de frenado.</span>
+                <span class="accordion-card-label" data-i18n="accordion.4.label">Campaña Integral</span>
+                <span class="accordion-card-desc" data-i18n="accordion.4.desc">Producción técnica de llanta y sistema de frenado.</span>
               </div>
             </div>
             <div class="accordion-card" data-category="reels">
               <img src="assets/portfolio/Fort_350_motorcycle_rear_light_202607292037.jpeg" alt="Rear Light">
               <div class="accordion-card-content">
-                <span class="accordion-card-label">Social Reels</span>
-                <span class="accordion-card-desc">Animación y cinematografía técnica nocturna.</span>
+                <span class="accordion-card-label" data-i18n="accordion.5.label">Social Reels</span>
+                <span class="accordion-card-desc" data-i18n="accordion.5.desc">Animación y cinematografía técnica nocturna.</span>
               </div>
             </div>
           </div>
@@ -175,29 +184,29 @@
             <div class="accordion-card" data-category="reels">
               <img src="assets/portfolio/Outdoor_ad_kiosk_rainy_afternoon_202607311313.jpeg" alt="Outdoor Ad Kiosk">
               <div class="accordion-card-content">
-                <span class="accordion-card-label">Kiosco Urbano</span>
-                <span class="accordion-card-desc">Integración visual en escenarios de lluvia.</span>
+                <span class="accordion-card-label" data-i18n="accordion.6.label">Kiosco Urbano</span>
+                <span class="accordion-card-desc" data-i18n="accordion.6.desc">Integración visual en escenarios de lluvia.</span>
               </div>
             </div>
             <div class="accordion-card" data-category="web">
               <img src="assets/portfolio/Promotional_poster_on_street_2K_202607311313.jpeg" alt="Street Poster">
               <div class="accordion-card-content">
-                <span class="accordion-card-label">Desarrollo Web</span>
-                <span class="accordion-card-desc">Landing pages dinámicas de alto impacto.</span>
+                <span class="accordion-card-label" data-i18n="accordion.7.label">Desarrollo Web</span>
+                <span class="accordion-card-desc" data-i18n="accordion.7.desc">Landing pages dinámicas de alto impacto.</span>
               </div>
             </div>
             <div class="accordion-card" data-category="Cartelería">
               <img src="assets/portfolio/Sidewalk_board_outside_building_2K_202607311313.jpeg" alt="Sidewalk Board">
               <div class="accordion-card-content">
-                <span class="accordion-card-label">Cartelería Exterior</span>
-                <span class="accordion-card-desc">Presencia física en vía pública para comercios.</span>
+                <span class="accordion-card-label" data-i18n="accordion.8.label">Cartelería Exterior</span>
+                <span class="accordion-card-desc" data-i18n="accordion.8.desc">Presencia física en vía pública para comercios.</span>
               </div>
             </div>
             <div class="accordion-card" data-category="integral">
               <img src="assets/portfolio/Fort_350_motorcycle_studio_2K_202607292059.jpeg" alt="Studio Shot 2">
               <div class="accordion-card-content">
-                <span class="accordion-card-label">Contenido de Producto</span>
-                <span class="accordion-card-desc">Modelado y renderización foto-realista.</span>
+                <span class="accordion-card-label" data-i18n="accordion.9.label">Contenido de Producto</span>
+                <span class="accordion-card-desc" data-i18n="accordion.9.desc">Modelado y renderización foto-realista.</span>
               </div>
             </div>
           </div>
@@ -216,7 +225,7 @@
       
       <!-- Section Header -->
       <h2 class="about-header">
-        quienes <strong>somos</strong>
+        <span data-i18n="about.title">quienes <strong>somos</strong></span>
         <i data-lucide="users"></i>
       </h2>
 
@@ -235,19 +244,31 @@
           <div class="team-info">
             <div>
               <h3 class="team-name">David <span>Brum</span></h3>
-              <p class="team-role">Founder & Visual / Tech Lead</p>
+              <p class="team-role" data-i18n="team.role.david">Founder & Visual / Tech Lead</p>
             </div>
             <div class="team-socials">
-              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill">
-                <i data-lucide="instagram"></i>
+              <a href="https://www.instagram.com/hdavidbrum/" target="_blank" rel="noopener" class="social-pill" title="Instagram">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
                 <span>Instagram</span>
               </a>
-              <a href="https://x.com" target="_blank" rel="noopener" class="social-pill">
-                <i data-lucide="twitter"></i>
+              <a href="https://x.com/bdvd_25" target="_blank" rel="noopener" class="social-pill" title="X.com">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                </svg>
                 <span>X.com</span>
               </a>
-              <a href="https://behance.net" target="_blank" rel="noopener" class="social-pill">
-                <i data-lucide="layout"></i>
+              <a href="https://www.behance.net/davidbrum" target="_blank" rel="noopener" class="social-pill" title="Behance">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 5h5a3.5 3.5 0 0 1 3.5 3.5 3 3 0 0 1-1.5 2.6A3.5 3.5 0 0 1 7.5 19H3V5z"></path>
+                  <path d="M3 11.5h6"></path>
+                  <line x1="15" y1="6.5" x2="20.5" y2="6.5"></line>
+                  <path d="M14 13.5a3.5 3.5 0 0 1 6.5-1.2A3.5 3.5 0 0 1 20 16.5H14a3.5 3.5 0 0 0 6 1.5"></path>
+                </svg>
                 <span>Behance</span>
               </a>
             </div>
@@ -266,19 +287,31 @@
           <div class="team-info">
             <div>
               <h3 class="team-name">Daniel <span>Santos</span></h3>
-              <p class="team-role">Co-Founder & Creative Director / Sales</p>
+              <p class="team-role" data-i18n="team.role.daniel">Co-Founder & Creative Director / Sales</p>
             </div>
             <div class="team-socials">
-              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill">
-                <i data-lucide="instagram"></i>
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill" title="Instagram">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
                 <span>Instagram</span>
               </a>
-              <a href="https://x.com" target="_blank" rel="noopener" class="social-pill">
-                <i data-lucide="twitter"></i>
+              <a href="https://x.com" target="_blank" rel="noopener" class="social-pill" title="X.com">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                </svg>
                 <span>X.com</span>
               </a>
-              <a href="https://behance.net" target="_blank" rel="noopener" class="social-pill">
-                <i data-lucide="layout"></i>
+              <a href="https://behance.net" target="_blank" rel="noopener" class="social-pill" title="Behance">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 5h5a3.5 3.5 0 0 1 3.5 3.5 3 3 0 0 1-1.5 2.6A3.5 3.5 0 0 1 7.5 19H3V5z"></path>
+                  <path d="M3 11.5h6"></path>
+                  <line x1="15" y1="6.5" x2="20.5" y2="6.5"></line>
+                  <path d="M14 13.5a3.5 3.5 0 0 1 6.5-1.2A3.5 3.5 0 0 1 20 16.5H14a3.5 3.5 0 0 0 6 1.5"></path>
+                </svg>
                 <span>Behance</span>
               </a>
             </div>
@@ -290,38 +323,38 @@
       <!-- Slogan / Brand Manifesto Divider -->
       <div class="slogan-divider">
         <img src="assets/branding/brusan_Isotipo_blanco.png" alt="Isotipo BRUSAN">
-        <span>ACOMPAÑAMOS EL CAMINO DE TU NEGOCIO CON CONTENIDO QUE IMPONE RESPETO</span>
+        <span data-i18n="slogan.text">ACOMPAÑAMOS EL CAMINO DE TU NEGOCIO CON CONTENIDO QUE IMPONE RESPETO</span>
       </div>
 
       <!-- Typographic Manifesto Matrix ("Hacer pie con lo propio") -->
       <div class="manifesto-matrix-box">
         <div class="manifesto-grid">
           <!-- Row 1 -->
-          <span class="manifesto-word highlight-blue">Hacer</span>
+          <span class="manifesto-word highlight-blue" style="--delay: 0s;">Hacer</span>
           <span class="manifesto-word">Hacer</span>
           <span class="manifesto-word">Hacer</span>
           <span class="manifesto-word">Hacer</span>
 
           <!-- Row 2 -->
           <span class="manifesto-word">pie</span>
-          <span class="manifesto-word highlight-blue">pie</span>
+          <span class="manifesto-word highlight-blue" style="--delay: 0.9s;">pie</span>
           <span class="manifesto-word">pie</span>
           <span class="manifesto-word">pie</span>
 
           <!-- Row 3 -->
           <span class="manifesto-word">con lo</span>
           <span class="manifesto-word">con lo</span>
-          <span class="manifesto-word highlight-blue">con lo</span>
+          <span class="manifesto-word highlight-blue" style="--delay: 1.8s;">con lo</span>
           <span class="manifesto-word">con lo</span>
 
           <!-- Row 4 -->
           <span class="manifesto-word">propio</span>
           <span class="manifesto-word">propio</span>
           <span class="manifesto-word">propio</span>
-          <span class="manifesto-word highlight-blue">propio</span>
+          <span class="manifesto-word highlight-blue" style="--delay: 2.7s;">propio</span>
         </div>
 
-        <p class="manifesto-subline">
+        <p class="manifesto-subline" data-i18n="manifesto.subline">
           Le damos presencia visual al trabajo que mueve la zona todos los días.
         </p>
       </div>
@@ -333,10 +366,11 @@
        4. FOOTER SECTION
        ========================================================================= -->
   <footer class="footer-section">
-    <!-- Centered Watermark Title with Visual Air -->
+    <!-- Centered Large Two-Line Watermark Title -->
     <div class="footer-watermark-wrap">
       <div class="footer-watermark">
-        DESARROLLO VISUAL
+        <span class="watermark-line" data-i18n="footer.watermark.line1">DESARROLLO</span>
+        <span class="watermark-line" data-i18n="footer.watermark.line2">VISUAL</span>
       </div>
     </div>
 
@@ -344,14 +378,14 @@
     <div class="container footer-bottom-bar">
       <div class="footer-brand">
         <img src="assets/brusan_logo_blanco.svg" alt="BRUSAN">
-        <span>- desarrollo visual</span>
+        <span data-i18n="footer.slogan">- desarrollo visual</span>
       </div>
 
       <div class="footer-sitemap-pill">
-        <a href="#inicio">Inicio</a>
-        <a href="#nuestro-portfolio">Portfolio</a>
-        <a href="#quienes-somos">Quienes Somos</a>
-        <a href="#quienes-somos">Contacto</a>
+        <a href="#inicio" data-i18n="footer.nav.home">Inicio</a>
+        <a href="#nuestro-portfolio" data-i18n="footer.nav.portfolio">Portfolio</a>
+        <a href="#quienes-somos" data-i18n="footer.nav.about">Quienes Somos</a>
+        <a href="#quienes-somos" data-i18n="footer.nav.contact">Contacto</a>
       </div>
 
       <div class="footer-copy">

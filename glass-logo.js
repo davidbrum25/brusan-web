@@ -1,8 +1,8 @@
 /* ==========================================================================
-   BRUSAN · 3D Dual-Material Logo (Three.js)
-   - Isotype: Optical Glass with RGB Chromatic Refraction & Dispersion
-   - Wordmark ("BRUSAN"): Satin Metallic Mineral Black with Micro-Noise Texture
-   - High-impact prominent framing & smooth looped breathing animation
+   BRUSAN · 3D Multi-Material Logo (Three.js)
+   - Glass (White parts): Notebook Body & Connector Tab with RGB Chromatic Refraction
+   - Metallic Black (Dark parts): 3 Binder Rings & "BRUSAN" Wordmark with Micro-Noise Satin Finish
+   - Auto-Framing & Autonomous Floating Breathing Loop
    ========================================================================== */
 
 (function () {
@@ -24,7 +24,6 @@
     const data = imgData.data;
 
     for (let i = 0; i < data.length; i += 4) {
-      // High-frequency subtle noise grain
       const noise = (Math.random() - 0.5) * 60;
       const val = Math.floor(128 + noise);
       data[i] = val;
@@ -75,7 +74,7 @@
     canvas.id = "glass-logo-canvas";
     container.appendChild(canvas);
 
-    // 5. Lighting Rig for Glass Refraction & Metallic Sheen
+    // 5. Lighting Rig for Glass Refraction & Metallic Highlights
     const ambientLight = new THREE.AmbientLight(0x24201b, 1.6);
     scene.add(ambientLight);
 
@@ -101,24 +100,24 @@
 
     // 6. Materials definition
 
-    // A. Refractive Glass Material for Isotype with Chromatic RGB Dispersion
+    // A. Refractive Glass Material for Notebook Cover & Connector Tab with Chromatic RGB Dispersion
     glassMaterial = new THREE.MeshPhysicalMaterial({
       color: 0xf4f1ea,
       emissive: 0x121110,
       roughness: 0.02,
       metalness: 0.0,
-      transmission: 0.98, // Full light transmission
+      transmission: 0.95, // Full light transmission
       ior: 1.54,          // Optical glass refractive index
       reflectivity: 0.95,
       thickness: 6.5,     // Deep refraction volume
       specularIntensity: 2.5,
       specularColor: 0xffffff,
-      clearcoat: 1.0,
-      clearcoatRoughness: 0.03,
+      clearcoat: 1,
+      clearcoatRoughness: 0.25,
       attenuationColor: 0xd4a359,
       attenuationDistance: 45.0,
       transparent: true,
-      opacity: 0.96,
+      opacity: 1,
       side: THREE.DoubleSide
     });
 
@@ -160,20 +159,31 @@
       glassMaterial.userData.shader = shader;
     };
 
-    // B. Metallic Black Material for Wordmark "BRUSAN" with micro-noise texture
-    const noiseTexture = createMicroNoiseTexture();
+    // B. Metallic Black Material for 3 Binder Rings & "BRUSAN" Wordmark with bg_textures_01.jpg roughness map
+    const textureLoader = new THREE.TextureLoader();
+    const roughnessTexture = textureLoader.load("assets/textures/bg_textures_04.jpg", (tex) => {
+      tex.wrapS = THREE.RepeatWrapping;
+      tex.wrapT = THREE.RepeatWrapping;
+      tex.repeat.set(2.5, 2.5);
+      if (metallicMaterial) {
+        metallicMaterial.needsUpdate = true;
+      }
+    });
+    roughnessTexture.wrapS = THREE.RepeatWrapping;
+    roughnessTexture.wrapT = THREE.RepeatWrapping;
+    roughnessTexture.repeat.set(2.5, 2.5);
 
     metallicMaterial = new THREE.MeshStandardMaterial({
-      color: 0x141312,           // Deep mineral graphite black
-      metalness: 0.90,           // Metallic sheen
-      roughness: 0.30,           // Satin rough finish
-      bumpMap: noiseTexture,     // Micro-noise surface grain
+      color: 0x141312,                // Deep mineral graphite black
+      metalness: 0.90,                // Rich metallic sheen
+      roughness: 0.50,                // Tactile surface roughness modulated by map
+      roughnessMap: roughnessTexture, // Texture-driven micro roughness
+      bumpMap: roughnessTexture,      // Tactile physical relief bump
       bumpScale: 0.04,
-      roughnessMap: noiseTexture,
       side: THREE.DoubleSide
     });
 
-    // 7. Load and Extrude SVG Logo with Dual Materials
+    // 7. Load and Extrude SVG Logo with Precise Material Mapping
     const loader = new THREE.SVGLoader();
 
     loader.load(
@@ -185,8 +195,8 @@
         const extrudeSettings = {
           depth: 4.8,
           bevelEnabled: true,
-          bevelThickness: 1.4,
-          bevelSize: 1.1,
+          bevelThickness: 1,
+          bevelSize: .8,
           bevelOffset: 0,
           bevelSegments: 6,
           curveSegments: 20
@@ -196,16 +206,13 @@
           const path = paths[i];
           const shapes = THREE.SVGLoader.createShapes(path);
 
+          // Path 0 (id="path86") is the complete Isotype notebook (Green area -> Optical Glass)
+          // Path 1 (id="path1") is the entire "BRUSAN" wordmark (Pink area -> Satin Metallic Black)
+          const isIsotype = (i === 0) || (path.userData && path.userData.node && path.userData.node.id === "path86");
+
           for (let j = 0; j < shapes.length; j++) {
             const shape = shapes[j];
             const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-
-            // Compute shape bounding box to distinguish Isotype from "BRUSAN" Wordmark
-            geometry.computeBoundingBox();
-            const minX = geometry.boundingBox.min.x;
-
-            // In SVG space: Isotype lies at X < 40mm, "BRUSAN" letters lie at X >= 40mm
-            const isIsotype = minX < 40.0;
 
             const mesh = new THREE.Mesh(
               geometry,
