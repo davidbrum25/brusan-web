@@ -314,8 +314,8 @@ img {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 980px;
-  height: 240px;
+  max-width: 1300px;
+  height: clamp(280px, 38vh, 460px);
   margin: 0 auto;
   position: relative;
   pointer-events: none; /* No mouse/tap interaction */
@@ -1024,8 +1024,8 @@ img {
   }
 
   .hero-logo-lockup {
-    height: 140px;
-    max-width: 94vw;
+    height: clamp(140px, 24vh, 220px);
+    max-width: 96vw;
   }
 
   .hero-actions {
