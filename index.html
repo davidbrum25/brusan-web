@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRUSAN · Desarrollo Visual</title>
+  <meta name="description" content="BRUSAN - Estudio de desarrollo visual en Gualeguaychú: contenido en redes, visualización de producto, cartelería urbana y desarrollo web moderno.">
+  
+  <!-- Google Fonts: Outfit (Display) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. HERO HEADER WITH WEBGL WAVE SHADER BACKGROUND
+       ========================================================================= -->
+  <header class="hero-header" id="inicio">
+    <!-- WebGL Canvas Container -->
+    <div class="hero-canvas-container">
+      <canvas id="gl-canvas"></canvas>
+    </div>
+
+    <!-- Header Top Navigation Bar -->
+    <div class="container hero-nav">
+      <div class="nav-badge">
+        <span class="pulse-dot"></span>
+        <span>Social Content, Development, Web/app design</span>
+      </div>
+    </div>
+
+    <!-- Center Hero Logo (3D Realistic Glass Logo) -->
+    <div class="container hero-center">
+      <div class="hero-logo-lockup" id="glass-logo-container">
+        <img 
+          src="assets/brusan_logo_blanco.svg" 
+          alt="BRUSAN - Desarrollo Visual" 
+          class="hero-logo-img"
+          id="hero-logo-fallback"
+        >
+      </div>
+    </div>
+
+    <!-- Bottom Hero Narrative & CTA Actions -->
+    <div class="container hero-footer-bar">
+      <div class="hero-tagline">
+        Conectamos tu <strong>producto</strong> con su audiencia
+      </div>
+      <div class="hero-actions">
+        <a href="#nuestro-portfolio" class="glass-pill">
+          <span>mira nuestro portfolio</span>
+          <i data-lucide="briefcase"></i>
+        </a>
+        <a href="#quienes-somos" class="glass-pill secondary">
+          <span>nos queres contactar?</span>
+          <i data-lucide="message-circle"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. PORTFOLIO SECTION
+       ========================================================================= -->
+  <section class="portfolio-section" id="nuestro-portfolio">
+    <div class="container">
+      <div class="portfolio-container-box">
+        
+        <!-- Header Bar & Category Filter Tabs -->
+        <div class="portfolio-header-bar">
+          <h2 class="portfolio-title">
+            nuestro <strong>portfolio</strong>
+            <i data-lucide="briefcase"></i>
+          </h2>
+          <ul class="portfolio-tabs">
+            <li><button class="tab-btn" data-category="reels">reels</button></li>
+            <li><button class="tab-btn active" data-category="Cartelería">Cartelería</button></li>
+            <li><button class="tab-btn" data-category="web">web</button></li>
+            <li><button class="tab-btn" data-category="integral">integral</button></li>
+          </ul>
+        </div>
+
+        <!-- Featured Showcase (3 Vertical Displays / Billboards) -->
+        <div class="featured-showcase">
+          
+          <!-- Poster 1: Outdoor Street Billboard -->
+          <div class="showcase-item" data-category="Cartelería">
+            <img 
+              src="assets/portfolio/Billboard_on_street_2K_202607311313.jpeg" 
+              alt="Cartelería Urbana - QJ Motor"
+            >
+            <div class="showcase-overlay">
+              <span class="showcase-tag">Cartelería Urbana</span>
+              <h3 class="showcase-title">QJ Motor Gerli — Outdoor Street Poster</h3>
+            </div>
+          </div>
+
+          <!-- Poster 2: Digital Totem Panel -->
+          <div class="showcase-item" data-category="Cartelería">
+            <img 
+              src="assets/portfolio/Digital_poster_panel_in_Argentina_202607311313.jpeg" 
+              alt="Digital Poster Panel - QJ Motor"
+            >
+            <div class="showcase-overlay">
+              <span class="showcase-tag">Totem Digital</span>
+              <h3 class="showcase-title">QJ Motor — GERLI FORT 350</h3>
+            </div>
+          </div>
+
+          <!-- Poster 3: Riverside Screen Display -->
+          <div class="showcase-item" data-category="Cartelería">
+            <img 
+              src="assets/portfolio/Advertising_screen_on_riverside_2K_202607311313.jpeg" 
+              alt="Riverside Screen - QJ Motor"
+            >
+            <div class="showcase-overlay">
+              <span class="showcase-tag">Pantalla Costanera</span>
+              <h3 class="showcase-title">QJ Motor — Riverside Display</h3>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Accordion Grid (Bottom Rows) -->
+        <div class="portfolio-accordion-grid">
+          
+          <!-- Row 1 -->
+          <div class="accordion-row">
+            <div class="accordion-card" data-category="Cartelería">
+              <img src="assets/portfolio/Fort_350_motorcycle_headlight_close-up_2K_202607292037.jpeg" alt="Headlight Detail">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">ON HOVER REVEALS FULL WIDTH IMAGE</span>
+                <span class="accordion-card-desc">Visualización CGI de faros frontales y óptica de alta precisión.</span>
+              </div>
+            </div>
+            <div class="accordion-card" data-category="reels">
+              <img src="assets/portfolio/Fort_350_motorcycle_studio_2K_202607292051.jpeg" alt="Studio Shot">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">Estudio CGI / Reels</span>
+                <span class="accordion-card-desc">Render de estudio con iluminación de contraste para redes sociales.</span>
+              </div>
+            </div>
+            <div class="accordion-card" data-category="web">
+              <img src="assets/portfolio/Fort_350_motorcycle_emblem_2K_202607292037.jpeg" alt="Emblem Detail">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">Identidad & Emblem</span>
+                <span class="accordion-card-desc">Detalle de marca y relieves metálicos en 3D.</span>
+              </div>
+            </div>
+            <div class="accordion-card" data-category="integral">
+              <img src="assets/portfolio/Brake_disc_and_rim_motorcycle_202607292037.jpeg" alt="Brake & Rim Detail">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">Campaña Integral</span>
+                <span class="accordion-card-desc">Producción técnica de llanta y sistema de frenado.</span>
+              </div>
+            </div>
+            <div class="accordion-card" data-category="reels">
+              <img src="assets/portfolio/Fort_350_motorcycle_rear_light_202607292037.jpeg" alt="Rear Light">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">Social Reels</span>
+                <span class="accordion-card-desc">Animación y cinematografía técnica nocturna.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="accordion-row">
+            <div class="accordion-card" data-category="reels">
+              <img src="assets/portfolio/Outdoor_ad_kiosk_rainy_afternoon_202607311313.jpeg" alt="Outdoor Ad Kiosk">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">Kiosco Urbano</span>
+                <span class="accordion-card-desc">Integración visual en escenarios de lluvia.</span>
+              </div>
+            </div>
+            <div class="accordion-card" data-category="web">
+              <img src="assets/portfolio/Promotional_poster_on_street_2K_202607311313.jpeg" alt="Street Poster">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">Desarrollo Web</span>
+                <span class="accordion-card-desc">Landing pages dinámicas de alto impacto.</span>
+              </div>
+            </div>
+            <div class="accordion-card" data-category="Cartelería">
+              <img src="assets/portfolio/Sidewalk_board_outside_building_2K_202607311313.jpeg" alt="Sidewalk Board">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">Cartelería Exterior</span>
+                <span class="accordion-card-desc">Presencia física en vía pública para comercios.</span>
+              </div>
+            </div>
+            <div class="accordion-card" data-category="integral">
+              <img src="assets/portfolio/Fort_350_motorcycle_studio_2K_202607292059.jpeg" alt="Studio Shot 2">
+              <div class="accordion-card-content">
+                <span class="accordion-card-label">Contenido de Producto</span>
+                <span class="accordion-card-desc">Modelado y renderización foto-realista.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. ABOUT US SECTION ("quienes somos")
+       ========================================================================= -->
+  <section class="about-section" id="quienes-somos">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <h2 class="about-header">
+        quienes <strong>somos</strong>
+        <i data-lucide="users"></i>
+      </h2>
+
+      <!-- Team Members Grid -->
+      <div class="team-grid">
+        
+        <!-- Founder 1: David Brum -->
+        <div class="team-card">
+          <div class="team-avatar-box">
+            <img 
+              src="assets/branding/brusan_Isotipo_blanco.png" 
+              alt="David Brum"
+              style="object-fit: contain; padding: 1.5rem; background: #171512;"
+            >
+          </div>
+          <div class="team-info">
+            <div>
+              <h3 class="team-name">David <span>Brum</span></h3>
+              <p class="team-role">Founder & Visual / Tech Lead</p>
+            </div>
+            <div class="team-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill">
+                <i data-lucide="instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener" class="social-pill">
+                <i data-lucide="twitter"></i>
+                <span>X.com</span>
+              </a>
+              <a href="https://behance.net" target="_blank" rel="noopener" class="social-pill">
+                <i data-lucide="layout"></i>
+                <span>Behance</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Co-Founder 2: Daniel Santos -->
+        <div class="team-card">
+          <div class="team-avatar-box">
+            <img 
+              src="assets/branding/brusan_Isotipo_blanco.png" 
+              alt="Daniel Santos"
+              style="object-fit: contain; padding: 1.5rem; background: #171512;"
+            >
+          </div>
+          <div class="team-info">
+            <div>
+              <h3 class="team-name">Daniel <span>Santos</span></h3>
+              <p class="team-role">Co-Founder & Creative Director / Sales</p>
+            </div>
+            <div class="team-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill">
+                <i data-lucide="instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener" class="social-pill">
+                <i data-lucide="twitter"></i>
+                <span>X.com</span>
+              </a>
+              <a href="https://behance.net" target="_blank" rel="noopener" class="social-pill">
+                <i data-lucide="layout"></i>
+                <span>Behance</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slogan / Brand Manifesto Divider -->
+      <div class="slogan-divider">
+        <img src="assets/branding/brusan_Isotipo_blanco.png" alt="Isotipo BRUSAN">
+        <span>ACOMPAÑAMOS EL CAMINO DE TU NEGOCIO CON CONTENIDO QUE IMPONE RESPETO</span>
+      </div>
+
+      <!-- Typographic Manifesto Matrix ("Hacer pie con lo propio") -->
+      <div class="manifesto-matrix-box">
+        <div class="manifesto-grid">
+          <!-- Row 1 -->
+          <span class="manifesto-word highlight-blue">Hacer</span>
+          <span class="manifesto-word">Hacer</span>
+          <span class="manifesto-word">Hacer</span>
+          <span class="manifesto-word">Hacer</span>
+
+          <!-- Row 2 -->
+          <span class="manifesto-word">pie</span>
+          <span class="manifesto-word highlight-blue">pie</span>
+          <span class="manifesto-word">pie</span>
+          <span class="manifesto-word">pie</span>
+
+          <!-- Row 3 -->
+          <span class="manifesto-word">con lo</span>
+          <span class="manifesto-word">con lo</span>
+          <span class="manifesto-word highlight-blue">con lo</span>
+          <span class="manifesto-word">con lo</span>
+
+          <!-- Row 4 -->
+          <span class="manifesto-word">propio</span>
+          <span class="manifesto-word">propio</span>
+          <span class="manifesto-word">propio</span>
+          <span class="manifesto-word highlight-blue">propio</span>
+        </div>
+
+        <p class="manifesto-subline">
+          Le damos presencia visual al trabajo que mueve la zona todos los días.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. FOOTER SECTION
+       ========================================================================= -->
+  <footer class="footer-section">
+    <!-- Centered Watermark Title with Visual Air -->
+    <div class="footer-watermark-wrap">
+      <div class="footer-watermark">
+        DESARROLLO VISUAL
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="container footer-bottom-bar">
+      <div class="footer-brand">
+        <img src="assets/brusan_logo_blanco.svg" alt="BRUSAN">
+        <span>- desarrollo visual</span>
+      </div>
+
+      <div class="footer-sitemap-pill">
+        <a href="#inicio">Inicio</a>
+        <a href="#nuestro-portfolio">Portfolio</a>
+        <a href="#quienes-somos">Quienes Somos</a>
+        <a href="#quienes-somos">Contacto</a>
+      </div>
+
+      <div class="footer-copy">
+        &copy; 2026
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/SVGLoader.js"></script>
+  <script src="shader.js"></script>
+  <script src="glass-logo.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
