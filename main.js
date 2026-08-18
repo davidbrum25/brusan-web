@@ -14,34 +14,53 @@ const translations = {
     "hero.btn.portfolio": "mira nuestro portfolio",
     "hero.btn.contact": "nos queres contactar?",
     "portfolio.title": "nuestro <strong>portfolio</strong>",
+    "tab.all": "todo",
     "tab.reels": "reels",
-    "tab.carteleria": "cartelería",
-    "tab.web": "web",
-    "tab.integral": "integral",
-    "showcase.tag.1": "Cartelería Urbana",
-    "showcase.title.1": "QJ Motor Gerli — Outdoor Street Poster",
-    "showcase.tag.2": "Totem Digital",
-    "showcase.title.2": "QJ Motor — GERLI FORT 350",
-    "showcase.tag.3": "Pantalla Costanera",
-    "showcase.title.3": "QJ Motor — Riverside Display",
-    "accordion.1.label": "Detalle técnico",
-    "accordion.1.desc": "Visualización CGI de faros frontales y óptica de alta precisión.",
-    "accordion.2.label": "Estudio CGI / Reels",
-    "accordion.2.desc": "Render de estudio con iluminación de contraste para redes sociales.",
-    "accordion.3.label": "Identidad & Emblem",
-    "accordion.3.desc": "Detalle de marca y relieves metálicos en 3D.",
-    "accordion.4.label": "Campaña Integral",
-    "accordion.4.desc": "Producción técnica de llanta y sistema de frenado.",
-    "accordion.5.label": "Social Reels",
-    "accordion.5.desc": "Animación y cinematografía técnica nocturna.",
-    "accordion.6.label": "Kiosco Urbano",
-    "accordion.6.desc": "Integración visual en escenarios de lluvia.",
-    "accordion.7.label": "Desarrollo Web",
-    "accordion.7.desc": "Landing pages dinámicas de alto impacto.",
-    "accordion.8.label": "Cartelería Exterior",
-    "accordion.8.desc": "Presencia física en vía pública para comercios.",
-    "accordion.9.label": "Contenido de Producto",
-    "accordion.9.desc": "Modelado y renderización foto-realista.",
+    "tab.cgi": "cgi",
+    "tab.branding": "branding",
+    "tab.foto": "foto",
+    "work.back": "volver al portfolio",
+    "work.prev": "anterior",
+    "work.next": "siguiente",
+    "work.pulpo.tag": "Reel · 3D",
+    "work.pulpo.title": "El Pulpo Negro",
+    "work.pulpo.desc": "Reel y piezas sociales del personaje 3D.",
+    "work.alfajor.tag": "CGI · Producto",
+    "work.alfajor.title": "Alfajor Argentino",
+    "work.alfajor.desc": "Visualización de producto y breakdown CGI.",
+    "work.cantilo.tag": "Archviz · Web",
+    "work.cantilo.title": "radiocantilo.com",
+    "work.cantilo.desc": "Archviz, identidad y reel de marca.",
+    "work.nonpa.tag": "Reels · Tour",
+    "work.nonpa.title": "Nonpalidece",
+    "work.nonpa.desc": "Reels y piezas para Soy Latino Tour.",
+    "work.empanada.tag": "CGI · Producto",
+    "work.empanada.title": "Empanada Criolla",
+    "work.empanada.desc": "Visualización de producto y breakdown CGI.",
+    "work.veganis.tag": "CGI · Producto",
+    "work.veganis.title": "Veganis",
+    "work.veganis.desc": "Spot y stills de producto para Veganis.",
+    "work.boxbike.tag": "3D Model",
+    "work.boxbike.title": "Box Bike",
+    "work.boxbike.desc": "Modelado y showcase 3D.",
+    "work.estelares.tag": "Music clip",
+    "work.estelares.title": "Estelares — Usted",
+    "work.estelares.desc": "Stills del videoclip Usted.",
+    "work.sybila.tag": "Branding",
+    "work.sybila.title": "sybi.la",
+    "work.sybila.desc": "Identidad y exploración de marca.",
+    "work.sybpro.tag": "Branding · Reel",
+    "work.sybpro.title": "sybpro.tv",
+    "work.sybpro.desc": "Identidad y reel de marca.",
+    "work.vai.tag": "Reels",
+    "work.vai.title": "Viaje a lo Inesperado",
+    "work.vai.desc": "Clips y motion de marca.",
+    "work.mellis.tag": "Branding",
+    "work.mellis.title": "Viajes los Mellis",
+    "work.mellis.desc": "Identidad — Seguimos la música.",
+    "work.foto.tag": "Fotografía",
+    "work.foto.title": "La Plata",
+    "work.foto.desc": "Serie fotográfica urbana.",
     "services.title": "qué <strong>hacemos</strong>",
     "services.lead": "Cuatro frentes claros para dar presencia visual a tu producto y tu negocio.",
     "services.1.title": "Contenido en redes",
@@ -84,34 +103,53 @@ const translations = {
     "hero.btn.portfolio": "explore our portfolio",
     "hero.btn.contact": "want to contact us?",
     "portfolio.title": "our <strong>portfolio</strong>",
+    "tab.all": "all",
     "tab.reels": "reels",
-    "tab.carteleria": "signage",
-    "tab.web": "web",
-    "tab.integral": "full-suite",
-    "showcase.tag.1": "Urban Signage",
-    "showcase.title.1": "QJ Motor Gerli — Outdoor Street Poster",
-    "showcase.tag.2": "Digital Totem",
-    "showcase.title.2": "QJ Motor — GERLI FORT 350",
-    "showcase.tag.3": "Riverside Display",
-    "showcase.title.3": "QJ Motor — Riverside Display",
-    "accordion.1.label": "Technical detail",
-    "accordion.1.desc": "CGI visualization of front headlights and high-precision optics.",
-    "accordion.2.label": "CGI Studio / Reels",
-    "accordion.2.desc": "High-contrast studio rendering tailored for social media.",
-    "accordion.3.label": "Identity & Emblem",
-    "accordion.3.desc": "Brand detailing and 3D metallic embossing.",
-    "accordion.4.label": "Full-Suite Campaign",
-    "accordion.4.desc": "Technical engineering visualization of rim and braking system.",
-    "accordion.5.label": "Social Reels",
-    "accordion.5.desc": "Nighttime technical cinematography and motion visuals.",
-    "accordion.6.label": "Urban Kiosk",
-    "accordion.6.desc": "Photorealistic outdoor integration under rainy atmospheric conditions.",
-    "accordion.7.label": "Web Development",
-    "accordion.7.desc": "Dynamic, high-impact interactive landing pages.",
-    "accordion.8.label": "Outdoor Signage",
-    "accordion.8.desc": "Physical storefront and outdoor presence for businesses.",
-    "accordion.9.label": "Product Content",
-    "accordion.9.desc": "Precision 3D modeling and photorealistic rendering.",
+    "tab.cgi": "cgi",
+    "tab.branding": "branding",
+    "tab.foto": "photo",
+    "work.back": "back to portfolio",
+    "work.prev": "previous",
+    "work.next": "next",
+    "work.pulpo.tag": "Reel · 3D",
+    "work.pulpo.title": "El Pulpo Negro",
+    "work.pulpo.desc": "Reel and social pieces for the 3D character.",
+    "work.alfajor.tag": "CGI · Product",
+    "work.alfajor.title": "Alfajor Argentino",
+    "work.alfajor.desc": "Product visualization and CGI breakdown.",
+    "work.cantilo.tag": "Archviz · Web",
+    "work.cantilo.title": "radiocantilo.com",
+    "work.cantilo.desc": "Archviz, identity and brand reel.",
+    "work.nonpa.tag": "Reels · Tour",
+    "work.nonpa.title": "Nonpalidece",
+    "work.nonpa.desc": "Reels and pieces for Soy Latino Tour.",
+    "work.empanada.tag": "CGI · Product",
+    "work.empanada.title": "Empanada Criolla",
+    "work.empanada.desc": "Product visualization and CGI breakdown.",
+    "work.veganis.tag": "CGI · Product",
+    "work.veganis.title": "Veganis",
+    "work.veganis.desc": "Product spot and stills for Veganis.",
+    "work.boxbike.tag": "3D Model",
+    "work.boxbike.title": "Box Bike",
+    "work.boxbike.desc": "3D modeling and showcase.",
+    "work.estelares.tag": "Music clip",
+    "work.estelares.title": "Estelares — Usted",
+    "work.estelares.desc": "Stills from the Usted music video.",
+    "work.sybila.tag": "Branding",
+    "work.sybila.title": "sybi.la",
+    "work.sybila.desc": "Identity and brand exploration.",
+    "work.sybpro.tag": "Branding · Reel",
+    "work.sybpro.title": "sybpro.tv",
+    "work.sybpro.desc": "Identity and brand reel.",
+    "work.vai.tag": "Reels",
+    "work.vai.title": "Viaje a lo Inesperado",
+    "work.vai.desc": "Brand clips and motion.",
+    "work.mellis.tag": "Branding",
+    "work.mellis.title": "Viajes los Mellis",
+    "work.mellis.desc": "Identity — We follow the music.",
+    "work.foto.tag": "Photography",
+    "work.foto.title": "La Plata",
+    "work.foto.desc": "Urban photography series.",
     "services.title": "what we <strong>do</strong>",
     "services.lead": "Four clear fronts to give visual presence to your product and business.",
     "services.1.title": "Social content",
@@ -180,7 +218,10 @@ function applyLanguage(lang, smooth = false) {
     langLabel.textContent = dict["lang.toggle"];
   }
 
-  if (dict["doc.title"]) {
+  const workKey = document.body && document.body.dataset.workKey;
+  if (workKey && dict["work." + workKey + ".title"]) {
+    document.title = dict["work." + workKey + ".title"] + " · BRUSAN";
+  } else if (dict["doc.title"]) {
     document.title = dict["doc.title"];
   }
 
@@ -207,8 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const tabBtns = document.querySelectorAll(".tab-btn");
-  const showcaseItems = document.querySelectorAll(".showcase-item");
-  const accordionCards = document.querySelectorAll(".accordion-card");
+  const portfolioItems = document.querySelectorAll(".showcase-item, .accordion-card");
 
   tabBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -217,25 +257,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const category = btn.getAttribute("data-category");
 
-      showcaseItems.forEach((item) => {
+      portfolioItems.forEach((item) => {
         const itemCat = item.getAttribute("data-category");
-        if (category === "all" || category === "integral" || itemCat === category) {
-          item.style.display = "block";
-          item.style.opacity = "1";
-        } else {
-          item.style.display = "none";
-          item.style.opacity = "0";
+        const show = category === "all" || itemCat === category;
+        item.classList.toggle("is-hidden", !show);
+        if (!show) {
+          item.querySelectorAll("video").forEach((video) => {
+            video.pause();
+            video.currentTime = 0;
+          });
         }
       });
+    });
+  });
 
-      accordionCards.forEach((card) => {
-        const cardCat = card.getAttribute("data-category");
-        if (category === "all" || category === "integral" || cardCat === category) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
+  document.querySelectorAll(".showcase-item video, .accordion-card video").forEach((video) => {
+    const parent = video.closest(".showcase-item, .accordion-card");
+    if (!parent) return;
+    parent.addEventListener("mouseenter", () => {
+      video.play().catch(() => {});
+    });
+    parent.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
     });
   });
 
@@ -255,7 +299,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   initMagneticCursor();
+  initWorkLightbox();
 });
+
+function initWorkLightbox() {
+  const box = document.querySelector(".work-lightbox");
+  if (!box) return;
+  const img = box.querySelector("img");
+  const closeBtn = box.querySelector(".work-lightbox-close");
+
+  function close() {
+    box.hidden = true;
+    img.removeAttribute("src");
+  }
+
+  document.querySelectorAll(".work-gallery img").forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      img.src = thumb.currentSrc || thumb.src;
+      img.alt = thumb.alt || "";
+      box.hidden = false;
+    });
+  });
+
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", (e) => {
+    if (e.target === box) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !box.hidden) close();
+  });
+}
 
 function initMagneticCursor() {
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
