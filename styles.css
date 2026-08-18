@@ -186,18 +186,19 @@ img {
   font-weight: 500;
   letter-spacing: 0.03em;
   color: var(--color-text-light);
-  transition: all var(--transition-fast);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.glass-pill:hover {
+.glass-pill:hover,
+.glass-pill.is-magnetic-active {
   background: rgba(212, 163, 89, 0.15);
   border-color: var(--color-border-accent);
   color: #ffffff;
-  transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(212, 163, 89, 0.15);
 }
 
-.glass-pill.secondary:hover {
+.glass-pill.secondary:hover,
+.glass-pill.secondary.is-magnetic-active {
   background: rgba(37, 137, 189, 0.2);
   border-color: var(--color-border-cobalt);
   box-shadow: 0 8px 20px rgba(37, 137, 189, 0.2);
@@ -332,16 +333,16 @@ img {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
   user-select: none;
   flex-shrink: 0;
 }
 
-.lang-toggle-btn:hover {
+.lang-toggle-btn:hover,
+.lang-toggle-btn.is-magnetic-active {
   background: rgba(212, 163, 89, 0.15);
   border-color: var(--color-accent);
   color: var(--color-accent);
-  transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
@@ -879,7 +880,7 @@ img {
   border: 1px solid rgba(244, 241, 234, 0.1);
   font-size: 0.75rem;
   color: var(--color-text-muted);
-  transition: all var(--transition-fast);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .social-pill svg {
@@ -890,11 +891,22 @@ img {
   color: inherit;
 }
 
-.social-pill:hover {
+.social-pill:hover,
+.social-pill.is-magnetic-active {
   background: rgba(37, 137, 189, 0.2);
   border-color: var(--color-border-cobalt);
   color: var(--color-text-light);
-  transform: translateY(-1px);
+}
+
+/* Magnetic cursor (Cursify-style). JS owns transform; keep hover color/shadow only. */
+[data-magnetic] {
+  position: relative;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+[data-magnetic].is-magnetic-active {
+  z-index: 2;
 }
 
 /* Slogan / Brand Manifesto Divider */

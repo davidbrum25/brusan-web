@@ -3,6 +3,7 @@
    - Zero-reload instant language switching (ES <-> EN)
    - Category filtering for portfolio showcases & accordion grid
    - Smooth anchor scrolling & Lucide icon initialization
+   - Magnetic cursor on header + Quienes Somos buttons
    ========================================================================== */
 
 const translations = {
@@ -208,4 +209,143 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // 5. Magnetic cursor (vanilla port of Cursify Magnetic)
+  initMagneticCursor();
 });
+
+/* --------------------------------------------------------------------------
+   Magnetic cursor
+   Source: https://cursify.ui-layouts.com/components/magnetic-cursor
+   Spring: stiffness 80, damping 10. Pull: sqrt(1 - dist/range) * strength.
+   Disabled only on coarse/touch pointers. Reduced-motion is not gated here:
+   this desktop maps GNOME "enable-animations=false" to prefers-reduced-motion,
+   which would otherwise skip the effect entirely.
+   -------------------------------------------------------------------------- */
+function initMagneticCursor() {
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (!finePointer) return;
+
+  const nodes = document.querySelectorAll("[data-magnetic]");
+  if (!nodes.length) return;
+
+  const STIFFNESS = 80;
+  const DAMPING = 10;
+
+  const items = Array.from(nodes, (el) => ({
+    el,
+    distance: Number(el.dataset.magneticDistance) || 100,
+    strength: Number(el.dataset.magneticStrength) || 0.45,
+    x: 0,
+    y: 0,
+    vx: 0,
+    vy: 0,
+    tx: 0,
+    ty: 0,
+    hovering: false
+  }));
+
+  let pointerX = 0;
+  let pointerY = 0;
+  let running = false;
+  let lastT = 0;
+
+  function updateTargets() {
+    for (const item of items) {
+      const rect = item.el.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2 - item.x;
+      const cy = rect.top + rect.height / 2 - item.y;
+      const dx = pointerX - cx;
+      const dy = pointerY - cy;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist < item.distance) {
+        const pull = Math.pow(1 - dist / item.distance, 0.5);
+        item.tx = dx * pull * item.strength;
+        item.ty = dy * pull * item.strength;
+        if (!item.hovering) {
+          item.hovering = true;
+          item.el.classList.add("is-magnetic-active");
+        }
+      } else {
+        item.tx = 0;
+        item.ty = 0;
+        if (item.hovering) {
+          item.hovering = false;
+          item.el.classList.remove("is-magnetic-active");
+        }
+      }
+    }
+  }
+
+  function step(t) {
+    if (!lastT) lastT = t;
+    const dt = Math.min((t - lastT) / 1000, 0.032);
+    lastT = t;
+
+    updateTargets();
+
+    let anyActive = false;
+    for (const item of items) {
+      const ax = -STIFFNESS * (item.x - item.tx) - DAMPING * item.vx;
+      const ay = -STIFFNESS * (item.y - item.ty) - DAMPING * item.vy;
+      item.vx += ax * dt;
+      item.vy += ay * dt;
+      item.x += item.vx * dt;
+      item.y += item.vy * dt;
+
+      const settled =
+        item.tx === 0 &&
+        item.ty === 0 &&
+        Math.abs(item.x) < 0.08 &&
+        Math.abs(item.y) < 0.08 &&
+        Math.abs(item.vx) < 0.08 &&
+        Math.abs(item.vy) < 0.08;
+
+      if (settled) {
+        item.x = 0;
+        item.y = 0;
+        item.vx = 0;
+        item.vy = 0;
+        item.el.style.transform = "";
+      } else {
+        anyActive = true;
+        item.el.style.transform =
+          "translate3d(" + item.x.toFixed(2) + "px, " + item.y.toFixed(2) + "px, 0)";
+      }
+    }
+
+    if (anyActive) {
+      running = true;
+      requestAnimationFrame(step);
+    } else {
+      running = false;
+      lastT = 0;
+    }
+  }
+
+  function kick() {
+    if (!running) {
+      running = true;
+      lastT = 0;
+      requestAnimationFrame(step);
+    }
+  }
+
+  window.addEventListener(
+    "pointermove",
+    (e) => {
+      if (e.pointerType && e.pointerType !== "mouse") return;
+      pointerX = e.clientX;
+      pointerY = e.clientY;
+      kick();
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("blur", () => {
+    pointerX = -9999;
+    pointerY = -9999;
+    kick();
+  });
+}
