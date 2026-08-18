@@ -718,11 +718,14 @@ img {
   text-align: center;
   background: rgba(18, 17, 16, 0.6);
   backdrop-filter: blur(4px);
-  transition: opacity var(--transition-smooth);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background var(--transition-smooth), backdrop-filter var(--transition-smooth);
 }
 
 .accordion-card:hover .accordion-card-content {
-  background: linear-gradient(to top, rgba(18, 17, 16, 0.85) 0%, rgba(18, 17, 16, 0.2) 100%);
+  background: linear-gradient(to top, rgba(18, 17, 16, 0.78) 0%, rgba(18, 17, 16, 0) 48%);
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
   align-items: flex-start;
   justify-content: flex-end;
   text-align: left;
@@ -1524,11 +1527,18 @@ a.accordion-card {
     transform: none;
   }
 
+  .accordion-card img,
+  .accordion-card video {
+    opacity: 1;
+  }
+
   .accordion-card-content {
     align-items: flex-start;
     justify-content: flex-end;
     text-align: left;
-    background: linear-gradient(to top, rgba(18, 17, 16, 0.85) 0%, rgba(18, 17, 16, 0.2) 100%);
+    background: linear-gradient(to top, rgba(18, 17, 16, 0.78) 0%, rgba(18, 17, 16, 0) 50%);
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
   }
 
   .accordion-card-label {
