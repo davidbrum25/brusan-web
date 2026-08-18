@@ -1,0 +1,94 @@
+/* BRUSAN · Services section */
+.services-section {
+  position: relative;
+  z-index: 10;
+  padding: 5rem 0 2rem;
+}
+.services-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+.services-header strong {
+  font-weight: 800;
+  color: var(--color-accent);
+}
+.services-header svg,
+.services-header i {
+  color: var(--color-accent);
+  width: 24px;
+  height: 24px;
+}
+.services-lead {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  line-height: 1.5;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.service-card {
+  background: rgba(36, 32, 27, 0.55);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.service-card:hover {
+  border-color: var(--color-border-accent);
+  background: rgba(36, 32, 27, 0.85);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+.service-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(212, 163, 89, 0.12);
+  border: 1px solid rgba(212, 163, 89, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+.service-icon svg,
+.service-icon i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+.service-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  letter-spacing: -0.01em;
+}
+.service-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+@media (max-width: 767px) {
+  .services-section { padding: 3.5rem 0 1rem; }
+  .services-lead { margin-bottom: 1.75rem; }
+}
