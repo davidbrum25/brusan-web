@@ -10,7 +10,9 @@ const translations = {
   es: {
     "lang.toggle": "EN",
     "hero.badge": "Social Content, Development, Web/app design",
+    "hero.location": "Gualeguaychú · Entre Ríos",
     "hero.tagline": "Conectamos tu <strong>producto</strong> con su audiencia",
+    "hero.valueprop": "Presencia visual técnica para productos y empresas de la zona.",
     "hero.btn.portfolio": "mira nuestro portfolio",
     "hero.btn.contact": "nos queres contactar?",
     "portfolio.title": "nuestro <strong>portfolio</strong>",
@@ -73,7 +75,9 @@ const translations = {
   en: {
     "lang.toggle": "ES",
     "hero.badge": "Social Content, Development, Web/app design",
+    "hero.location": "Gualeguaychú · Entre Ríos",
     "hero.tagline": "We connect your <strong>product</strong> with its audience",
+    "hero.valueprop": "Technical visual presence for products and businesses in the region.",
     "hero.btn.portfolio": "explore our portfolio",
     "hero.btn.contact": "want to contact us?",
     "portfolio.title": "our <strong>portfolio</strong>",
