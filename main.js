@@ -9,7 +9,7 @@
 const translations = {
   es: {
     "lang.toggle": "EN",
-    "hero.badge": "Social Content, Development, Web/app design",
+    "hero.badge": "Contenido, desarrollo y diseño web/app",
     "hero.tagline": "Conectamos tu <strong>producto</strong> con su audiencia",
     "hero.btn.portfolio": "mira nuestro portfolio",
     "hero.btn.contact": "nos queres contactar?",
@@ -24,6 +24,7 @@ const translations = {
     "showcase.title.2": "QJ Motor — GERLI FORT 350",
     "showcase.tag.3": "Pantalla Costanera",
     "showcase.title.3": "QJ Motor — Riverside Display",
+    "accordion.1.label": "Detalle técnico",
     "accordion.1.desc": "Visualización CGI de faros frontales y óptica de alta precisión.",
     "accordion.2.label": "Estudio CGI / Reels",
     "accordion.2.desc": "Render de estudio con iluminación de contraste para redes sociales.",
@@ -56,6 +57,10 @@ const translations = {
     "team.role.david": "Founder & Visual / Tech Lead",
     "team.role.daniel": "Co-Founder & Creative Director / Sales",
     "slogan.text": "ACOMPAÑAMOS EL CAMINO DE TU NEGOCIO CON CONTENIDO QUE IMPONE RESPETO",
+    "manifesto.w1": "Hacer",
+    "manifesto.w2": "pie",
+    "manifesto.w3": "con lo",
+    "manifesto.w4": "propio",
     "manifesto.subline": "Le damos presencia visual al trabajo que mueve la zona todos los días.",
     "contact.title": "hablemos de tu <strong>proyecto</strong>",
     "contact.lead": "Contanos qué necesitás. Respondemos rápido y sin vueltas.",
@@ -69,7 +74,8 @@ const translations = {
     "footer.nav.portfolio": "Portfolio",
     "footer.nav.services": "Qué hacemos",
     "footer.nav.about": "Quienes Somos",
-    "footer.nav.contact": "Contacto"
+    "footer.nav.contact": "Contacto",
+    "doc.title": "BRUSAN · Desarrollo Visual | Gualeguaychú"
   },
   en: {
     "lang.toggle": "ES",
@@ -88,6 +94,7 @@ const translations = {
     "showcase.title.2": "QJ Motor — GERLI FORT 350",
     "showcase.tag.3": "Riverside Display",
     "showcase.title.3": "QJ Motor — Riverside Display",
+    "accordion.1.label": "Technical detail",
     "accordion.1.desc": "CGI visualization of front headlights and high-precision optics.",
     "accordion.2.label": "CGI Studio / Reels",
     "accordion.2.desc": "High-contrast studio rendering tailored for social media.",
@@ -120,6 +127,10 @@ const translations = {
     "team.role.david": "Founder & Visual / Tech Lead",
     "team.role.daniel": "Co-Founder & Creative Director / Sales",
     "slogan.text": "WE EMPOWER YOUR BUSINESS JOURNEY WITH CONTENT THAT COMMANDS RESPECT",
+    "manifesto.w1": "Stand",
+    "manifesto.w2": "firm",
+    "manifesto.w3": "on your",
+    "manifesto.w4": "own",
     "manifesto.subline": "We give visual presence to the work that powers the region every single day.",
     "contact.title": "let's talk about your <strong>project</strong>",
     "contact.lead": "Tell us what you need. We reply fast and straight to the point.",
@@ -133,7 +144,8 @@ const translations = {
     "footer.nav.portfolio": "Portfolio",
     "footer.nav.services": "What we do",
     "footer.nav.about": "About Us",
-    "footer.nav.contact": "Contact"
+    "footer.nav.contact": "Contact",
+    "doc.title": "BRUSAN · Visual Development | Gualeguaychú"
   }
 };
 
@@ -166,6 +178,10 @@ function applyLanguage(lang, smooth = false) {
   const langLabel = document.getElementById("lang-label");
   if (langLabel) {
     langLabel.textContent = dict["lang.toggle"];
+  }
+
+  if (dict["doc.title"]) {
+    document.title = dict["doc.title"];
   }
 
   if (window.lucide) {
