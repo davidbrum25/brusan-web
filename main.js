@@ -10,9 +10,7 @@ const translations = {
   es: {
     "lang.toggle": "EN",
     "hero.badge": "Social Content, Development, Web/app design",
-    "hero.location": "Gualeguaychú · Entre Ríos",
     "hero.tagline": "Conectamos tu <strong>producto</strong> con su audiencia",
-    "hero.valueprop": "Presencia visual técnica para productos y empresas de la zona.",
     "hero.btn.portfolio": "mira nuestro portfolio",
     "hero.btn.contact": "nos queres contactar?",
     "portfolio.title": "nuestro <strong>portfolio</strong>",
@@ -66,6 +64,7 @@ const translations = {
     "footer.watermark.line1": "DESARROLLO",
     "footer.watermark.line2": "VISUAL",
     "footer.slogan": "- desarrollo visual",
+    "footer.location": "Gualeguaychú",
     "footer.nav.home": "Inicio",
     "footer.nav.portfolio": "Portfolio",
     "footer.nav.services": "Qué hacemos",
@@ -75,9 +74,7 @@ const translations = {
   en: {
     "lang.toggle": "ES",
     "hero.badge": "Social Content, Development, Web/app design",
-    "hero.location": "Gualeguaychú · Entre Ríos",
     "hero.tagline": "We connect your <strong>product</strong> with its audience",
-    "hero.valueprop": "Technical visual presence for products and businesses in the region.",
     "hero.btn.portfolio": "explore our portfolio",
     "hero.btn.contact": "want to contact us?",
     "portfolio.title": "our <strong>portfolio</strong>",
@@ -131,6 +128,7 @@ const translations = {
     "footer.watermark.line1": "VISUAL",
     "footer.watermark.line2": "DEVELOPMENT",
     "footer.slogan": "- visual development",
+    "footer.location": "Gualeguaychú",
     "footer.nav.home": "Home",
     "footer.nav.portfolio": "Portfolio",
     "footer.nav.services": "What we do",
@@ -170,19 +168,16 @@ function applyLanguage(lang, smooth = false) {
     langLabel.textContent = dict["lang.toggle"];
   }
 
-  // Refresh Lucide icons if any icon tags were updated
   if (window.lucide) {
     window.lucide.createIcons();
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Initialize Lucide Icons
   if (window.lucide) {
     window.lucide.createIcons();
   }
 
-  // 2. Language Switcher Toggle
   const langToggleBtn = document.getElementById("lang-toggle-btn");
   if (langToggleBtn) {
     langToggleBtn.addEventListener("click", () => {
@@ -191,12 +186,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Apply saved language on load if different from default HTML
   if (currentLanguage !== "es") {
     applyLanguage(currentLanguage, false);
   }
 
-  // 3. Portfolio Category Tabs Switching
   const tabBtns = document.querySelectorAll(".tab-btn");
   const showcaseItems = document.querySelectorAll(".showcase-item");
   const accordionCards = document.querySelectorAll(".accordion-card");
@@ -230,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 4. Smooth Scroll Links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -246,18 +238,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 5. Magnetic cursor (vanilla port of Cursify Magnetic)
   initMagneticCursor();
 });
 
-/* --------------------------------------------------------------------------
-   Magnetic cursor
-   Source: https://cursify.ui-layouts.com/components/magnetic-cursor
-   Spring: stiffness 80, damping 10. Pull: sqrt(1 - dist/range) * strength.
-   Disabled only on coarse/touch pointers. Reduced-motion is not gated here:
-   this desktop maps GNOME "enable-animations=false" to prefers-reduced-motion,
-   which would otherwise skip the effect entirely.
-   -------------------------------------------------------------------------- */
 function initMagneticCursor() {
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   if (!finePointer) return;
