@@ -117,6 +117,33 @@ PROJECTS = [
         ],
     },
     {
+        "slug": "qjmotor",
+        "key": "qjmotor",
+        "tag": "CGI · Cartelería",
+        "title": "QJ Motor",
+        "desc": "Visualización de producto y vía pública para Fort 350.",
+        "layout": "product",
+        "media": [
+            {"kind": "image", "src": "assets/work/qjmotor/product/studio-01.webp", "alt": "QJ Motor Fort 350 — estudio", "feature": True},
+            {"kind": "image", "src": "assets/work/qjmotor/branding/qj-badge.webp", "alt": "QJ Motor — isotipo", "contain": True},
+            {"kind": "image", "src": "assets/work/qjmotor/product/studio-02.webp", "alt": "QJ Motor Fort 350 — estudio 02"},
+            {"kind": "image", "src": "assets/work/qjmotor/product/emblem.webp", "alt": "QJ Motor Fort 350 — emblema"},
+            {"kind": "image", "src": "assets/work/qjmotor/product/headlight.webp", "alt": "QJ Motor Fort 350 — óptica"},
+            {"kind": "image", "src": "assets/work/qjmotor/product/handlebars.webp", "alt": "QJ Motor Fort 350 — comandos"},
+            {"kind": "image", "src": "assets/work/qjmotor/product/exhaust.webp", "alt": "QJ Motor Fort 350 — escape"},
+            {"kind": "image", "src": "assets/work/qjmotor/product/rear-light.webp", "alt": "QJ Motor Fort 350 — faro trasero"},
+            {"kind": "image", "src": "assets/work/qjmotor/product/brake-disc.webp", "alt": "QJ Motor Fort 350 — disco"},
+            {"kind": "image", "src": "assets/work/qjmotor/product/suspension.webp", "alt": "QJ Motor Fort 350 — suspensión"},
+            {"kind": "image", "src": "assets/work/qjmotor/product/seat.webp", "alt": "QJ Motor Fort 350 — asiento"},
+            {"kind": "image", "src": "assets/work/qjmotor/outdoor/riverside-screen.webp", "alt": "QJ Motor — pantalla costanera"},
+            {"kind": "image", "src": "assets/work/qjmotor/outdoor/billboard.webp", "alt": "QJ Motor — billboard"},
+            {"kind": "image", "src": "assets/work/qjmotor/outdoor/digital-poster.webp", "alt": "QJ Motor — poster digital"},
+            {"kind": "image", "src": "assets/work/qjmotor/outdoor/kiosk-rain.webp", "alt": "QJ Motor — kiosco"},
+            {"kind": "image", "src": "assets/work/qjmotor/outdoor/street-poster.webp", "alt": "QJ Motor — poster urbano"},
+            {"kind": "image", "src": "assets/work/qjmotor/outdoor/sidewalk-board.webp", "alt": "QJ Motor — cartelería de vereda"},
+        ],
+    },
+    {
         "slug": "box-bike",
         "key": "boxbike",
         "tag": "3D Model",
@@ -333,10 +360,19 @@ def page_html(project: dict, prev_p: dict, next_p: dict) -> str:
         <a href="../index.html#quienes-somos" data-i18n="footer.nav.about">Quienes Somos</a>
         <a href="../index.html#contacto" data-i18n="footer.nav.contact">Contacto</a>
       </nav>
-      <button class="lang-toggle-btn" id="lang-toggle-btn" data-magnetic data-magnetic-distance="80" data-magnetic-strength="0.5" aria-label="Cambiar idioma / Switch language">
-        <i data-lucide="globe"></i>
-        <span id="lang-label">EN</span>
-      </button>
+      <div class="nav-actions">
+        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" data-magnetic data-magnetic-distance="70" data-magnetic-strength="0.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <button class="lang-toggle-btn" id="lang-toggle-btn" data-magnetic data-magnetic-distance="80" data-magnetic-strength="0.5" aria-label="Cambiar idioma / Switch language">
+          <i data-lucide="globe"></i>
+          <span id="lang-label">EN</span>
+        </button>
+      </div>
     </div>
   </header>
 
