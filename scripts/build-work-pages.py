@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "work"
 CASES_PATH = ROOT / "data" / "portfolio-cases.json"
 CASES_I18N_JS = ROOT / "work-cases-i18n.js"
+SITE_ORIGIN = "https://brusan.ar"
+DEFAULT_OG_IMAGE = "assets/og/default.webp"
 
 # Media paths are relative to the site root (resolved as ../ from work/).
 PROJECTS = [
@@ -20,6 +22,7 @@ PROJECTS = [
         "tag": "CGI · Cartelería",
         "title": "QJ Motor",
         "desc": "Visualización de producto y vía pública para Fort 350.",
+        "og_image": "assets/og/qjmotor.webp",
         "layout": "product",
         "sections": [
             {
@@ -65,6 +68,7 @@ PROJECTS = [
         "tag": "Branding",
         "title": "Viajes los Mellis",
         "desc": "Identidad — Seguimos la música.",
+        "og_image": "assets/og/viajes-los-mellis.webp",
         "layout": "branding",
         "media": [
             {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/1.webp", "alt": "Viajes los Mellis 1", "feature": True},
@@ -81,6 +85,7 @@ PROJECTS = [
         "tag": "CGI · Producto",
         "title": "Alfajor Argentino",
         "desc": "Visualización de producto y breakdown CGI.",
+        "og_image": "assets/og/alfajor-argentino.webp",
         "layout": "product",
         "media": [
             {"kind": "video", "src": "assets/work/product-showcase/alfajor-argentino/bdvd-dc-003.alfajor.mp4", "poster": "assets/work/product-showcase/alfajor-argentino/stills/006.webp", "feature": True, "portrait": True},
@@ -101,6 +106,7 @@ PROJECTS = [
         "tag": "Archviz · Web",
         "title": "radiocantilo.com",
         "desc": "Archviz, identidad y reel de marca.",
+        "og_image": "assets/og/radiocantilo.webp",
         "layout": "mixed",
         "media": [
             {"kind": "image", "src": "assets/work/radiocantilo.com/archviz/grok-a45bc15d-56f9-46f0-8989-fb3ac1277297.webp", "alt": "radiocantilo.com — planta", "feature": True},
@@ -120,6 +126,7 @@ PROJECTS = [
         "tag": "Reel · 3D",
         "title": "El Pulpo Negro",
         "desc": "Reel y piezas sociales del personaje 3D.",
+        "og_image": "assets/og/el-pulpo-negro.webp",
         "layout": "mixed",
         "media": [
             {"kind": "video", "src": "assets/work/el-pulpo-negro/elpulponegro-reel.mp4", "poster": "assets/work/el-pulpo-negro/socials/social-post-03.webp", "feature": True},
@@ -134,6 +141,7 @@ PROJECTS = [
         "tag": "Reels · Tour",
         "title": "Nonpalidece",
         "desc": "Reels y piezas para Soy Latino Tour.",
+        "og_image": "assets/og/nonpalidece.webp",
         "layout": "mixed",
         "media": [
             {"kind": "video", "src": "assets/work/nonpalidece/reels/social-reels-03.mp4", "poster": "assets/work/nonpalidece/stills-03.webp", "feature": True},
@@ -150,6 +158,7 @@ PROJECTS = [
         "tag": "CGI · Producto",
         "title": "Empanada Criolla",
         "desc": "Visualización de producto y breakdown CGI.",
+        "og_image": "assets/og/empanada-criolla.webp",
         "layout": "product",
         "media": [
             {"kind": "video", "src": "assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.mp4", "poster": "assets/work/product-showcase/empanada-criolla/stills/frame-7-a-finished-raw-202606061400.webp", "feature": True, "portrait": True},
@@ -172,6 +181,7 @@ PROJECTS = [
         "tag": "CGI · Producto",
         "title": "Veganis",
         "desc": "Spot y stills de producto para Veganis.",
+        "og_image": "assets/og/veganis.webp",
         "layout": "product",
         "media": [
             {"kind": "video", "src": "assets/work/product-showcase/veganis/veganis-169-rosa-short.mp4", "poster": "assets/work/product-showcase/veganis/stills/png-rosa.webp", "feature": True},
@@ -187,6 +197,7 @@ PROJECTS = [
         "tag": "3D Model",
         "title": "Box Bike",
         "desc": "Modelado y showcase 3D.",
+        "og_image": "assets/og/box-bike.webp",
         "layout": "mixed",
         "media": [
             {"kind": "video", "src": "assets/work/model-showcase/3dmodel-box-bike/capture.mp4", "poster": "assets/work/model-showcase/3dmodel-box-bike/22-06-27-boxbike.webp", "feature": True},
@@ -207,6 +218,7 @@ PROJECTS = [
         "tag": "CGI · Clip",
         "title": "2Veinte",
         "desc": "Fondo 3D animado para clip publicitario.",
+        "og_image": "assets/og/3d-background.webp",
         "layout": "mixed",
         "media": [
             {"kind": "video", "src": "assets/work/model-showcase/3dbackground-music-clip/scene-final.mp4", "poster": "assets/work/model-showcase/3dbackground-music-clip/stills-01.webp", "feature": True},
@@ -225,6 +237,7 @@ PROJECTS = [
         "tag": "Music clip",
         "title": "Estelares — Usted",
         "desc": "Stills del videoclip Usted.",
+        "og_image": "assets/og/estelares.webp",
         "layout": "stills",
         "media": [
             {"kind": "image", "src": "assets/work/estelares/music-clip/stills-01.webp", "alt": "Estelares — Usted", "feature": True},
@@ -243,6 +256,7 @@ PROJECTS = [
         "tag": "Branding",
         "title": "sybi.la",
         "desc": "Identidad y exploración de marca.",
+        "og_image": "assets/og/sybila.webp",
         "layout": "branding",
         "media": [
             {"kind": "image", "src": "assets/work/sybi.la/branding/mockups-search/todas.webp", "alt": "sybi.la — exploración", "feature": True},
@@ -263,6 +277,7 @@ PROJECTS = [
         "tag": "Branding · Reel",
         "title": "sybpro.tv",
         "desc": "Identidad y reel de marca.",
+        "og_image": "assets/og/sybpro.webp",
         "layout": "branding",
         "media": [
             {"kind": "video", "src": "assets/work/sybpro.tv/reel/sybprotv-ad1.mp4", "poster": "assets/work/sybpro.tv/branding/1.webp", "feature": True},
@@ -279,6 +294,7 @@ PROJECTS = [
         "tag": "Reels",
         "title": "Viaje a lo Inesperado",
         "desc": "Clips y motion de marca.",
+        "og_image": "assets/og/viaje-a-lo-inesperado.webp",
         "layout": "mixed",
         "media": [
             {"kind": "video", "src": "assets/work/viaje-a-lo-inesperado/reels/18-04-03-vai-clip-1.mp4", "poster": "assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp", "feature": True},
@@ -294,6 +310,7 @@ PROJECTS = [
         "tag": "Fotografía",
         "title": "La Plata",
         "desc": "Serie fotográfica urbana.",
+        "og_image": "assets/og/la-plata.webp",
         "layout": "foto",
         "media": [
             {"kind": "image", "src": "assets/work/fotografia/la-plata-area/covers.webp", "alt": "La Plata — tapa", "cover": True},
@@ -331,6 +348,11 @@ PROJECTS = [
 
 def asset(path: str) -> str:
     return "../" + path
+
+
+def og_url(project: dict) -> str:
+    rel = project.get("og_image") or DEFAULT_OG_IMAGE
+    return f"{SITE_ORIGIN}/{rel.lstrip('/')}"
 
 
 def load_cases() -> dict:
@@ -458,6 +480,7 @@ def page_html(project: dict, prev_p: dict, next_p: dict, case: dict | None, labe
     media_html = render_gallery(project)
     facts_html = "\n" + render_case_facts(case, key) if case else ""
     panel_html = "\n" + render_case_panel(case, key) if case else ""
+    og = og_url(project)
     return f'''<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -467,17 +490,19 @@ def page_html(project: dict, prev_p: dict, next_p: dict, case: dict | None, labe
   <meta name="description" content="{project["desc"]} — BRUSAN, desarrollo visual en Gualeguaychú.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://brusan.ar/work/{project["slug"]}">
-  <link rel="icon" type="image/png" href="../assets/branding/brusan_Isotipo_blanco.png">
+  <link rel="icon" href="../assets/branding/brusan_favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/branding/brusan_apple-touch-icon.png">
   <meta name="theme-color" content="#121110">
   <meta name="color-scheme" content="dark">
   <meta property="og:type" content="article">
   <meta property="og:title" content="{project["title"]} · BRUSAN">
   <meta property="og:description" content="{project["desc"]}">
-  <meta property="og:image" content="https://brusan.ar/assets/branding/brusan_Logotipo_blanco.png">
+  <meta property="og:image" content="{og}">
+  <meta name="twitter:image" content="{og}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../services.css">
 </head>

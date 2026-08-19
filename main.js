@@ -14,7 +14,7 @@ const translations = {
     "hero.btn.portfolio": "mira nuestro portfolio",
     "hero.btn.contact": "nos queres contactar?",
     "portfolio.title": "nuestro <strong>portfolio</strong>",
-    "tab.all": "todo",
+    "tab.all": "todos",
     "tab.reels": "reels",
     "tab.cgi": "cgi",
     "tab.branding": "branding",

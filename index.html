@@ -13,16 +13,15 @@
   <link rel="canonical" href="https://brusan.ar/">
 
   <!-- Favicon (isotype) -->
-  <link rel="icon" type="image/png" href="assets/branding/brusan_favicon.svg">
-  <link rel="apple-touch-icon" href="assets/branding/brusan_favicon.svg">
-  <link rel="shortcut icon" type="image/png" href="assets/branding/brusan_favicon.svg">
+  <link rel="icon" href="assets/branding/brusan_favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/branding/brusan_apple-touch-icon.png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://brusan.ar/">
   <meta property="og:title" content="BRUSAN · Desarrollo Visual">
   <meta property="og:description" content="Estudio de desarrollo visual en Gualeguaychú. Conectamos tu producto con su audiencia a través de contenido técnico, CGI y diseño web moderno.">
-  <meta property="og:image" content="https://brusan.ar/assets/branding/brusan_Logotipo_blanco.png">
+  <meta property="og:image" content="https://brusan.ar/assets/og/default.webp">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="BRUSAN">
 
@@ -31,11 +30,100 @@
   <meta name="twitter:url" content="https://brusan.ar/">
   <meta name="twitter:title" content="BRUSAN · Desarrollo Visual">
   <meta name="twitter:description" content="Estudio de desarrollo visual en Gualeguaychú. Contenido para redes, CGI de producto, cartelería y web moderna.">
-  <meta name="twitter:image" content="https://brusan.ar/assets/branding/brusan_Logotipo_blanco.png">
+  <meta name="twitter:image" content="https://brusan.ar/assets/og/default.webp">
 
   <!-- Theme & Icons -->
   <meta name="theme-color" content="#121110">
   <meta name="color-scheme" content="dark">
+
+  <!-- JSON-LD: Organization + LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+    "@id": "https://brusan.ar/#organization",
+    "name": "BRUSAN · Desarrollo Visual",
+    "alternateName": "BRUSAN",
+    "url": "https://brusan.ar",
+    "logo": "https://brusan.ar/assets/branding/brusan_Logotipo_blanco.png",
+    "image": "https://brusan.ar/assets/branding/brusan_Logotipo_blanco.png",
+    "description": "Estudio de desarrollo visual en Gualeguaychú, Entre Ríos. Contenido para redes, CGI y visualización de producto, cartelería urbana y desarrollo web moderno para pymes y empresas productivas.",
+    "email": "contacto@brusan.ar",
+    "telephone": "+5493446367960",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gualeguaychú",
+      "addressRegion": "Entre Ríos",
+      "addressCountry": "AR"
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Gualeguaychú"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Entre Ríos"
+      },
+      {
+        "@type": "Country",
+        "name": "Argentina"
+      }
+    ],
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "David Brum",
+        "jobTitle": "Founder & Visual / Tech Lead"
+      },
+      {
+        "@type": "Person",
+        "name": "Daniel Santos",
+        "jobTitle": "Co-Founder & Creative Director / Sales"
+      }
+    ],
+    "knowsAbout": [
+      "Contenido en redes",
+      "CGI y visualización de producto",
+      "Cartelería urbana",
+      "Web y Web Apps"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Contenido en redes",
+          "description": "Reels, piezas estáticas y secuencias pensadas para mostrar tu producto con claridad y peso visual."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "CGI y visualización de producto",
+          "description": "Renders técnicos y fotorealistas para maquinaria, productos industriales y piezas que necesitan verse en detalle."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cartelería urbana",
+          "description": "Diseño para vía pública, totems, pantallas y espacios físicos que acompañan la presencia de tu marca en la calle."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web y Web Apps",
+          "description": "Landings y sitios modernos, rápidos y con dirección de arte clara para convertir visitas en consultas."
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Fonts: Outfit (Display) & Plus Jakarta Sans (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +131,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 
   <!-- Site Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -413,7 +501,7 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/SVGLoader.js"></script>
   <script src="shader.js"></script>
   <script src="glass-logo.js"></script>
