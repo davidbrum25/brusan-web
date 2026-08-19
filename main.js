@@ -305,28 +305,90 @@ document.addEventListener("DOMContentLoaded", () => {
 function initWorkLightbox() {
   const box = document.querySelector(".work-lightbox");
   if (!box) return;
+
   const img = box.querySelector("img");
   const closeBtn = box.querySelector(".work-lightbox-close");
+  const thumbs = Array.from(document.querySelectorAll(".work-gallery img"));
+  if (!img || !closeBtn || !thumbs.length) return;
+
+  let index = 0;
+
+  function ensureControl(selector, className, label, icon) {
+    let el = box.querySelector(selector);
+    if (!el) {
+      el = document.createElement("button");
+      el.type = "button";
+      el.className = className;
+      el.setAttribute("aria-label", label);
+      el.innerHTML = '<i data-lucide="' + icon + '"></i>';
+      box.appendChild(el);
+    }
+    return el;
+  }
+
+  const prevBtn = ensureControl(".work-lightbox-prev", "work-lightbox-nav work-lightbox-prev", "Imagen anterior / Previous image", "chevron-left");
+  const nextBtn = ensureControl(".work-lightbox-next", "work-lightbox-nav work-lightbox-next", "Imagen siguiente / Next image", "chevron-right");
+
+  let countEl = box.querySelector(".work-lightbox-count");
+  if (!countEl) {
+    countEl = document.createElement("p");
+    countEl.className = "work-lightbox-count";
+    countEl.setAttribute("aria-live", "polite");
+    box.appendChild(countEl);
+  }
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+
+  function show(i) {
+    index = (i + thumbs.length) % thumbs.length;
+    const thumb = thumbs[index];
+    img.src = thumb.currentSrc || thumb.src;
+    img.alt = thumb.alt || "";
+    countEl.textContent = (index + 1) + " / " + thumbs.length;
+    const multi = thumbs.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+    countEl.hidden = !multi;
+    box.hidden = false;
+  }
 
   function close() {
     box.hidden = true;
     img.removeAttribute("src");
   }
 
-  document.querySelectorAll(".work-gallery img").forEach((thumb) => {
-    thumb.addEventListener("click", () => {
-      img.src = thumb.currentSrc || thumb.src;
-      img.alt = thumb.alt || "";
-      box.hidden = false;
-    });
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener("click", () => show(i));
   });
 
-  closeBtn.addEventListener("click", close);
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    show(index - 1);
+  });
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    show(index + 1);
+  });
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    close();
+  });
   box.addEventListener("click", (e) => {
     if (e.target === box) close();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !box.hidden) close();
+    if (box.hidden) return;
+    if (e.key === "Escape") {
+      close();
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      show(index - 1);
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      show(index + 1);
+    }
   });
 }
 

@@ -40,12 +40,17 @@
     return texture;
   }
 
+  function showFallback(fallbackImg) {
+    if (fallbackImg) fallbackImg.style.display = "block";
+    if (canvas) canvas.style.display = "none";
+  }
+
   function initGlassLogo() {
     container = document.getElementById("glass-logo-container");
     const fallbackImg = document.getElementById("hero-logo-fallback");
 
     if (!container || !window.THREE || !window.THREE.SVGLoader) {
-      if (fallbackImg) fallbackImg.style.display = "block";
+      showFallback(fallbackImg);
       return;
     }
 
@@ -222,19 +227,19 @@
           }
         }
 
-        // Compute overall bounding box to center entire lockup at (0, 0, 0)
-        const box = new THREE.Box3().setFromObject(logoGroup);
-        const center = new THREE.Vector3();
-        box.getCenter(center);
-        const size = new THREE.Vector3();
-        box.getSize(size);
-        cachedSize = size;
-
-        // Center meshes and flip SVG Y-axis
-        logoGroup.position.x = -center.x;
-        logoGroup.position.y = center.y;
-        logoGroup.position.z = 0;
+        // Flip SVG Y first, then recenter from the post-transform AABB
+        // so extrusion depth is included and both sides have equal margin.
         logoGroup.scale.set(1, -1, 1);
+        logoGroup.updateMatrixWorld(true);
+
+        const box = new THREE.Box3().setFromObject(logoGroup);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+        cachedSize = size.clone();
+
+        logoGroup.position.x -= center.x;
+        logoGroup.position.y -= center.y;
+        logoGroup.position.z -= center.z;
 
         // Root wrapper for smooth floating rotation
         const rootWrapper = new THREE.Group();
@@ -242,12 +247,12 @@
         scene.add(rootWrapper);
         logoGroup = rootWrapper;
 
-        // Frame camera prominently
-        updateCameraFit(size);
+        updateCameraFit(cachedSize);
 
         if (fallbackImg) {
           fallbackImg.style.display = "none";
         }
+        if (canvas) canvas.style.display = "block";
 
         isInitialized = true;
         requestAnimationFrame(renderLoop);
@@ -255,38 +260,48 @@
       undefined,
       function (error) {
         console.warn("SVG 3D logo load error, falling back to static SVG:", error);
-        if (fallbackImg) fallbackImg.style.display = "block";
+        showFallback(fallbackImg);
       }
     );
 
     window.addEventListener("resize", onWindowResize);
   }
 
+  // Must stay in sync with the renderLoop float / tilt amplitudes
+  const MAX_ROT_Y = 0.08;
+  const MAX_ROT_X = 0.04;
+  const FLOAT_Y = 2.8;
+
   function updateCameraFit(size) {
     if (size) cachedSize = size;
     if (!camera || !container || !cachedSize) return;
 
-    const width = container.clientWidth || window.innerWidth;
-    const height = container.clientHeight || 360;
+    const width = Math.max(container.clientWidth, 1);
+    const height = Math.max(container.clientHeight, 1);
     const aspect = width / height;
 
     camera.aspect = aspect;
 
     const logoWidth = cachedSize.x || 226;
     const logoHeight = cachedSize.y || 39;
+    const logoDepth = cachedSize.z || 8;
+
+    // Projected AABB while the logo tilts — extrusion swings the sides out
+    const projectedW = logoWidth * Math.cos(MAX_ROT_Y) + logoDepth * Math.abs(Math.sin(MAX_ROT_Y));
+    const projectedH = logoHeight * Math.cos(MAX_ROT_X) + logoDepth * Math.abs(Math.sin(MAX_ROT_X)) + FLOAT_Y * 2;
 
     const vFOV = (camera.fov * Math.PI) / 180;
     const tanHalfFOV = Math.tan(vFOV / 2);
 
-    const distanceWidth = (logoWidth / (2 * tanHalfFOV * aspect)) * 1.10;
-    const distanceHeight = (logoHeight / (2 * tanHalfFOV)) * 1.25;
+    const distanceWidth = (projectedW / (2 * tanHalfFOV * aspect)) * 1.34;
+    const distanceHeight = (projectedH / (2 * tanHalfFOV)) * 1.28;
 
-    camera.position.z = Math.max(distanceWidth, distanceHeight, 35);
+    camera.position.set(0, 0, Math.max(distanceWidth, distanceHeight, 35));
     camera.updateProjectionMatrix();
 
     if (renderer) {
-      renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setSize(width, height, false);
     }
   }
 
@@ -306,9 +321,9 @@
 
     // Smooth, gentle looped floating movement without user interaction
     if (logoGroup) {
-      logoGroup.rotation.y = Math.sin(t * 0.45) * 0.08;
-      logoGroup.rotation.x = Math.cos(t * 0.35) * 0.04;
-      logoGroup.position.y = Math.sin(t * 0.65) * 2.8;
+      logoGroup.rotation.y = Math.sin(t * 0.45) * MAX_ROT_Y;
+      logoGroup.rotation.x = Math.cos(t * 0.35) * MAX_ROT_X;
+      logoGroup.position.y = Math.sin(t * 0.65) * FLOAT_Y;
     }
 
     // Orbiting light reflections for specular refractions & metallic highlights

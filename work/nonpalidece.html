@@ -62,7 +62,7 @@
           <source src="../assets/work/nonpalidece/reels/social-reels-01.mp4" type="video/mp4">
         </video>
       </figure>
-      <figure class="work-media work-media--video">
+      <figure class="work-media work-media--video work-media--portrait">
         <video controls playsinline preload="metadata" poster="../assets/work/nonpalidece/stills-02.webp">
           <source src="../assets/work/nonpalidece/reels/social-reels-02.mp4" type="video/mp4">
         </video>
@@ -133,7 +133,14 @@
 
   <div class="work-lightbox" hidden>
     <button class="work-lightbox-close" type="button" aria-label="Cerrar">&times;</button>
+    <button class="work-lightbox-nav work-lightbox-prev" type="button" aria-label="Imagen anterior / Previous image">
+      <i data-lucide="chevron-left"></i>
+    </button>
+    <button class="work-lightbox-nav work-lightbox-next" type="button" aria-label="Imagen siguiente / Next image">
+      <i data-lucide="chevron-right"></i>
+    </button>
     <img alt="">
+    <p class="work-lightbox-count" aria-live="polite"></p>
   </div>
 
   <script src="../main.js"></script>

@@ -32,8 +32,8 @@ PROJECTS = [
         "desc": "Visualización de producto y breakdown CGI.",
         "layout": "product",
         "media": [
-            {"kind": "video", "src": "assets/work/product-showcase/alfajor-argentino/bdvd-dc-003.alfajor.mp4", "poster": "assets/work/product-showcase/alfajor-argentino/stills/006.webp", "feature": True},
-            {"kind": "video", "src": "assets/work/product-showcase/alfajor-argentino/bdvd-dc-003.alfajor.breakdown.mp4", "poster": "assets/work/product-showcase/alfajor-argentino/stills/001.webp"},
+            {"kind": "video", "src": "assets/work/product-showcase/alfajor-argentino/bdvd-dc-003.alfajor.mp4", "poster": "assets/work/product-showcase/alfajor-argentino/stills/006.webp", "feature": True, "portrait": True},
+            {"kind": "video", "src": "assets/work/product-showcase/alfajor-argentino/bdvd-dc-003.alfajor.breakdown.mp4", "poster": "assets/work/product-showcase/alfajor-argentino/stills/001.webp", "portrait": True},
             {"kind": "image", "src": "assets/work/product-showcase/alfajor-argentino/stills/006.webp", "alt": "Alfajor Argentino 06"},
             {"kind": "image", "src": "assets/work/product-showcase/alfajor-argentino/stills/001.webp", "alt": "Alfajor Argentino 01"},
             {"kind": "image", "src": "assets/work/product-showcase/alfajor-argentino/stills/002.webp", "alt": "Alfajor Argentino 02"},
@@ -73,7 +73,7 @@ PROJECTS = [
         "media": [
             {"kind": "video", "src": "assets/work/nonpalidece/reels/social-reels-03.mp4", "poster": "assets/work/nonpalidece/stills-03.webp", "feature": True},
             {"kind": "video", "src": "assets/work/nonpalidece/reels/social-reels-01.mp4", "poster": "assets/work/nonpalidece/stills-01.webp"},
-            {"kind": "video", "src": "assets/work/nonpalidece/reels/social-reels-02.mp4", "poster": "assets/work/nonpalidece/stills-02.webp"},
+            {"kind": "video", "src": "assets/work/nonpalidece/reels/social-reels-02.mp4", "poster": "assets/work/nonpalidece/stills-02.webp", "portrait": True},
             {"kind": "image", "src": "assets/work/nonpalidece/stills-03.webp", "alt": "Nonpalidece — Soy Latino Tour"},
             {"kind": "image", "src": "assets/work/nonpalidece/stills-01.webp", "alt": "Nonpalidece — still 01"},
             {"kind": "image", "src": "assets/work/nonpalidece/stills-02.webp", "alt": "Nonpalidece — still 02"},
@@ -87,8 +87,8 @@ PROJECTS = [
         "desc": "Visualización de producto y breakdown CGI.",
         "layout": "product",
         "media": [
-            {"kind": "video", "src": "assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.mp4", "poster": "assets/work/product-showcase/empanada-criolla/stills/frame-7-a-finished-raw-202606061400.webp", "feature": True},
-            {"kind": "video", "src": "assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.breakdown.mp4", "poster": "assets/work/product-showcase/empanada-criolla/stills/frame-1-extreme-close-up-of-202606061400.webp"},
+            {"kind": "video", "src": "assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.mp4", "poster": "assets/work/product-showcase/empanada-criolla/stills/frame-7-a-finished-raw-202606061400.webp", "feature": True, "portrait": True},
+            {"kind": "video", "src": "assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.breakdown.mp4", "poster": "assets/work/product-showcase/empanada-criolla/stills/frame-1-extreme-close-up-of-202606061400.webp", "portrait": True},
             {"kind": "image", "src": "assets/work/product-showcase/empanada-criolla/stills/frame-7-a-finished-raw-202606061400.webp", "alt": "Empanada criolla"},
             {"kind": "image", "src": "assets/work/product-showcase/empanada-criolla/stills/frame-1-extreme-close-up-of-202606061400.webp", "alt": "Empanada — detalle 1"},
             {"kind": "image", "src": "assets/work/product-showcase/empanada-criolla/stills/frame-2-a-smooth-elastic-202606061400.webp", "alt": "Empanada — detalle 2"},
@@ -271,6 +271,8 @@ def render_media(item: dict) -> str:
         cls.append("work-media--feature")
     if kind == "video":
         cls.append("work-media--video")
+    if item.get("portrait"):
+        cls.append("work-media--portrait")
     if item.get("contain"):
         cls.append("is-contain")
     class_attr = " ".join(cls)
@@ -408,7 +410,14 @@ def page_html(project: dict, prev_p: dict, next_p: dict) -> str:
 
   <div class="work-lightbox" hidden>
     <button class="work-lightbox-close" type="button" aria-label="Cerrar">&times;</button>
+    <button class="work-lightbox-nav work-lightbox-prev" type="button" aria-label="Imagen anterior / Previous image">
+      <i data-lucide="chevron-left"></i>
+    </button>
+    <button class="work-lightbox-nav work-lightbox-next" type="button" aria-label="Imagen siguiente / Next image">
+      <i data-lucide="chevron-right"></i>
+    </button>
     <img alt="">
+    <p class="work-lightbox-count" aria-live="polite"></p>
   </div>
 
   <script src="../main.js"></script>

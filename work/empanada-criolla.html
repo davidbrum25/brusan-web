@@ -52,12 +52,12 @@
         <p class="work-lead" data-i18n="work.empanada.desc">Visualización de producto y breakdown CGI.</p>
       </header>
       <div class="work-gallery work-gallery--product">
-      <figure class="work-media work-media--feature work-media--video">
+      <figure class="work-media work-media--feature work-media--video work-media--portrait">
         <video controls playsinline preload="metadata" poster="../assets/work/product-showcase/empanada-criolla/stills/frame-7-a-finished-raw-202606061400.webp">
           <source src="../assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.mp4" type="video/mp4">
         </video>
       </figure>
-      <figure class="work-media work-media--video">
+      <figure class="work-media work-media--video work-media--portrait">
         <video controls playsinline preload="metadata" poster="../assets/work/product-showcase/empanada-criolla/stills/frame-1-extreme-close-up-of-202606061400.webp">
           <source src="../assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.breakdown.mp4" type="video/mp4">
         </video>
@@ -149,7 +149,14 @@
 
   <div class="work-lightbox" hidden>
     <button class="work-lightbox-close" type="button" aria-label="Cerrar">&times;</button>
+    <button class="work-lightbox-nav work-lightbox-prev" type="button" aria-label="Imagen anterior / Previous image">
+      <i data-lucide="chevron-left"></i>
+    </button>
+    <button class="work-lightbox-nav work-lightbox-next" type="button" aria-label="Imagen siguiente / Next image">
+      <i data-lucide="chevron-right"></i>
+    </button>
     <img alt="">
+    <p class="work-lightbox-count" aria-live="polite"></p>
   </div>
 
   <script src="../main.js"></script>
