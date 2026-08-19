@@ -1,21 +1,4 @@
-# Pretty URLs for work pages (rewrite, keep clean path)
-/work/el-pulpo-negro          /work/el-pulpo-negro.html          200
-/work/alfajor-argentino       /work/alfajor-argentino.html       200
-/work/empanada-criolla        /work/empanada-criolla.html        200
-/work/veganis                 /work/veganis.html                 200
-/work/box-bike                /work/box-bike.html                200
-/work/nonpalidece             /work/nonpalidece.html             200
-/work/estelares               /work/estelares.html               200
-/work/viaje-a-lo-inesperado   /work/viaje-a-lo-inesperado.html   200
-/work/radiocantilo            /work/radiocantilo.html            200
-/work/sybila                  /work/sybila.html                  200
-/work/sybpro                  /work/sybpro.html                  200
-/work/viajes-los-mellis       /work/viajes-los-mellis.html       200
-/work/la-plata                /work/la-plata.html                200
-/work/qjmotor                 /work/qjmotor.html                 200
-/work/3d-background           /work/3d-background.html           200
-
-# Optional trailing slash → clean
+# Trailing slash → clean URL
 /work/el-pulpo-negro/         /work/el-pulpo-negro               301
 /work/alfajor-argentino/      /work/alfajor-argentino            301
 /work/empanada-criolla/       /work/empanada-criolla             301
