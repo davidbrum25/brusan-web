@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 · Página no encontrada | BRUSAN</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#121110">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="/assets/branding/brusan_Isotipo_blanco.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/services.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #121110;
+      color: #F4F1EA;
+    }
+    .error-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.25rem 3rem;
+      text-align: center;
+    }
+    .error-inner {
+      max-width: 420px;
+    }
+    .error-code {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 900;
+      font-size: clamp(5rem, 18vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: #D4A359;
+      margin: 0 0 1rem;
+    }
+    .error-title {
+      font-family: "Outfit", system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .error-lead {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      font-size: 0.95rem;
+      color: rgba(244, 241, 234, 0.65);
+      line-height: 1.55;
+      margin: 0 0 2rem;
+    }
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body class="error-page">
+  <header class="site-nav">
+    <div class="container site-nav-inner">
+      <a class="site-nav-logo" href="/" aria-label="BRUSAN inicio">
+        <img src="/assets/brusan_logo_blanco.svg" alt="BRUSAN">
+      </a>
+    </div>
+  </header>
+
+  <main class="error-main">
+    <div class="error-inner">
+      <p class="error-code">404</p>
+      <h1 class="error-title">Esta página no existe</h1>
+      <p class="error-lead">
+        El enlace puede estar roto o la página se movió. Volvé al inicio o mirá el portfolio.
+      </p>
+      <div class="error-actions">
+        <a href="/" class="glass-pill">Inicio</a>
+        <a href="/#nuestro-portfolio" class="glass-pill secondary">Portfolio</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-section" style="padding-top: 0;">
+    <div class="container footer-bottom-bar">
+      <div class="footer-brand">
+        <img src="/assets/brusan_logo_blanco.svg" alt="BRUSAN">
+        <span>- desarrollo visual</span>
+      </div>
+      <div class="footer-copy">
+        <span>Gualeguaychú</span>
+        <span class="footer-copy-sep">·</span>
+        <span>&copy; 2026</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

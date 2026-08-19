@@ -1,0 +1,34 @@
+# Pretty URLs for work pages (rewrite, keep clean path)
+/work/el-pulpo-negro          /work/el-pulpo-negro.html          200
+/work/alfajor-argentino       /work/alfajor-argentino.html       200
+/work/empanada-criolla        /work/empanada-criolla.html        200
+/work/veganis                 /work/veganis.html                 200
+/work/box-bike                /work/box-bike.html                200
+/work/nonpalidece             /work/nonpalidece.html             200
+/work/estelares               /work/estelares.html               200
+/work/viaje-a-lo-inesperado   /work/viaje-a-lo-inesperado.html   200
+/work/radiocantilo            /work/radiocantilo.html            200
+/work/sybila                  /work/sybila.html                  200
+/work/sybpro                  /work/sybpro.html                  200
+/work/viajes-los-mellis       /work/viajes-los-mellis.html       200
+/work/la-plata                /work/la-plata.html                200
+/work/qjmotor                 /work/qjmotor.html                 200
+
+# Optional trailing slash → clean
+/work/el-pulpo-negro/         /work/el-pulpo-negro               301
+/work/alfajor-argentino/      /work/alfajor-argentino            301
+/work/empanada-criolla/       /work/empanada-criolla             301
+/work/veganis/                /work/veganis                      301
+/work/box-bike/               /work/box-bike                     301
+/work/nonpalidece/            /work/nonpalidece                  301
+/work/estelares/              /work/estelares                    301
+/work/viaje-a-lo-inesperado/  /work/viaje-a-lo-inesperado        301
+/work/radiocantilo/           /work/radiocantilo                 301
+/work/sybila/                 /work/sybila                       301
+/work/sybpro/                 /work/sybpro                       301
+/work/viajes-los-mellis/      /work/viajes-los-mellis            301
+/work/la-plata/               /work/la-plata                     301
+/work/qjmotor/                /work/qjmotor                      301
+
+# SPA-style 404 for everything else
+/*    /404.html   404
