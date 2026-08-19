@@ -62,14 +62,14 @@
         <span data-i18n="hero.badge">Contenido, desarrollo y diseño web/app</span>
       </div>
       <div class="nav-actions">
-        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" data-magnetic data-magnetic-distance="80" data-magnetic-strength="0.5">
+        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
         </a>
-        <button class="lang-toggle-btn" id="lang-toggle-btn" data-magnetic data-magnetic-distance="100" data-magnetic-strength="0.55" aria-label="Cambiar idioma / Switch language" title="Cambiar idioma / Switch language">
+        <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Cambiar idioma / Switch language" title="Cambiar idioma / Switch language">
           <i data-lucide="globe"></i>
           <span id="lang-label">EN</span>
         </button>
@@ -115,13 +115,18 @@
         </div>
 
         <div class="featured-showcase">
-          <a class="showcase-item" data-category="reels" href="work/el-pulpo-negro.html">
-            <video muted loop playsinline preload="metadata" poster="assets/work/el-pulpo-negro/socials/social-post-03.webp">
-              <source src="assets/work/el-pulpo-negro/elpulponegro-reel.mp4" type="video/mp4">
-            </video>
+          <a class="showcase-item" data-category="cgi" href="work/qjmotor.html">
+            <img src="assets/work/qjmotor/product/studio-01.webp" alt="QJ Motor Fort 350">
             <div class="showcase-overlay">
-              <span class="showcase-tag" data-i18n="work.pulpo.tag">Reel · 3D</span>
-              <h3 class="showcase-title" data-i18n="work.pulpo.title">El Pulpo Negro</h3>
+              <span class="showcase-tag" data-i18n="work.qjmotor.tag">CGI · Cartelería</span>
+              <h3 class="showcase-title" data-i18n="work.qjmotor.title">QJ Motor</h3>
+            </div>
+          </a>
+          <a class="showcase-item" data-category="branding" href="work/viajes-los-mellis.html">
+            <img src="assets/work/viajes-los-mellis/branding/1.webp" alt="Viajes los Mellis">
+            <div class="showcase-overlay">
+              <span class="showcase-tag" data-i18n="work.mellis.tag">Branding</span>
+              <h3 class="showcase-title" data-i18n="work.mellis.title">Viajes los Mellis</h3>
             </div>
           </a>
           <a class="showcase-item" data-category="cgi" href="work/alfajor-argentino.html">
@@ -133,16 +138,26 @@
               <h3 class="showcase-title" data-i18n="work.alfajor.title">Alfajor Argentino</h3>
             </div>
           </a>
-          <a class="showcase-item" data-category="branding" href="work/radiocantilo.html">
-            <img src="assets/work/radiocantilo.com/archviz/grok-a45bc15d-56f9-46f0-8989-fb3ac1277297.webp" alt="radiocantilo.com — archviz">
-            <div class="showcase-overlay">
-              <span class="showcase-tag" data-i18n="work.cantilo.tag">Archviz · Web</span>
-              <h3 class="showcase-title" data-i18n="work.cantilo.title">radiocantilo.com</h3>
-            </div>
-          </a>
         </div>
 
         <div class="portfolio-accordion-grid">
+          <div class="accordion-row">
+          <a class="accordion-card" data-category="branding" href="work/radiocantilo.html">
+            <img src="assets/work/radiocantilo.com/archviz/grok-a45bc15d-56f9-46f0-8989-fb3ac1277297.webp" alt="radiocantilo.com — archviz">
+            <div class="accordion-card-content">
+              <span class="accordion-card-label" data-i18n="work.cantilo.title">radiocantilo.com</span>
+              <span class="accordion-card-desc" data-i18n="work.cantilo.desc">Archviz, identidad y reel de marca.</span>
+            </div>
+          </a>
+          <a class="accordion-card" data-category="reels" href="work/el-pulpo-negro.html">
+            <video muted loop playsinline preload="metadata" poster="assets/work/el-pulpo-negro/socials/social-post-03.webp">
+              <source src="assets/work/el-pulpo-negro/elpulponegro-reel.mp4" type="video/mp4">
+            </video>
+            <div class="accordion-card-content">
+              <span class="accordion-card-label" data-i18n="work.pulpo.title">El Pulpo Negro</span>
+              <span class="accordion-card-desc" data-i18n="work.pulpo.desc">Reel y piezas sociales del personaje 3D.</span>
+            </div>
+          </a>
           <a class="accordion-card" data-category="reels" href="work/nonpalidece.html">
             <video muted loop playsinline preload="metadata" poster="assets/work/nonpalidece/stills-03.webp">
               <source src="assets/work/nonpalidece/reels/social-reels-03.mp4" type="video/mp4">
@@ -170,13 +185,8 @@
               <span class="accordion-card-desc" data-i18n="work.veganis.desc">Spot y stills de producto para Veganis.</span>
             </div>
           </a>
-          <a class="accordion-card" data-category="cgi" href="work/qjmotor.html">
-            <img src="assets/work/qjmotor/product/studio-01.webp" alt="QJ Motor Fort 350">
-            <div class="accordion-card-content">
-              <span class="accordion-card-label" data-i18n="work.qjmotor.title">QJ Motor</span>
-              <span class="accordion-card-desc" data-i18n="work.qjmotor.desc">Visualización de producto y vía pública para Fort 350.</span>
-            </div>
-          </a>
+          </div>
+          <div class="accordion-row">
           <a class="accordion-card" data-category="cgi" href="work/box-bike.html">
             <video muted loop playsinline preload="metadata" poster="assets/work/model-showcase/3dmodel-box-bike/22-06-27-boxbike.webp">
               <source src="assets/work/model-showcase/3dmodel-box-bike/capture.mp4" type="video/mp4">
@@ -184,6 +194,15 @@
             <div class="accordion-card-content">
               <span class="accordion-card-label" data-i18n="work.boxbike.title">Box Bike</span>
               <span class="accordion-card-desc" data-i18n="work.boxbike.desc">Modelado y showcase 3D.</span>
+            </div>
+          </a>
+          <a class="accordion-card" data-category="cgi" href="work/3d-background.html">
+            <video muted loop playsinline preload="metadata" poster="assets/work/model-showcase/3dbackground-music-clip/stills-01.webp">
+              <source src="assets/work/model-showcase/3dbackground-music-clip/scene-final.mp4" type="video/mp4">
+            </video>
+            <div class="accordion-card-content">
+              <span class="accordion-card-label" data-i18n="work.bgclip.title">2Veinte</span>
+              <span class="accordion-card-desc" data-i18n="work.bgclip.desc">Fondo 3D animado para clip publicitario.</span>
             </div>
           </a>
           <a class="accordion-card" data-category="reels" href="work/estelares.html">
@@ -209,6 +228,8 @@
               <span class="accordion-card-desc" data-i18n="work.sybpro.desc">Identidad y reel de marca.</span>
             </div>
           </a>
+          </div>
+          <div class="accordion-row">
           <a class="accordion-card" data-category="reels" href="work/viaje-a-lo-inesperado.html">
             <video muted loop playsinline preload="metadata" poster="assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp">
               <source src="assets/work/viaje-a-lo-inesperado/reels/18-04-03-vai-clip-1.mp4" type="video/mp4">
@@ -218,20 +239,14 @@
               <span class="accordion-card-desc" data-i18n="work.vai.desc">Clips y motion de marca.</span>
             </div>
           </a>
-          <a class="accordion-card is-logo" data-category="branding" href="work/viajes-los-mellis.html">
-            <img src="assets/work/viajes-los-mellis/branding/1.webp" alt="Viajes los Mellis">
-            <div class="accordion-card-content">
-              <span class="accordion-card-label" data-i18n="work.mellis.title">Viajes los Mellis</span>
-              <span class="accordion-card-desc" data-i18n="work.mellis.desc">Identidad — Seguimos la música.</span>
-            </div>
-          </a>
           <a class="accordion-card" data-category="foto" href="work/la-plata.html">
-            <img src="assets/work/fotografia/la-plata-area/00-tapa.webp" alt="Fotografía La Plata">
+            <img src="assets/work/fotografia/la-plata-area/covers.webp" alt="Fotografía La Plata">
             <div class="accordion-card-content">
               <span class="accordion-card-label" data-i18n="work.foto.title">La Plata</span>
               <span class="accordion-card-desc" data-i18n="work.foto.desc">Serie fotográfica urbana.</span>
             </div>
           </a>
+          </div>
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@
 /work/viajes-los-mellis       /work/viajes-los-mellis.html       200
 /work/la-plata                /work/la-plata.html                200
 /work/qjmotor                 /work/qjmotor.html                 200
+/work/3d-background           /work/3d-background.html           200
 
 # Optional trailing slash → clean
 /work/el-pulpo-negro/         /work/el-pulpo-negro               301
@@ -29,6 +30,7 @@
 /work/viajes-los-mellis/      /work/viajes-los-mellis            301
 /work/la-plata/               /work/la-plata                     301
 /work/qjmotor/                /work/qjmotor                      301
+/work/3d-background/          /work/3d-background                301
 
 # SPA-style 404 for everything else
 /*    /404.html   404

@@ -3,25 +3,76 @@
 
 from __future__ import annotations
 
+import html
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "work"
+CASES_PATH = ROOT / "data" / "portfolio-cases.json"
+CASES_I18N_JS = ROOT / "work-cases-i18n.js"
 
 # Media paths are relative to the site root (resolved as ../ from work/).
 PROJECTS = [
     {
-        "slug": "el-pulpo-negro",
-        "key": "pulpo",
-        "tag": "Reel · 3D",
-        "title": "El Pulpo Negro",
-        "desc": "Reel y piezas sociales del personaje 3D.",
-        "layout": "mixed",
+        "slug": "qjmotor",
+        "key": "qjmotor",
+        "tag": "CGI · Cartelería",
+        "title": "QJ Motor",
+        "desc": "Visualización de producto y vía pública para Fort 350.",
+        "layout": "product",
+        "sections": [
+            {
+                "title_key": "work.section.product",
+                "title": "Product Showcase",
+                "media": [
+                    {"kind": "image", "src": "assets/work/qjmotor/product/studio-01.webp", "alt": "QJ Motor Fort 350 — estudio", "feature": True},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/studio-02.webp", "alt": "QJ Motor Fort 350 — estudio 02"},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/emblem.webp", "alt": "QJ Motor Fort 350 — emblema"},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/headlight.webp", "alt": "QJ Motor Fort 350 — óptica"},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/handlebars.webp", "alt": "QJ Motor Fort 350 — comandos"},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/exhaust.webp", "alt": "QJ Motor Fort 350 — escape"},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/rear-light.webp", "alt": "QJ Motor Fort 350 — faro trasero"},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/brake-disc.webp", "alt": "QJ Motor Fort 350 — disco"},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/suspension.webp", "alt": "QJ Motor Fort 350 — suspensión"},
+                    {"kind": "image", "src": "assets/work/qjmotor/product/seat.webp", "alt": "QJ Motor Fort 350 — asiento"},
+                ],
+            },
+            {
+                "title_key": "work.section.branding",
+                "title": "Branding",
+                "media": [
+                    {"kind": "image", "src": "assets/work/qjmotor/branding/qj-badge.webp", "alt": "QJ Motor — isotipo", "contain": True},
+                ],
+            },
+            {
+                "title_key": "work.section.outdoor",
+                "title": "Outdoor",
+                "media": [
+                    {"kind": "image", "src": "assets/work/qjmotor/outdoor/riverside-screen.webp", "alt": "QJ Motor — pantalla costanera"},
+                    {"kind": "image", "src": "assets/work/qjmotor/outdoor/billboard.webp", "alt": "QJ Motor — billboard"},
+                    {"kind": "image", "src": "assets/work/qjmotor/outdoor/digital-poster.webp", "alt": "QJ Motor — poster digital"},
+                    {"kind": "image", "src": "assets/work/qjmotor/outdoor/kiosk-rain.webp", "alt": "QJ Motor — kiosco"},
+                    {"kind": "image", "src": "assets/work/qjmotor/outdoor/street-poster.webp", "alt": "QJ Motor — poster urbano"},
+                    {"kind": "image", "src": "assets/work/qjmotor/outdoor/sidewalk-board.webp", "alt": "QJ Motor — cartelería de vereda"},
+                ],
+            },
+        ],
+    },
+    {
+        "slug": "viajes-los-mellis",
+        "key": "mellis",
+        "tag": "Branding",
+        "title": "Viajes los Mellis",
+        "desc": "Identidad — Seguimos la música.",
+        "layout": "branding",
         "media": [
-            {"kind": "video", "src": "assets/work/el-pulpo-negro/elpulponegro-reel.mp4", "poster": "assets/work/el-pulpo-negro/socials/social-post-03.webp", "feature": True},
-            {"kind": "image", "src": "assets/work/el-pulpo-negro/socials/social-post-03.webp", "alt": "El Pulpo Negro"},
-            {"kind": "image", "src": "assets/work/el-pulpo-negro/socials/social-post-01.webp", "alt": "El Pulpo Negro — social 01"},
-            {"kind": "image", "src": "assets/work/el-pulpo-negro/socials/social-post-02.webp", "alt": "El Pulpo Negro — social 02"},
+            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/1.webp", "alt": "Viajes los Mellis 1", "feature": True},
+            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/2.webp", "alt": "Viajes los Mellis 2"},
+            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/3.webp", "alt": "Viajes los Mellis 3"},
+            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/4.webp", "alt": "Viajes los Mellis 4"},
+            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/5.webp", "alt": "Viajes los Mellis 5"},
+            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/6.webp", "alt": "Viajes los Mellis 6"},
         ],
     },
     {
@@ -61,6 +112,20 @@ PROJECTS = [
             {"kind": "image", "src": "assets/work/radiocantilo.com/archviz/grok-b25a0836-20dd-4bf1-b385-920d1de76f4b.webp", "alt": "radiocantilo.com — archviz"},
             {"kind": "image", "src": "assets/work/radiocantilo.com/branding/radiocantilo-logo.webp", "alt": "radiocantilo.com — logo", "contain": True},
             {"kind": "file", "src": "assets/work/radiocantilo.com/branding/radiocantilo-branding.pdf", "label": "Manual de marca (PDF)"},
+        ],
+    },
+    {
+        "slug": "el-pulpo-negro",
+        "key": "pulpo",
+        "tag": "Reel · 3D",
+        "title": "El Pulpo Negro",
+        "desc": "Reel y piezas sociales del personaje 3D.",
+        "layout": "mixed",
+        "media": [
+            {"kind": "video", "src": "assets/work/el-pulpo-negro/elpulponegro-reel.mp4", "poster": "assets/work/el-pulpo-negro/socials/social-post-03.webp", "feature": True},
+            {"kind": "image", "src": "assets/work/el-pulpo-negro/socials/social-post-03.webp", "alt": "El Pulpo Negro"},
+            {"kind": "image", "src": "assets/work/el-pulpo-negro/socials/social-post-01.webp", "alt": "El Pulpo Negro — social 01"},
+            {"kind": "image", "src": "assets/work/el-pulpo-negro/socials/social-post-02.webp", "alt": "El Pulpo Negro — social 02"},
         ],
     },
     {
@@ -117,33 +182,6 @@ PROJECTS = [
         ],
     },
     {
-        "slug": "qjmotor",
-        "key": "qjmotor",
-        "tag": "CGI · Cartelería",
-        "title": "QJ Motor",
-        "desc": "Visualización de producto y vía pública para Fort 350.",
-        "layout": "product",
-        "media": [
-            {"kind": "image", "src": "assets/work/qjmotor/product/studio-01.webp", "alt": "QJ Motor Fort 350 — estudio", "feature": True},
-            {"kind": "image", "src": "assets/work/qjmotor/branding/qj-badge.webp", "alt": "QJ Motor — isotipo", "contain": True},
-            {"kind": "image", "src": "assets/work/qjmotor/product/studio-02.webp", "alt": "QJ Motor Fort 350 — estudio 02"},
-            {"kind": "image", "src": "assets/work/qjmotor/product/emblem.webp", "alt": "QJ Motor Fort 350 — emblema"},
-            {"kind": "image", "src": "assets/work/qjmotor/product/headlight.webp", "alt": "QJ Motor Fort 350 — óptica"},
-            {"kind": "image", "src": "assets/work/qjmotor/product/handlebars.webp", "alt": "QJ Motor Fort 350 — comandos"},
-            {"kind": "image", "src": "assets/work/qjmotor/product/exhaust.webp", "alt": "QJ Motor Fort 350 — escape"},
-            {"kind": "image", "src": "assets/work/qjmotor/product/rear-light.webp", "alt": "QJ Motor Fort 350 — faro trasero"},
-            {"kind": "image", "src": "assets/work/qjmotor/product/brake-disc.webp", "alt": "QJ Motor Fort 350 — disco"},
-            {"kind": "image", "src": "assets/work/qjmotor/product/suspension.webp", "alt": "QJ Motor Fort 350 — suspensión"},
-            {"kind": "image", "src": "assets/work/qjmotor/product/seat.webp", "alt": "QJ Motor Fort 350 — asiento"},
-            {"kind": "image", "src": "assets/work/qjmotor/outdoor/riverside-screen.webp", "alt": "QJ Motor — pantalla costanera"},
-            {"kind": "image", "src": "assets/work/qjmotor/outdoor/billboard.webp", "alt": "QJ Motor — billboard"},
-            {"kind": "image", "src": "assets/work/qjmotor/outdoor/digital-poster.webp", "alt": "QJ Motor — poster digital"},
-            {"kind": "image", "src": "assets/work/qjmotor/outdoor/kiosk-rain.webp", "alt": "QJ Motor — kiosco"},
-            {"kind": "image", "src": "assets/work/qjmotor/outdoor/street-poster.webp", "alt": "QJ Motor — poster urbano"},
-            {"kind": "image", "src": "assets/work/qjmotor/outdoor/sidewalk-board.webp", "alt": "QJ Motor — cartelería de vereda"},
-        ],
-    },
-    {
         "slug": "box-bike",
         "key": "boxbike",
         "tag": "3D Model",
@@ -161,6 +199,24 @@ PROJECTS = [
             {"kind": "image", "src": "assets/work/model-showcase/3dmodel-box-bike/ins-a.webp", "alt": "Box Bike — detalle"},
             {"kind": "image", "src": "assets/work/model-showcase/3dmodel-box-bike/ins-b.webp", "alt": "Box Bike — detalle"},
             {"kind": "image", "src": "assets/work/model-showcase/3dmodel-box-bike/ins-c.webp", "alt": "Box Bike — detalle"},
+        ],
+    },
+    {
+        "slug": "3d-background",
+        "key": "bgclip",
+        "tag": "CGI · Clip",
+        "title": "2Veinte",
+        "desc": "Fondo 3D animado para clip publicitario.",
+        "layout": "mixed",
+        "media": [
+            {"kind": "video", "src": "assets/work/model-showcase/3dbackground-music-clip/scene-final.mp4", "poster": "assets/work/model-showcase/3dbackground-music-clip/stills-01.webp", "feature": True},
+            {"kind": "video", "src": "assets/work/model-showcase/3dbackground-music-clip/scene-wip.mp4", "poster": "assets/work/model-showcase/3dbackground-music-clip/stills-02.webp"},
+            {"kind": "video", "src": "assets/work/model-showcase/3dbackground-music-clip/wip-process.mp4", "poster": "assets/work/model-showcase/3dbackground-music-clip/screen-blender-process-01.webp"},
+            {"kind": "image", "src": "assets/work/model-showcase/3dbackground-music-clip/stills-01.webp", "alt": "2Veinte — still 01"},
+            {"kind": "image", "src": "assets/work/model-showcase/3dbackground-music-clip/stills-02.webp", "alt": "2Veinte — still 02"},
+            {"kind": "image", "src": "assets/work/model-showcase/3dbackground-music-clip/screen-blender-process-01.webp", "alt": "2Veinte — proceso Blender 01"},
+            {"kind": "image", "src": "assets/work/model-showcase/3dbackground-music-clip/screen-blender-process-02.webp", "alt": "2Veinte — proceso Blender 02"},
+            {"kind": "image", "src": "assets/work/model-showcase/3dbackground-music-clip/screen-blender-process-03.webp", "alt": "2Veinte — proceso Blender 03"},
         ],
     },
     {
@@ -226,26 +282,10 @@ PROJECTS = [
         "layout": "mixed",
         "media": [
             {"kind": "video", "src": "assets/work/viaje-a-lo-inesperado/reels/18-04-03-vai-clip-1.mp4", "poster": "assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp", "feature": True},
-            {"kind": "video", "src": "assets/work/viaje-a-lo-inesperado/reels/18-04-03-vai-clip-2.mp4", "poster": "assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp"},
-            {"kind": "video", "src": "assets/work/viaje-a-lo-inesperado/reels/18-04-19-vai-clip-4-sonido.mp4", "poster": "assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp"},
-            {"kind": "video", "src": "assets/work/viaje-a-lo-inesperado/reels/vai-logo-animado-full-alpha.mp4", "poster": "assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp"},
+            {"kind": "video", "src": "assets/work/viaje-a-lo-inesperado/reels/18-04-03-vai-clip-2.mp4", "poster": "assets/work/viaje-a-lo-inesperado/reels/vai-clip-2-poster.webp"},
+            {"kind": "video", "src": "assets/work/viaje-a-lo-inesperado/reels/18-04-19-vai-clip-4-sonido.mp4", "poster": "assets/work/viaje-a-lo-inesperado/reels/vai-clip-4-poster.webp"},
+            {"kind": "video", "src": "assets/work/viaje-a-lo-inesperado/reels/vai-logo-animado-full-alpha.mp4", "poster": "assets/work/viaje-a-lo-inesperado/reels/vai-logo-poster.webp"},
             {"kind": "file", "src": "assets/work/viaje-a-lo-inesperado/branding-manual-de-marca.pdf", "label": "Manual de marca (PDF)"},
-        ],
-    },
-    {
-        "slug": "viajes-los-mellis",
-        "key": "mellis",
-        "tag": "Branding",
-        "title": "Viajes los Mellis",
-        "desc": "Identidad — Seguimos la música.",
-        "layout": "branding",
-        "media": [
-            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/1.webp", "alt": "Viajes los Mellis 1", "feature": True},
-            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/2.webp", "alt": "Viajes los Mellis 2"},
-            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/3.webp", "alt": "Viajes los Mellis 3"},
-            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/4.webp", "alt": "Viajes los Mellis 4"},
-            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/5.webp", "alt": "Viajes los Mellis 5"},
-            {"kind": "image", "src": "assets/work/viajes-los-mellis/branding/6.webp", "alt": "Viajes los Mellis 6"},
         ],
     },
     {
@@ -256,7 +296,8 @@ PROJECTS = [
         "desc": "Serie fotográfica urbana.",
         "layout": "foto",
         "media": [
-            {"kind": "image", "src": "assets/work/fotografia/la-plata-area/00-tapa.webp", "alt": "La Plata — tapa", "feature": True},
+            {"kind": "image", "src": "assets/work/fotografia/la-plata-area/covers.webp", "alt": "La Plata — tapa", "cover": True},
+            {"kind": "image", "src": "assets/work/fotografia/la-plata-area/00-tapa.webp", "alt": "La Plata — tapa"},
             {"kind": "image", "src": "assets/work/fotografia/la-plata-area/4-5-estadio.webp", "alt": "La Plata — estadio"},
             {"kind": "image", "src": "assets/work/fotografia/la-plata-area/8-9-dardo-rocha.webp", "alt": "La Plata — Dardo Rocha"},
             {"kind": "image", "src": "assets/work/fotografia/la-plata-area/62-63-catedral-estadio.webp", "alt": "La Plata — catedral"},
@@ -287,8 +328,73 @@ PROJECTS = [
 ]
 
 
+
 def asset(path: str) -> str:
     return "../" + path
+
+
+def load_cases() -> dict:
+    return json.loads(CASES_PATH.read_text(encoding="utf-8"))
+
+
+def render_case_facts(case: dict, key: str) -> str:
+    return f'''      <dl class="work-case-facts">
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.client">Cliente</dt>
+          <dd data-i18n="work.{key}.client">{html.escape(case["client"]["es"])}</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.year">Año</dt>
+          <dd>{case["year"]}</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.role">Rol</dt>
+          <dd data-i18n="work.{key}.role">{html.escape(case["role"]["es"])}</dd>
+        </div>
+      </dl>'''
+
+
+def render_case_panel(case: dict, key: str) -> str:
+    items = "\n".join(f"            <li>{html.escape(item)}</li>" for item in case["deliverables"]["es"])
+    return f'''      <aside class="work-case-panel">
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.deliverables">Entregables</h2>
+          <ul data-i18n-list="work.{key}.deliverables">
+{items}
+          </ul>
+        </section>
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.notes">Notas</h2>
+          <p data-i18n="work.{key}.notes">{html.escape(case["notes"]["es"])}</p>
+        </section>
+      </aside>'''
+
+
+def build_case_i18n(labels: dict, cases: dict) -> dict:
+    es: dict = {
+        "work.case.client": labels["client"]["es"],
+        "work.case.year": labels["year"]["es"],
+        "work.case.role": labels["role"]["es"],
+        "work.case.deliverables": labels["deliverables"]["es"],
+        "work.case.notes": labels["notes"]["es"],
+    }
+    en: dict = {
+        "work.case.client": labels["client"]["en"],
+        "work.case.year": labels["year"]["en"],
+        "work.case.role": labels["role"]["en"],
+        "work.case.deliverables": labels["deliverables"]["en"],
+        "work.case.notes": labels["notes"]["en"],
+    }
+    for key, case in cases.items():
+        es[f"work.{key}.client"] = case["client"]["es"]
+        en[f"work.{key}.client"] = case["client"]["en"]
+        es[f"work.{key}.role"] = case["role"]["es"]
+        en[f"work.{key}.role"] = case["role"]["en"]
+        es[f"work.{key}.notes"] = case["notes"]["es"]
+        en[f"work.{key}.notes"] = case["notes"]["en"]
+        es[f"work.{key}.deliverables"] = case["deliverables"]["es"]
+        en[f"work.{key}.deliverables"] = case["deliverables"]["en"]
+    return {"es": es, "en": en}
 
 
 def render_media(item: dict) -> str:
@@ -300,6 +406,8 @@ def render_media(item: dict) -> str:
         cls.append("work-media--video")
     if item.get("portrait"):
         cls.append("work-media--portrait")
+    if item.get("cover"):
+        cls.append("work-media--cover")
     if item.get("contain"):
         cls.append("is-contain")
     class_attr = " ".join(cls)
@@ -321,10 +429,35 @@ def render_media(item: dict) -> str:
       </figure>'''
 
 
-def page_html(project: dict, prev_p: dict, next_p: dict) -> str:
-    key = project["key"]
-    media_html = "\n".join(render_media(m) for m in project["media"])
+def render_gallery(project: dict) -> str:
     layout = project.get("layout", "mixed")
+    sections = project.get("sections")
+    if sections:
+        blocks = []
+        for section in sections:
+            items = "\n".join(render_media(m) for m in section["media"])
+            title = html.escape(section["title"])
+            title_key = section["title_key"]
+            blocks.append(
+                f'''      <section class="work-section">
+        <h2 class="work-section-title" data-i18n="{title_key}">{title}</h2>
+        <div class="work-gallery work-gallery--{layout}">
+{items}
+        </div>
+      </section>'''
+            )
+        return '<div class="work-gallery-stack">\n' + "\n".join(blocks) + "\n      </div>"
+    media_html = "\n".join(render_media(m) for m in project["media"])
+    return f'''      <div class="work-gallery work-gallery--{layout}">
+{media_html}
+      </div>'''
+
+
+def page_html(project: dict, prev_p: dict, next_p: dict, case: dict | None, labels: dict) -> str:
+    key = project["key"]
+    media_html = render_gallery(project)
+    facts_html = "\n" + render_case_facts(case, key) if case else ""
+    panel_html = "\n" + render_case_panel(case, key) if case else ""
     return f'''<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -361,14 +494,14 @@ def page_html(project: dict, prev_p: dict, next_p: dict) -> str:
         <a href="../index.html#contacto" data-i18n="footer.nav.contact">Contacto</a>
       </nav>
       <div class="nav-actions">
-        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" data-magnetic data-magnetic-distance="70" data-magnetic-strength="0.5">
+        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
         </a>
-        <button class="lang-toggle-btn" id="lang-toggle-btn" data-magnetic data-magnetic-distance="80" data-magnetic-strength="0.5" aria-label="Cambiar idioma / Switch language">
+        <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Cambiar idioma / Switch language">
           <i data-lucide="globe"></i>
           <span id="lang-label">EN</span>
         </button>
@@ -386,10 +519,10 @@ def page_html(project: dict, prev_p: dict, next_p: dict) -> str:
         <span class="showcase-tag" data-i18n="work.{key}.tag">{project["tag"]}</span>
         <h1 class="work-title" data-i18n="work.{key}.title">{project["title"]}</h1>
         <p class="work-lead" data-i18n="work.{key}.desc">{project["desc"]}</p>
+{facts_html}
       </header>
-      <div class="work-gallery work-gallery--{layout}">
 {media_html}
-      </div>
+{panel_html}
       <nav class="work-pager" aria-label="Proyectos">
         <a class="work-pager-link" href="{prev_p["slug"]}.html">
           <span data-i18n="work.prev">anterior</span>
@@ -456,6 +589,7 @@ def page_html(project: dict, prev_p: dict, next_p: dict) -> str:
     <p class="work-lightbox-count" aria-live="polite"></p>
   </div>
 
+  <script src="../work-cases-i18n.js"></script>
   <script src="../main.js"></script>
 </body>
 </html>
@@ -464,13 +598,28 @@ def page_html(project: dict, prev_p: dict, next_p: dict) -> str:
 
 def main() -> None:
     OUT.mkdir(exist_ok=True)
+    cases_data = load_cases()
+    labels = cases_data["labels"]
+    cases = cases_data["cases"]
+    i18n = build_case_i18n(labels, cases)
+    CASES_I18N_JS.write_text(
+        "window.workCaseTranslations = " + json.dumps(i18n, ensure_ascii=False, indent=2) + ";\n",
+        encoding="utf-8",
+    )
+    print(f"wrote {CASES_I18N_JS.relative_to(ROOT)}")
     n = len(PROJECTS)
+    missing = []
     for i, project in enumerate(PROJECTS):
         prev_p = PROJECTS[(i - 1) % n]
         next_p = PROJECTS[(i + 1) % n]
+        case = cases.get(project["key"])
+        if not case:
+            missing.append(project["key"])
         path = OUT / f"{project['slug']}.html"
-        path.write_text(page_html(project, prev_p, next_p), encoding="utf-8")
+        path.write_text(page_html(project, prev_p, next_p, case, labels), encoding="utf-8")
         print(f"wrote {path.relative_to(ROOT)}")
+    if missing:
+        raise SystemExit("missing case data for: " + ", ".join(missing))
     print(f"{n} project pages")
 
 

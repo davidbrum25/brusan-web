@@ -34,14 +34,14 @@
         <a href="../index.html#contacto" data-i18n="footer.nav.contact">Contacto</a>
       </nav>
       <div class="nav-actions">
-        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" data-magnetic data-magnetic-distance="70" data-magnetic-strength="0.5">
+        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
         </a>
-        <button class="lang-toggle-btn" id="lang-toggle-btn" data-magnetic data-magnetic-distance="80" data-magnetic-strength="0.5" aria-label="Cambiar idioma / Switch language">
+        <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Cambiar idioma / Switch language">
           <i data-lucide="globe"></i>
           <span id="lang-label">EN</span>
         </button>
@@ -59,6 +59,21 @@
         <span class="showcase-tag" data-i18n="work.sybpro.tag">Branding · Reel</span>
         <h1 class="work-title" data-i18n="work.sybpro.title">sybpro.tv</h1>
         <p class="work-lead" data-i18n="work.sybpro.desc">Identidad y reel de marca.</p>
+
+      <dl class="work-case-facts">
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.client">Cliente</dt>
+          <dd data-i18n="work.sybpro.client">Sybila Producciones S.A.</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.year">Año</dt>
+          <dd>2019</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.role">Rol</dt>
+          <dd data-i18n="work.sybpro.role">Branding.</dd>
+        </div>
+      </dl>
       </header>
       <div class="work-gallery work-gallery--branding">
       <figure class="work-media work-media--feature work-media--video">
@@ -82,6 +97,19 @@
         <img src="../assets/work/sybpro.tv/branding/5.webp" alt="sybpro.tv 5">
       </figure>
       </div>
+
+      <aside class="work-case-panel">
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.deliverables">Entregables</h2>
+          <ul data-i18n-list="work.sybpro.deliverables">
+            <li>Rediseño de branding completo y piezas audiovisuales para publicidad.</li>
+          </ul>
+        </section>
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.notes">Notas</h2>
+          <p data-i18n="work.sybpro.notes">La productora audiovisual Sybila Producciones requería un diseño integral de la marca sybpro.tv, plataforma audiovisual que concentraba todo el contenido elaborado por la productora.</p>
+        </section>
+      </aside>
       <nav class="work-pager" aria-label="Proyectos">
         <a class="work-pager-link" href="sybila.html">
           <span data-i18n="work.prev">anterior</span>
@@ -148,6 +176,7 @@
     <p class="work-lightbox-count" aria-live="polite"></p>
   </div>
 
+  <script src="../work-cases-i18n.js"></script>
   <script src="../main.js"></script>
 </body>
 </html>

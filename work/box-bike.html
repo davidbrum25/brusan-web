@@ -34,14 +34,14 @@
         <a href="../index.html#contacto" data-i18n="footer.nav.contact">Contacto</a>
       </nav>
       <div class="nav-actions">
-        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" data-magnetic data-magnetic-distance="70" data-magnetic-strength="0.5">
+        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
         </a>
-        <button class="lang-toggle-btn" id="lang-toggle-btn" data-magnetic data-magnetic-distance="80" data-magnetic-strength="0.5" aria-label="Cambiar idioma / Switch language">
+        <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Cambiar idioma / Switch language">
           <i data-lucide="globe"></i>
           <span id="lang-label">EN</span>
         </button>
@@ -56,9 +56,24 @@
         <span data-i18n="work.back">volver al portfolio</span>
       </a>
       <header class="work-hero">
-        <span class="showcase-tag">CGI · 3D</span>
+        <span class="showcase-tag" data-i18n="work.boxbike.tag">3D Model</span>
         <h1 class="work-title" data-i18n="work.boxbike.title">Box Bike</h1>
         <p class="work-lead" data-i18n="work.boxbike.desc">Modelado y showcase 3D.</p>
+
+      <dl class="work-case-facts">
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.client">Cliente</dt>
+          <dd data-i18n="work.boxbike.client">Trabajo personal</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.year">Año</dt>
+          <dd>2022</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.role">Rol</dt>
+          <dd data-i18n="work.boxbike.role">Proceso 3D integral.</dd>
+        </div>
+      </dl>
       </header>
       <div class="work-gallery work-gallery--mixed">
       <figure class="work-media work-media--feature work-media--video">
@@ -66,15 +81,55 @@
           <source src="../assets/work/model-showcase/3dmodel-box-bike/capture.mp4" type="video/mp4">
         </video>
       </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/22-06-27-boxbike.webp" alt="Box Bike">
+      </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/2.b.webp" alt="Box Bike — vista">
+      </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/2.c.webp" alt="Box Bike — vista">
+      </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/2.d.webp" alt="Box Bike — vista">
+      </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/long.a.webp" alt="Box Bike — long">
+      </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/long.b.webp" alt="Box Bike — long">
+      </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/ins-a.webp" alt="Box Bike — detalle">
+      </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/ins-b.webp" alt="Box Bike — detalle">
+      </figure>
+      <figure class="work-media">
+        <img src="../assets/work/model-showcase/3dmodel-box-bike/ins-c.webp" alt="Box Bike — detalle">
+      </figure>
       </div>
+
+      <aside class="work-case-panel">
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.deliverables">Entregables</h2>
+          <ul data-i18n-list="work.boxbike.deliverables">
+            <li>Piezas fijas para redes y video animado.</li>
+          </ul>
+        </section>
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.notes">Notas</h2>
+          <p data-i18n="work.boxbike.notes">Pieza personal para preparar workflows de modelado 3D y rig para trabajos de clientes. Se optimizó el flujo de trabajo y se crearon herramientas para animar rápidamente.</p>
+        </section>
+      </aside>
       <nav class="work-pager" aria-label="Proyectos">
         <a class="work-pager-link" href="veganis.html">
           <span data-i18n="work.prev">anterior</span>
           <strong data-i18n="work.veganis.title">Veganis</strong>
         </a>
-        <a class="work-pager-link work-pager-link--next" href="estelares.html">
+        <a class="work-pager-link work-pager-link--next" href="3d-background.html">
           <span data-i18n="work.next">siguiente</span>
-          <strong data-i18n="work.estelares.title">Estelares</strong>
+          <strong data-i18n="work.bgclip.title">2Veinte</strong>
         </a>
       </nav>
     </div>
@@ -133,6 +188,7 @@
     <p class="work-lightbox-count" aria-live="polite"></p>
   </div>
 
+  <script src="../work-cases-i18n.js"></script>
   <script src="../main.js"></script>
 </body>
 </html>

@@ -1,0 +1,364 @@
+{
+  "labels": {
+    "client": { "es": "Cliente", "en": "Client" },
+    "year": { "es": "Año", "en": "Year" },
+    "role": { "es": "Rol", "en": "Role" },
+    "deliverables": { "es": "Entregables", "en": "Deliverables" },
+    "notes": { "es": "Notas", "en": "Notes" }
+  },
+  "cases": {
+    "pulpo": {
+      "source": "el_pulpo_negro",
+      "slug": "el-pulpo-negro",
+      "year": 2019,
+      "client": {
+        "es": "Sybila Producciones S.A.",
+        "en": "Sybila Producciones S.A."
+      },
+      "role": {
+        "es": "Proceso 3D integral, animación, post y entrega.",
+        "en": "Full 3D pipeline, animation, post and delivery."
+      },
+      "deliverables": {
+        "es": [
+          "Set de piezas fijas para redes en todos los formatos.",
+          "Set de videos animados en formato 1:1, 9:16 y 16:9.",
+          "Piezas cortas en loop para pantallas y tótems."
+        ],
+        "en": [
+          "Still pieces for social in every format.",
+          "Animated videos in 1:1, 9:16 and 16:9.",
+          "Short loops for screens and totems."
+        ]
+      },
+      "notes": {
+        "es": "El encargo original fue una intro para proyecciones de cine. Después se sumaron piezas de acompañamiento para redes, web y eventos.",
+        "en": "The original brief was an intro for cinema projections. Companion pieces for social, web and events were added later."
+      }
+    },
+    "estelares": {
+      "source": "estelares",
+      "slug": "estelares",
+      "year": 2019,
+      "client": {
+        "es": "Sybila Producciones S.A.",
+        "en": "Sybila Producciones S.A."
+      },
+      "role": {
+        "es": "Preproducción, storyboard, proceso 3D integral, animación, post y entrega.",
+        "en": "Preproduction, storyboard, full 3D pipeline, animation, post and delivery."
+      },
+      "deliverables": {
+        "es": ["Clip musical completo."],
+        "en": ["Complete music video."]
+      },
+      "notes": {
+        "es": "Este proyecto se llevó a cabo de forma individual y casi completa; quedó frenado al final por causas ajenas.",
+        "en": "This project was carried out individually and almost in full; it was stopped near the end for reasons beyond our control."
+      }
+    },
+    "foto": {
+      "source": "fotografia",
+      "slug": "la-plata",
+      "year": 2018,
+      "client": {
+        "es": "Sybila Producciones S.A.",
+        "en": "Sybila Producciones S.A."
+      },
+      "role": {
+        "es": "Fotógrafo y post.",
+        "en": "Photographer and post."
+      },
+      "deliverables": {
+        "es": ["Set de fotos individuales para editorial."],
+        "en": ["Set of individual photos for editorial use."]
+      },
+      "notes": {
+        "es": "Piezas encargadas para ilustrar tapa e interior de la revista sybproMAG.",
+        "en": "Commissioned pieces to illustrate the cover and interior of sybproMAG magazine."
+      }
+    },
+    "boxbike": {
+      "source": "model_showcase/3DModel_Box_Bike",
+      "slug": "box-bike",
+      "year": 2022,
+      "client": {
+        "es": "Trabajo personal",
+        "en": "Personal work"
+      },
+      "role": {
+        "es": "Proceso 3D integral.",
+        "en": "Full 3D pipeline."
+      },
+      "deliverables": {
+        "es": ["Piezas fijas para redes y video animado."],
+        "en": ["Still pieces for social and an animated video."]
+      },
+      "notes": {
+        "es": "Pieza personal para preparar workflows de modelado 3D y rig para trabajos de clientes. Se optimizó el flujo de trabajo y se crearon herramientas para animar rápidamente.",
+        "en": "Personal piece to prepare 3D modeling and rig workflows for client work. The pipeline was optimized and tools were built to animate faster."
+      }
+    },
+    "bgclip": {
+      "source": "model_showcase/3DBackground_music_clip",
+      "slug": "3d-background",
+      "year": 2023,
+      "client": {
+        "es": "2Veinte",
+        "en": "2Veinte"
+      },
+      "role": {
+        "es": "Modelado 3D, textura y animación de cámara.",
+        "en": "3D modeling, texturing and camera animation."
+      },
+      "deliverables": {
+        "es": ["Archivo de video 16:9."],
+        "en": ["16:9 video file."]
+      },
+      "notes": {
+        "es": "Pieza de video animada para fondo, pensada para usarse después en una escena de animación tradicional para publicidad.",
+        "en": "Animated video background, meant to be used later in a traditionally animated advertising scene."
+      }
+    },
+    "nonpa": {
+      "source": "nonpalidece",
+      "slug": "nonpalidece",
+      "year": 2019,
+      "client": {
+        "es": "Nonpalidece",
+        "en": "Nonpalidece"
+      },
+      "role": {
+        "es": "Modelado 3D, textura y animación de cámara.",
+        "en": "3D modeling, texturing and camera animation."
+      },
+      "deliverables": {
+        "es": ["Set de videos animados en formato 1:1, 9:16 y 16:9."],
+        "en": ["Set of animated videos in 1:1, 9:16 and 16:9."]
+      },
+      "notes": {
+        "es": "Trabajo realizado en conjunto con un fotógrafo que generó las fotos de fondo. Se modeló y animó toda la escena lírica para acompañar el video de Soy Latino de Nonpalidece.",
+        "en": "Work done with a photographer who created the background photos. The full lyrical scene was modeled and animated to accompany Nonpalidece’s Soy Latino video."
+      }
+    },
+    "alfajor": {
+      "source": "product_showcase/alfajor_argentino",
+      "slug": "alfajor-argentino",
+      "year": 2026,
+      "client": {
+        "es": "Trabajo personal",
+        "en": "Personal work"
+      },
+      "role": {
+        "es": "Proceso integral.",
+        "en": "Full pipeline."
+      },
+      "deliverables": {
+        "es": ["Set de piezas fijas, video y breakdown."],
+        "en": ["Set of stills, video and breakdown."]
+      },
+      "notes": {
+        "es": "Trabajo personal para armar el workflow para clientes, optimizando el proceso para generar videos y piezas estáticas de forma ágil.",
+        "en": "Personal work to build the client workflow, optimizing the process so videos and stills can be produced quickly."
+      }
+    },
+    "empanada": {
+      "source": "product_showcase/empanada_criolla",
+      "slug": "empanada-criolla",
+      "year": 2026,
+      "client": {
+        "es": "Trabajo personal",
+        "en": "Personal work"
+      },
+      "role": {
+        "es": "Proceso integral.",
+        "en": "Full pipeline."
+      },
+      "deliverables": {
+        "es": ["Set de piezas fijas, video y breakdown."],
+        "en": ["Set of stills, video and breakdown."]
+      },
+      "notes": {
+        "es": "Trabajo personal para armar el workflow para clientes, optimizando el proceso para generar videos y piezas estáticas de forma ágil.",
+        "en": "Personal work to build the client workflow, optimizing the process so videos and stills can be produced quickly."
+      }
+    },
+    "veganis": {
+      "source": "product_showcase/veganis",
+      "slug": "veganis",
+      "year": 2024,
+      "client": {
+        "es": "Veganis Latinoamérica",
+        "en": "Veganis Latinoamérica"
+      },
+      "role": {
+        "es": "Dirección, proceso 3D integral, animación, post y entrega.",
+        "en": "Direction, full 3D pipeline, animation, post and delivery."
+      },
+      "deliverables": {
+        "es": ["Set de piezas fijas y video."],
+        "en": ["Set of stills and video."]
+      },
+      "notes": {
+        "es": "Trabajo realizado en conjunto con un animador 2D clásico, para mostrar los productos de Veganis en piezas de redes y web.",
+        "en": "Work done with a traditional 2D animator to show Veganis products in social and web pieces."
+      }
+    },
+    "qjmotor": {
+      "source": "qjmotor",
+      "slug": "qjmotor",
+      "year": 2026,
+      "client": {
+        "es": "QJ Motor Gerli",
+        "en": "QJ Motor Gerli"
+      },
+      "role": {
+        "es": "Proyecto integral.",
+        "en": "Full project."
+      },
+      "deliverables": {
+        "es": [
+          "Set de piezas fijas para redes en todos los formatos.",
+          "Set de videos animados en formato 1:1, 9:16 y 16:9.",
+          "Piezas cortas en loop para pantallas y tótems.",
+          "Propuesta de rediseño web."
+        ],
+        "en": [
+          "Still pieces for social in every format.",
+          "Animated videos in 1:1, 9:16 and 16:9.",
+          "Short loops for screens and totems.",
+          "Website redesign proposal."
+        ]
+      },
+      "notes": {
+        "es": "Proyecto de propuesta para el cliente, para cubrir todos los frentes donde muestran su marca y potenciar el impacto visual de QJ y sus productos.",
+        "en": "A proposal for the client covering every surface where the brand appears, to strengthen the visual impact of QJ and its products."
+      }
+    },
+    "cantilo": {
+      "source": "radiocantilo.com",
+      "slug": "radiocantilo",
+      "year": 2018,
+      "client": {
+        "es": "Radio Cantilo",
+        "en": "Radio Cantilo"
+      },
+      "role": {
+        "es": "Propuesta de archviz, branding y animación 2D y 3D.",
+        "en": "Archviz proposal, branding, and 2D and 3D animation."
+      },
+      "deliverables": {
+        "es": [
+          "Set de piezas fijas para redes en todos los formatos.",
+          "Set de videos animados en formato 1:1, 9:16 y 16:9.",
+          "Piezas cortas en loop para pantallas y tótems.",
+          "Branding completo.",
+          "Diseño web.",
+          "Renders archviz del estudio."
+        ],
+        "en": [
+          "Still pieces for social in every format.",
+          "Animated videos in 1:1, 9:16 and 16:9.",
+          "Short loops for screens and totems.",
+          "Complete branding.",
+          "Web design.",
+          "Studio archviz renders."
+        ]
+      },
+      "notes": {
+        "es": "Radio Cantilo se encaró de forma completa, desde el diseño impreso al digital, web, redes y más.",
+        "en": "Radio Cantilo was handled end to end, from print to digital, web, social and more."
+      }
+    },
+    "sybila": {
+      "source": "sybi.la",
+      "slug": "sybila",
+      "year": 2019,
+      "client": {
+        "es": "Sybila Producciones S.A.",
+        "en": "Sybila Producciones S.A."
+      },
+      "role": {
+        "es": "Branding.",
+        "en": "Branding."
+      },
+      "deliverables": {
+        "es": ["Rediseño de branding completo."],
+        "en": ["Complete branding redesign."]
+      },
+      "notes": {
+        "es": "La productora audiovisual Sybila Producciones requería una actualización de branding, por lo que se realizaron una serie de propuestas para modernizar el impacto visual de la marca.",
+        "en": "The audiovisual production company Sybila Producciones needed a branding update, so a series of proposals was developed to modernize the brand’s visual impact."
+      }
+    },
+    "sybpro": {
+      "source": "sybpro.tv",
+      "slug": "sybpro",
+      "year": 2019,
+      "client": {
+        "es": "Sybila Producciones S.A.",
+        "en": "Sybila Producciones S.A."
+      },
+      "role": {
+        "es": "Branding.",
+        "en": "Branding."
+      },
+      "deliverables": {
+        "es": ["Rediseño de branding completo y piezas audiovisuales para publicidad."],
+        "en": ["Complete branding redesign and audiovisual pieces for advertising."]
+      },
+      "notes": {
+        "es": "La productora audiovisual Sybila Producciones requería un diseño integral de la marca sybpro.tv, plataforma audiovisual que concentraba todo el contenido elaborado por la productora.",
+        "en": "Sybila Producciones needed a full identity for sybpro.tv, the audiovisual platform that gathered all of the company’s content."
+      }
+    },
+    "vai": {
+      "source": "viaje_a_lo_inesperado",
+      "slug": "viaje-a-lo-inesperado",
+      "year": 2019,
+      "client": {
+        "es": "Sybila Producciones S.A.",
+        "en": "Sybila Producciones S.A."
+      },
+      "role": {
+        "es": "Branding.",
+        "en": "Branding."
+      },
+      "deliverables": {
+        "es": [
+          "Diseño de branding completo.",
+          "Piezas cortas audiovisuales para acompañar activaciones de marca."
+        ],
+        "en": [
+          "Complete branding design.",
+          "Short audiovisual pieces to support brand activations."
+        ]
+      },
+      "notes": {
+        "es": "Sybila Producciones acompañó el evento de cine Viaje a lo Inesperado y necesitaba branding, animaciones e ideas para los eventos. Llevamos a cabo el diseño de marca, animaciones de branding, modelado 3D, animación, post y dirección total de microcortos para los eventos.",
+        "en": "Sybila Producciones supported the cinema event Viaje a lo Inesperado and needed branding, animation and ideas for the events. We handled the brand design, branding animation, 3D modeling, animation, post and full direction of short films for the events."
+      }
+    },
+    "mellis": {
+      "source": "viajes_los_mellis",
+      "slug": "viajes-los-mellis",
+      "year": 2021,
+      "client": {
+        "es": "Viajes los Mellis",
+        "en": "Viajes los Mellis"
+      },
+      "role": {
+        "es": "Branding.",
+        "en": "Branding."
+      },
+      "deliverables": {
+        "es": ["Rediseño de branding completo."],
+        "en": ["Complete branding redesign."]
+      },
+      "notes": {
+        "es": "Actualización de marca para el cliente, acompañando una nueva estética y dirección.",
+        "en": "Brand update for the client, supporting a new look and direction."
+      }
+    }
+  }
+}

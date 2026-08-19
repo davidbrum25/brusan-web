@@ -34,14 +34,14 @@
         <a href="../index.html#contacto" data-i18n="footer.nav.contact">Contacto</a>
       </nav>
       <div class="nav-actions">
-        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" data-magnetic data-magnetic-distance="70" data-magnetic-strength="0.5">
+        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
         </a>
-        <button class="lang-toggle-btn" id="lang-toggle-btn" data-magnetic data-magnetic-distance="80" data-magnetic-strength="0.5" aria-label="Cambiar idioma / Switch language">
+        <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Cambiar idioma / Switch language">
           <i data-lucide="globe"></i>
           <span id="lang-label">EN</span>
         </button>
@@ -59,6 +59,21 @@
         <span class="showcase-tag" data-i18n="work.vai.tag">Reels</span>
         <h1 class="work-title" data-i18n="work.vai.title">Viaje a lo Inesperado</h1>
         <p class="work-lead" data-i18n="work.vai.desc">Clips y motion de marca.</p>
+
+      <dl class="work-case-facts">
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.client">Cliente</dt>
+          <dd data-i18n="work.vai.client">Sybila Producciones S.A.</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.year">Año</dt>
+          <dd>2019</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.role">Rol</dt>
+          <dd data-i18n="work.vai.role">Branding.</dd>
+        </div>
+      </dl>
       </header>
       <div class="work-gallery work-gallery--mixed">
       <figure class="work-media work-media--feature work-media--video">
@@ -67,17 +82,17 @@
         </video>
       </figure>
       <figure class="work-media work-media--video">
-        <video controls playsinline preload="metadata" poster="../assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp">
+        <video controls playsinline preload="metadata" poster="../assets/work/viaje-a-lo-inesperado/reels/vai-clip-2-poster.webp">
           <source src="../assets/work/viaje-a-lo-inesperado/reels/18-04-03-vai-clip-2.mp4" type="video/mp4">
         </video>
       </figure>
       <figure class="work-media work-media--video">
-        <video controls playsinline preload="metadata" poster="../assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp">
+        <video controls playsinline preload="metadata" poster="../assets/work/viaje-a-lo-inesperado/reels/vai-clip-4-poster.webp">
           <source src="../assets/work/viaje-a-lo-inesperado/reels/18-04-19-vai-clip-4-sonido.mp4" type="video/mp4">
         </video>
       </figure>
       <figure class="work-media work-media--video">
-        <video controls playsinline preload="metadata" poster="../assets/work/viaje-a-lo-inesperado/reels/vai-clip-1-poster.webp">
+        <video controls playsinline preload="metadata" poster="../assets/work/viaje-a-lo-inesperado/reels/vai-logo-poster.webp">
           <source src="../assets/work/viaje-a-lo-inesperado/reels/vai-logo-animado-full-alpha.mp4" type="video/mp4">
         </video>
       </figure>
@@ -86,14 +101,28 @@
         <span>Manual de marca (PDF)</span>
       </a>
       </div>
+
+      <aside class="work-case-panel">
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.deliverables">Entregables</h2>
+          <ul data-i18n-list="work.vai.deliverables">
+            <li>Diseño de branding completo.</li>
+            <li>Piezas cortas audiovisuales para acompañar activaciones de marca.</li>
+          </ul>
+        </section>
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.notes">Notas</h2>
+          <p data-i18n="work.vai.notes">Sybila Producciones acompañó el evento de cine Viaje a lo Inesperado y necesitaba branding, animaciones e ideas para los eventos. Llevamos a cabo el diseño de marca, animaciones de branding, modelado 3D, animación, post y dirección total de microcortos para los eventos.</p>
+        </section>
+      </aside>
       <nav class="work-pager" aria-label="Proyectos">
         <a class="work-pager-link" href="sybpro.html">
           <span data-i18n="work.prev">anterior</span>
           <strong data-i18n="work.sybpro.title">sybpro.tv</strong>
         </a>
-        <a class="work-pager-link work-pager-link--next" href="viajes-los-mellis.html">
+        <a class="work-pager-link work-pager-link--next" href="la-plata.html">
           <span data-i18n="work.next">siguiente</span>
-          <strong data-i18n="work.mellis.title">Viajes los Mellis</strong>
+          <strong data-i18n="work.foto.title">La Plata</strong>
         </a>
       </nav>
     </div>
@@ -152,6 +181,7 @@
     <p class="work-lightbox-count" aria-live="polite"></p>
   </div>
 
+  <script src="../work-cases-i18n.js"></script>
   <script src="../main.js"></script>
 </body>
 </html>

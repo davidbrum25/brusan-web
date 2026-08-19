@@ -40,12 +40,18 @@ const translations = {
     "work.veganis.tag": "CGI · Producto",
     "work.veganis.title": "Veganis",
     "work.veganis.desc": "Spot y stills de producto para Veganis.",
+    "work.section.product": "Product Showcase",
+    "work.section.branding": "Branding",
+    "work.section.outdoor": "Outdoor",
     "work.qjmotor.tag": "CGI · Cartelería",
     "work.qjmotor.title": "QJ Motor",
     "work.qjmotor.desc": "Visualización de producto y vía pública para Fort 350.",
     "work.boxbike.tag": "3D Model",
     "work.boxbike.title": "Box Bike",
     "work.boxbike.desc": "Modelado y showcase 3D.",
+    "work.bgclip.tag": "CGI · Clip",
+    "work.bgclip.title": "2Veinte",
+    "work.bgclip.desc": "Fondo 3D animado para clip publicitario.",
     "work.estelares.tag": "Music clip",
     "work.estelares.title": "Estelares — Usted",
     "work.estelares.desc": "Stills del videoclip Usted.",
@@ -132,12 +138,18 @@ const translations = {
     "work.veganis.tag": "CGI · Product",
     "work.veganis.title": "Veganis",
     "work.veganis.desc": "Product spot and stills for Veganis.",
+    "work.section.product": "Product Showcase",
+    "work.section.branding": "Branding",
+    "work.section.outdoor": "Outdoor",
     "work.qjmotor.tag": "CGI · Urban media",
     "work.qjmotor.title": "QJ Motor",
     "work.qjmotor.desc": "Product visualization and outdoor media for Fort 350.",
     "work.boxbike.tag": "3D Model",
     "work.boxbike.title": "Box Bike",
     "work.boxbike.desc": "3D modeling and showcase.",
+    "work.bgclip.tag": "CGI · Clip",
+    "work.bgclip.title": "2Veinte",
+    "work.bgclip.desc": "Animated 3D background for an advertising clip.",
     "work.estelares.tag": "Music clip",
     "work.estelares.title": "Estelares — Usted",
     "work.estelares.desc": "Stills from the Usted music video.",
@@ -195,12 +207,26 @@ const translations = {
 
 let currentLanguage = localStorage.getItem("brusan_lang") || "es";
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function getDictionary(lang) {
+  const base = translations[lang] || translations.es;
+  const extra = (window.workCaseTranslations && window.workCaseTranslations[lang]) || {};
+  return Object.assign({}, base, extra);
+}
+
 function applyLanguage(lang, smooth = false) {
   currentLanguage = lang;
   localStorage.setItem("brusan_lang", lang);
   document.documentElement.lang = lang;
 
-  const dict = translations[lang] || translations.es;
+  const dict = getDictionary(lang);
 
   const elements = document.querySelectorAll("[data-i18n]");
 
@@ -216,6 +242,22 @@ function applyLanguage(lang, smooth = false) {
       } else {
         el.innerHTML = dict[key];
       }
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-list]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-list");
+    const items = dict[key];
+    if (!Array.isArray(items)) return;
+    const html = items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    if (smooth) {
+      el.style.opacity = "0.2";
+      setTimeout(() => {
+        el.innerHTML = html;
+        el.style.opacity = "1";
+      }, 120);
+    } else {
+      el.innerHTML = html;
     }
   });
 

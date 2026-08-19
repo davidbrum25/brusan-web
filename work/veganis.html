@@ -34,14 +34,14 @@
         <a href="../index.html#contacto" data-i18n="footer.nav.contact">Contacto</a>
       </nav>
       <div class="nav-actions">
-        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" data-magnetic data-magnetic-distance="70" data-magnetic-strength="0.5">
+        <a class="nav-icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
         </a>
-        <button class="lang-toggle-btn" id="lang-toggle-btn" data-magnetic data-magnetic-distance="80" data-magnetic-strength="0.5" aria-label="Cambiar idioma / Switch language">
+        <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Cambiar idioma / Switch language">
           <i data-lucide="globe"></i>
           <span id="lang-label">EN</span>
         </button>
@@ -59,6 +59,21 @@
         <span class="showcase-tag" data-i18n="work.veganis.tag">CGI · Producto</span>
         <h1 class="work-title" data-i18n="work.veganis.title">Veganis</h1>
         <p class="work-lead" data-i18n="work.veganis.desc">Spot y stills de producto para Veganis.</p>
+
+      <dl class="work-case-facts">
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.client">Cliente</dt>
+          <dd data-i18n="work.veganis.client">Veganis Latinoamérica</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.year">Año</dt>
+          <dd>2024</dd>
+        </div>
+        <div class="work-case-fact">
+          <dt data-i18n="work.case.role">Rol</dt>
+          <dd data-i18n="work.veganis.role">Dirección, proceso 3D integral, animación, post y entrega.</dd>
+        </div>
+      </dl>
       </header>
       <div class="work-gallery work-gallery--product">
       <figure class="work-media work-media--feature work-media--video">
@@ -79,14 +94,27 @@
         <img src="../assets/work/product-showcase/veganis/stills/png-verde-hojas.webp" alt="Veganis verde hojas">
       </figure>
       </div>
+
+      <aside class="work-case-panel">
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.deliverables">Entregables</h2>
+          <ul data-i18n-list="work.veganis.deliverables">
+            <li>Set de piezas fijas y video.</li>
+          </ul>
+        </section>
+        <section class="work-case-block">
+          <h2 class="work-case-heading" data-i18n="work.case.notes">Notas</h2>
+          <p data-i18n="work.veganis.notes">Trabajo realizado en conjunto con un animador 2D clásico, para mostrar los productos de Veganis en piezas de redes y web.</p>
+        </section>
+      </aside>
       <nav class="work-pager" aria-label="Proyectos">
         <a class="work-pager-link" href="empanada-criolla.html">
           <span data-i18n="work.prev">anterior</span>
           <strong data-i18n="work.empanada.title">Empanada Criolla</strong>
         </a>
-        <a class="work-pager-link work-pager-link--next" href="qjmotor.html">
+        <a class="work-pager-link work-pager-link--next" href="box-bike.html">
           <span data-i18n="work.next">siguiente</span>
-          <strong data-i18n="work.qjmotor.title">QJ Motor</strong>
+          <strong data-i18n="work.boxbike.title">Box Bike</strong>
         </a>
       </nav>
     </div>
@@ -145,6 +173,7 @@
     <p class="work-lightbox-count" aria-live="polite"></p>
   </div>
 
+  <script src="../work-cases-i18n.js"></script>
   <script src="../main.js"></script>
 </body>
 </html>
