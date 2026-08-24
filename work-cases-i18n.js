@@ -100,6 +100,12 @@ window.workCaseTranslations = {
       "Diseño de branding completo.",
       "Piezas cortas audiovisuales para acompañar activaciones de marca."
     ],
+    "work.totem.client": "BRUSAN",
+    "work.totem.role": "Servicio integral de publicidad (hardware + contenido)",
+    "work.totem.notes": "Realizamos el armado y la programación de totems publicitarios para emplazamiento en locación, con opción de gestión remota del contenido. También ofrecemos la creación del material audiovisual o gráfico a mostrar en las pantallas.",
+    "work.totem.deliverables": [
+      "Diseño, armado y programación de tótems con pantalla para publicidad en locación."
+    ],
     "work.mellis.client": "Viajes los Mellis",
     "work.mellis.role": "Branding.",
     "work.mellis.notes": "Actualización de marca para el cliente, acompañando una nueva estética y dirección.",
@@ -207,6 +213,12 @@ window.workCaseTranslations = {
     "work.vai.deliverables": [
       "Complete branding design.",
       "Short audiovisual pieces to support brand activations."
+    ],
+    "work.totem.client": "BRUSAN",
+    "work.totem.role": "Full advertising service (hardware + content)",
+    "work.totem.notes": "We assemble and program advertising totems for on-site placement, with optional remote content management. We also create the audiovisual or graphic material shown on the screens.",
+    "work.totem.deliverables": [
+      "Design, assembly and programming of screen totems for on-site advertising."
     ],
     "work.mellis.client": "Viajes los Mellis",
     "work.mellis.role": "Branding.",

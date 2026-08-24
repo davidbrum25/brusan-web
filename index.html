@@ -140,6 +140,12 @@
 <body>
 
   <header class="hero-header" id="inicio">
+    <div class="hero-video-bg">
+      <video id="hero-bg-video" muted playsinline preload="auto" disablePictureInPicture aria-hidden="true" poster="assets/header/header_fallback.jpeg">
+        <source src="assets/header/header_bg.mp4" type="video/mp4">
+        <source src="assets/header/header_bg.webm" type="video/webm">
+      </video>
+    </div>
     <div class="hero-canvas-container">
       <canvas id="gl-canvas"></canvas>
     </div>
@@ -161,11 +167,6 @@
           <i data-lucide="globe"></i>
           <span id="lang-label">EN</span>
         </button>
-      </div>
-    </div>
-    <div class="hero-center">
-      <div class="hero-logo-lockup" id="glass-logo-container">
-        <img src="assets/brusan_logo_blanco.svg" alt="BRUSAN - Desarrollo Visual" class="hero-logo-img" id="hero-logo-fallback">
       </div>
     </div>
     <div class="container hero-footer-bar">
@@ -210,11 +211,11 @@
               <h3 class="showcase-title" data-i18n="work.qjmotor.title">QJ Motor</h3>
             </div>
           </a>
-          <a class="showcase-item" data-category="branding" href="work/viajes-los-mellis.html">
-            <img src="assets/work/viajes-los-mellis/branding/1.webp" alt="Viajes los Mellis">
+          <a class="showcase-item" data-category="carteleria" href="work/totem.html">
+            <img src="assets/work/totem/totem-01.webp" alt="Totem Publicitario">
             <div class="showcase-overlay">
-              <span class="showcase-tag" data-i18n="work.mellis.tag">Branding</span>
-              <h3 class="showcase-title" data-i18n="work.mellis.title">Viajes los Mellis</h3>
+              <span class="showcase-tag" data-i18n="work.totem.tag">Cartelería · Hardware</span>
+              <h3 class="showcase-title" data-i18n="work.totem.title">Totem Publicitario</h3>
             </div>
           </a>
           <a class="showcase-item" data-category="cgi" href="work/alfajor-argentino.html">
@@ -334,6 +335,13 @@
               <span class="accordion-card-desc" data-i18n="work.foto.desc">Serie fotográfica urbana.</span>
             </div>
           </a>
+          <a class="accordion-card" data-category="branding" href="work/viajes-los-mellis.html">
+            <img src="assets/work/viajes-los-mellis/branding/1.webp" alt="Viajes los Mellis">
+            <div class="accordion-card-content">
+              <span class="accordion-card-label" data-i18n="work.mellis.title">Viajes los Mellis</span>
+              <span class="accordion-card-desc" data-i18n="work.mellis.desc">Identidad — Seguimos la música.</span>
+            </div>
+          </a>
           </div>
         </div>
       </div>
@@ -341,6 +349,9 @@
   </section>
 
   <section class="services-section" id="que-hacemos">
+    <div class="services-bg" aria-hidden="true">
+      <canvas id="services-bg-canvas"></canvas>
+    </div>
     <div class="container">
       <h2 class="services-header">
         <span data-i18n="services.title">qué <strong>hacemos</strong></span>
@@ -501,10 +512,9 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/SVGLoader.js"></script>
-  <script src="shader.js"></script>
-  <script src="glass-logo.js"></script>
+  <script src="header-particles.js"></script>
+  <script src="header-video.js"></script>
+  <script src="services-matrix.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

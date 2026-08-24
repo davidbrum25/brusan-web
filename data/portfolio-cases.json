@@ -339,6 +339,31 @@
         "en": "Sybila Producciones supported the cinema event Viaje a lo Inesperado and needed branding, animation and ideas for the events. We handled the brand design, branding animation, 3D modeling, animation, post and full direction of short films for the events."
       }
     },
+    "totem": {
+      "source": "totem",
+      "slug": "totem",
+      "year": 2026,
+      "client": {
+        "es": "BRUSAN",
+        "en": "BRUSAN"
+      },
+      "role": {
+        "es": "Servicio integral de publicidad (hardware + contenido)",
+        "en": "Full advertising service (hardware + content)"
+      },
+      "deliverables": {
+        "es": [
+          "Diseño, armado y programación de tótems con pantalla para publicidad en locación."
+        ],
+        "en": [
+          "Design, assembly and programming of screen totems for on-site advertising."
+        ]
+      },
+      "notes": {
+        "es": "Realizamos el armado y la programación de totems publicitarios para emplazamiento en locación, con opción de gestión remota del contenido. También ofrecemos la creación del material audiovisual o gráfico a mostrar en las pantallas.",
+        "en": "We assemble and program advertising totems for on-site placement, with optional remote content management. We also create the audiovisual or graphic material shown on the screens."
+      }
+    },
     "mellis": {
       "source": "viajes_los_mellis",
       "slug": "viajes-los-mellis",

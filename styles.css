@@ -219,6 +219,7 @@ img {
    -------------------------------------------------------------------------- */
 .hero-header {
   position: relative;
+  isolation: isolate;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -226,13 +227,32 @@ img {
   justify-content: space-between;
   padding: 3.5rem 0 2.5rem 0;
   overflow: hidden;
+  background: #121110;
 }
 
-/* WebGL Shader Canvas background */
-.hero-canvas-container {
+/* Scroll-scrubbed video sits behind the transparent wave shader */
+.hero-video-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #121110;
+}
+
+.hero-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ThreeUI signal-particles overlay (transparent over the header video) */
+.hero-canvas-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -240,6 +260,9 @@ img {
   width: 100%;
   height: 100%;
   display: block;
+  background: transparent;
+  opacity: 0.8;
+  filter: hue-rotate(190deg) saturate(0.0) brightness(0.5);
 }
 
 /* Smooth bottom gradient fade to seamlessly blend shader into next section without covering text/buttons */
@@ -263,7 +286,7 @@ img {
   z-index: 1;
 }
 
-/* Soft Subtle Film Grain Overlay over Header & 3D Logo */
+/* Soft Subtle Film Grain Overlay over Header */
 .hero-grain-overlay {
   position: absolute;
   inset: 0;
@@ -274,6 +297,12 @@ img {
   background-repeat: repeat;
   background-size: 160px 160px;
   mix-blend-mode: overlay;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-grain-overlay {
+    opacity: 0.5;
+  }
 }
 
 /* Header Navbar Top Bar */
