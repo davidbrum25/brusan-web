@@ -559,17 +559,20 @@ async function sendFormMailbox(payload) {
     })
   });
   const data = await res.json().catch(() => ({}));
-  const ok = data.success === true || data.success === "true";
+  const note = String(data.message || "");
+  const noteLower = note.toLowerCase();
+  const needsConfirm =
+    noteLower.includes("activat") ||
+    noteLower.includes("confirm") ||
+    noteLower.includes("activate form");
+  const ok = data.success === true || data.success === "true" || needsConfirm;
   if (!res.ok || !ok) {
     throw Object.assign(new Error("send_failed"), {
       res,
       body: { error: "send_failed", detail: data.message }
     });
   }
-  const note = String(data.message || "").toLowerCase();
-  return {
-    needsConfirm: note.includes("confirm") || note.includes("activat")
-  };
+  return { needsConfirm };
 }
 
 function loadTurnstile() {
