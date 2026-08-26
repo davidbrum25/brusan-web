@@ -106,6 +106,7 @@ const translations = {
     "contact.form.submit": "Enviar consulta",
     "contact.form.sending": "Enviando…",
     "contact.form.success": "Listo. Te respondemos a la brevedad.",
+    "contact.form.confirm": "Listo. Confirmá el primer envío en el mail que llega a contacto@brusan.ar.",
     "contact.form.error": "No se pudo enviar. Escribinos por mail o WhatsApp.",
     "contact.form.invalid": "Completá nombre, email y un mensaje de al menos 10 caracteres.",
     "contact.form.offline": "En local no se envía mail. Eso corre en Cloudflare, en brusan.ar.",
@@ -222,6 +223,7 @@ const translations = {
     "contact.form.submit": "Send inquiry",
     "contact.form.sending": "Sending…",
     "contact.form.success": "Done. We'll get back to you shortly.",
+    "contact.form.confirm": "Done. Confirm the first send in the email that arrives at contacto@brusan.ar.",
     "contact.form.error": "Couldn't send. Reach us by email or WhatsApp.",
     "contact.form.invalid": "Please fill in name, email and a message of at least 10 characters.",
     "contact.form.offline": "Mail isn't sent on this local preview. It goes out on Cloudflare, at brusan.ar.",
@@ -516,7 +518,7 @@ function initContactForm() {
       if (!res.ok || !body.ok) throw Object.assign(new Error(body.error || "send_failed"), { res, body });
       form.reset();
       resetTurnstile();
-      setStatus("success", "contact.form.success");
+      setStatus("success", body.needsConfirm ? "contact.form.confirm" : "contact.form.success");
     } catch (err) {
       const key = errorKey(err && err.res, err && err.body);
       const detail = err && err.body && err.body.detail;

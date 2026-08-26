@@ -94,7 +94,8 @@ export async function onRequestPost(context) {
   ].join("");
 
   try {
-    await sendContactEmail(env, { name, email, subject, text, html });
+    const sent = await sendContactEmail(env, { name, email, subject, text, html });
+    return json({ ok: true, needsConfirm: Boolean(sent && sent.needsConfirm) });
   } catch (error) {
     if (error && error.code === "email_not_configured") {
       console.error(JSON.stringify({ event: "contact_email_unbound" }));
@@ -110,8 +111,6 @@ export async function onRequestPost(context) {
     );
     return json({ ok: false, error: "send_failed", detail }, 502);
   }
-
-  return json({ ok: true });
 }
 
 export async function onRequest(context) {
@@ -181,7 +180,7 @@ async function sendContactEmail(env, { name, email, subject, text, html }) {
         text,
         html,
       });
-      return;
+      return { needsConfirm: false };
     } catch (error) {
       try {
         const { EmailMessage } = await import("cloudflare:email");
@@ -201,47 +200,49 @@ async function sendContactEmail(env, { name, email, subject, text, html }) {
             }),
           ),
         );
-        return;
+        return { needsConfirm: false };
       } catch {
-        // Pages cannot declare send_email; fall through to REST.
+        // Pages cannot use send_email; use the free form mailbox instead.
       }
     }
   }
 
-  const accountId = env.CF_ACCOUNT_ID;
-  const apiToken = env.EMAIL_API_TOKEN;
-  if (!accountId || !apiToken) {
-    const missing = new Error("email_not_configured");
-    missing.code = "email_not_configured";
-    throw missing;
-  }
+  return sendViaFormSubmit({ name, email, subject, text });
+}
 
+async function sendViaFormSubmit({ name, email, subject, text }) {
   const res = await fetch(
-    `https://api.cloudflare.com/client/v4/accounts/${accountId}/email/sending/send`,
+    "https://formsubmit.co/ajax/" + encodeURIComponent(CONTACT_TO),
     {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${apiToken}`,
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify({
-        to: CONTACT_TO,
-        from: { address: CONTACT_FROM, name: CONTACT_FROM_NAME },
-        reply_to: { address: email, name },
-        subject,
-        text,
-        html,
+        name,
+        email,
+        message: text,
+        _subject: subject,
+        _replyto: email,
+        _template: "table",
+        _captcha: "false",
       }),
     },
   );
   const data = await res.json().catch(() => ({}));
-  if (!res.ok || !data.success) {
-    const failed = new Error("rest_send_failed");
-    failed.code = "rest_send_failed";
+  const ok = data.success === true || data.success === "true";
+  if (!res.ok || !ok) {
+    const failed = new Error("formsubmit_failed");
+    failed.code = "formsubmit_failed";
     failed.cfStatus = res.status;
-    failed.cfErrors = Array.isArray(data.errors) ? data.errors : [];
+    failed.cfErrors = data.message ? [{ message: String(data.message).slice(0, 180) }] : [];
     throw failed;
   }
+  const message = String(data.message || "").toLowerCase();
+  return {
+    needsConfirm: message.includes("confirm") || message.includes("activat"),
+  };
 }
 
 function sanitizeSendDetail(error) {
