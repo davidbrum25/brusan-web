@@ -516,9 +516,11 @@ function initContactForm() {
       });
       const body = await res.json().catch(() => ({}));
       if (!res.ok || !body.ok) throw Object.assign(new Error(body.error || "send_failed"), { res, body });
+
+      const mail = await sendFormMailbox(payload);
       form.reset();
       resetTurnstile();
-      setStatus("success", body.needsConfirm ? "contact.form.confirm" : "contact.form.success");
+      setStatus("success", mail.needsConfirm ? "contact.form.confirm" : "contact.form.success");
     } catch (err) {
       const key = errorKey(err && err.res, err && err.body);
       const detail = err && err.body && err.body.detail;
@@ -536,6 +538,38 @@ function initContactForm() {
   });
 
   setupTurnstile();
+}
+
+async function sendFormMailbox(payload) {
+  const res = await fetch("https://formsubmit.co/ajax/contacto@brusan.ar", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      name: payload.name,
+      email: payload.email,
+      phone: payload.phone || "",
+      message: payload.message,
+      _subject: "Consulta web BRUSAN — " + payload.name,
+      _replyto: payload.email,
+      _template: "table",
+      _captcha: "false"
+    })
+  });
+  const data = await res.json().catch(() => ({}));
+  const ok = data.success === true || data.success === "true";
+  if (!res.ok || !ok) {
+    throw Object.assign(new Error("send_failed"), {
+      res,
+      body: { error: "send_failed", detail: data.message }
+    });
+  }
+  const note = String(data.message || "").toLowerCase();
+  return {
+    needsConfirm: note.includes("confirm") || note.includes("activat")
+  };
 }
 
 function loadTurnstile() {
