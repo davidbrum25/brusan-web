@@ -100,13 +100,15 @@ export async function onRequestPost(context) {
       console.error(JSON.stringify({ event: "contact_email_unbound" }));
       return json({ ok: false, error: "email_not_configured" }, 503);
     }
+    const detail = sanitizeSendDetail(error);
     console.error(
       JSON.stringify({
         event: "contact_email_failed",
         code: error && error.code,
+        detail,
       }),
     );
-    return json({ ok: false, error: "send_failed" }, 502);
+    return json({ ok: false, error: "send_failed", detail }, 502);
   }
 
   return json({ ok: true });
@@ -236,8 +238,25 @@ async function sendContactEmail(env, { name, email, subject, text, html }) {
   if (!res.ok || !data.success) {
     const failed = new Error("rest_send_failed");
     failed.code = "rest_send_failed";
+    failed.cfStatus = res.status;
+    failed.cfErrors = Array.isArray(data.errors) ? data.errors : [];
     throw failed;
   }
+}
+
+function sanitizeSendDetail(error) {
+  const first =
+    error &&
+    Array.isArray(error.cfErrors) &&
+    error.cfErrors.find((item) => item && (item.message || item.code));
+  if (first) {
+    const code = first.code != null ? String(first.code) : "";
+    const message = first.message ? String(first.message).slice(0, 180) : "";
+    return [code, message].filter(Boolean).join(": ");
+  }
+  if (error && error.cfStatus) return "http_" + error.cfStatus;
+  if (error && error.code) return String(error.code);
+  return "send_failed";
 }
 
 async function verifyTurnstile(token, secret, request) {

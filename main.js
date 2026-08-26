@@ -432,6 +432,18 @@ function initContactForm() {
     return "contact.form.error";
   }
 
+  function setStatusRaw(type, text) {
+    if (!status) return;
+    status.hidden = !text;
+    status.classList.remove("is-success", "is-error");
+    if (!text) {
+      status.textContent = "";
+      return;
+    }
+    status.classList.add(type === "success" ? "is-success" : "is-error");
+    status.textContent = text;
+  }
+
   function resetTurnstile() {
     if (turnstileWidgetId != null && window.turnstile) {
       window.turnstile.reset(turnstileWidgetId);
@@ -506,7 +518,13 @@ function initContactForm() {
       resetTurnstile();
       setStatus("success", "contact.form.success");
     } catch (err) {
-      setStatus("error", errorKey(err && err.res, err && err.body));
+      const key = errorKey(err && err.res, err && err.body);
+      const detail = err && err.body && err.body.detail;
+      if (key === "contact.form.error" && detail) {
+        setStatusRaw("error", (dict()[key] || "") + " (" + detail + ")");
+      } else {
+        setStatus("error", key);
+      }
       resetTurnstile();
     } finally {
       if (submit) submit.disabled = false;
