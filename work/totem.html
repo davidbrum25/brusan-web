@@ -125,6 +125,40 @@
           <i data-lucide="message-circle"></i>
         </h2>
         <p class="contact-lead" data-i18n="contact.lead">Contanos qué necesitás. Respondemos rápido y sin vueltas.</p>
+        <form class="contact-form" id="contact-form" action="/api/contact" method="POST" novalidate>
+          <div class="contact-form-row">
+            <label class="contact-field">
+              <span data-i18n="contact.form.name">Nombre</span>
+              <input type="text" name="name" required minlength="2" autocomplete="name" maxlength="80" data-i18n-placeholder="contact.form.name_ph" placeholder="Tu nombre">
+            </label>
+            <label class="contact-field">
+              <span data-i18n="contact.form.email">Email</span>
+              <input type="email" name="email" required autocomplete="email" inputmode="email" maxlength="120" data-i18n-placeholder="contact.form.email_ph" placeholder="diana.k@example.org">
+            </label>
+          </div>
+          <label class="contact-field">
+            <span data-i18n="contact.form.phone">Teléfono <em>(opcional)</em></span>
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="40" data-i18n-placeholder="contact.form.phone_ph" placeholder="+54 9 …">
+          </label>
+          <label class="contact-field">
+            <span data-i18n="contact.form.message">Mensaje</span>
+            <textarea name="message" required minlength="10" rows="4" maxlength="4000" data-i18n-placeholder="contact.form.message_ph" placeholder="Contanos qué necesitás"></textarea>
+          </label>
+          <div class="contact-honeypot" aria-hidden="true">
+            <label>Website
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </label>
+            <label>Company
+              <input type="text" name="company" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
+          <div class="contact-turnstile"></div>
+          <button type="submit" class="glass-pill contact-submit" data-magnetic data-magnetic-distance="100" data-magnetic-strength="0.45">
+            <i data-lucide="send"></i>
+            <span data-i18n="contact.form.submit">Enviar consulta</span>
+          </button>
+          <p class="contact-form-status" role="status" aria-live="polite" hidden></p>
+        </form>
         <div class="contact-actions">
           <a href="mailto:contacto@brusan.ar" class="glass-pill contact-pill" data-magnetic data-magnetic-distance="100" data-magnetic-strength="0.45">
             <i data-lucide="mail"></i>

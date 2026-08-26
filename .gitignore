@@ -4,6 +4,12 @@ node_modules/
 *.log
 .git-credentials
 
+.wrangler/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+
 # Master/source portfolio media (2GB+). Serve web copies from assets/work/.
 portfolio/
 

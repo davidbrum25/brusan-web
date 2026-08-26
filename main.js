@@ -95,6 +95,21 @@ const translations = {
     "manifesto.subline": "Le damos presencia visual al trabajo que mueve la zona todos los días.",
     "contact.title": "hablemos de tu <strong>proyecto</strong>",
     "contact.lead": "Contanos qué necesitás. Respondemos rápido y sin vueltas.",
+    "contact.form.name": "Nombre",
+    "contact.form.email": "Email",
+    "contact.form.phone": "Teléfono <em>(opcional)</em>",
+    "contact.form.message": "Mensaje",
+    "contact.form.name_ph": "Tu nombre",
+    "contact.form.email_ph": "diana.k@example.org",
+    "contact.form.phone_ph": "+54 9 …",
+    "contact.form.message_ph": "Contanos qué necesitás",
+    "contact.form.submit": "Enviar consulta",
+    "contact.form.sending": "Enviando…",
+    "contact.form.success": "Listo. Te respondemos a la brevedad.",
+    "contact.form.error": "No se pudo enviar. Escribinos por mail o WhatsApp.",
+    "contact.form.invalid": "Completá nombre, email y un mensaje de al menos 10 caracteres.",
+    "contact.form.offline": "En local no se envía mail. Eso corre en Cloudflare, en brusan.ar.",
+    "contact.form.spam": "No pudimos verificar el envío. Probá de nuevo.",
     "contact.whatsapp": "WhatsApp",
     "contact.location": "Gualeguaychú · Entre Ríos · Argentina",
     "footer.watermark.line1": "DESARROLLO",
@@ -196,6 +211,21 @@ const translations = {
     "manifesto.subline": "We give visual presence to the work that powers the region every single day.",
     "contact.title": "let's talk about your <strong>project</strong>",
     "contact.lead": "Tell us what you need. We reply fast and straight to the point.",
+    "contact.form.name": "Name",
+    "contact.form.email": "Email",
+    "contact.form.phone": "Phone <em>(optional)</em>",
+    "contact.form.message": "Message",
+    "contact.form.name_ph": "Your name",
+    "contact.form.email_ph": "you@studio.com",
+    "contact.form.phone_ph": "+54 9 …",
+    "contact.form.message_ph": "Tell us what you need",
+    "contact.form.submit": "Send inquiry",
+    "contact.form.sending": "Sending…",
+    "contact.form.success": "Done. We'll get back to you shortly.",
+    "contact.form.error": "Couldn't send. Reach us by email or WhatsApp.",
+    "contact.form.invalid": "Please fill in name, email and a message of at least 10 characters.",
+    "contact.form.offline": "Mail isn't sent on this local preview. It goes out on Cloudflare, at brusan.ar.",
+    "contact.form.spam": "We couldn't verify this send. Please try again.",
     "contact.whatsapp": "WhatsApp",
     "contact.location": "Gualeguaychú · Entre Ríos · Argentina",
     "footer.watermark.line1": "VISUAL",
@@ -249,6 +279,11 @@ function applyLanguage(lang, smooth = false) {
         el.innerHTML = dict[key];
       }
     }
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (dict[key]) el.setAttribute("placeholder", dict[key]);
   });
 
   document.querySelectorAll("[data-i18n-list]").forEach((el) => {
@@ -354,7 +389,148 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initMagneticCursor();
   initWorkLightbox();
+  initContactForm();
 });
+
+function initContactForm() {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
+  const status = form.querySelector(".contact-form-status");
+  const submit = form.querySelector('button[type="submit"]');
+  const submitLabel = submit && submit.querySelector("[data-i18n='contact.form.submit']");
+  const turnstileHost = form.querySelector(".contact-turnstile");
+  const startedAt = Date.now();
+  let turnstileWidgetId = null;
+
+  function dict() {
+    return getDictionary(currentLanguage);
+  }
+
+  function setStatus(type, key) {
+    if (!status) return;
+    status.hidden = !key;
+    status.classList.remove("is-success", "is-error");
+    if (!key) {
+      status.textContent = "";
+      return;
+    }
+    status.classList.add(type === "success" ? "is-success" : "is-error");
+    status.textContent = dict()[key] || key;
+  }
+
+  function errorKey(res, body) {
+    const code = (body && body.error) || "";
+    if (!res || res.status === 404 || res.status === 405 || res.status === 501) {
+      return "contact.form.offline";
+    }
+    if (res.status === 503 || code === "email_not_configured") return "contact.form.offline";
+    if (code === "invalid_name" || code === "invalid_email" || code === "invalid_message") {
+      return "contact.form.invalid";
+    }
+    if (code === "captcha" || code === "too_fast" || code === "forbidden") return "contact.form.spam";
+    return "contact.form.error";
+  }
+
+  function resetTurnstile() {
+    if (turnstileWidgetId != null && window.turnstile) {
+      window.turnstile.reset(turnstileWidgetId);
+    }
+  }
+
+  async function setupTurnstile() {
+    if (!turnstileHost) return;
+    try {
+      const res = await fetch("/api/contact", { headers: { Accept: "application/json" } });
+      if (!res.ok) return;
+      const cfg = await res.json().catch(() => ({}));
+      if (!cfg.siteKey) return;
+      await loadTurnstile();
+      if (!window.turnstile) return;
+      turnstileWidgetId = window.turnstile.render(turnstileHost, {
+        sitekey: cfg.siteKey,
+        theme: "dark",
+        size: "flexible",
+        appearance: "interaction-only",
+        action: "contact"
+      });
+    } catch (err) {}
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    if (String(data.get("website") || "").trim() || String(data.get("company") || "").trim()) {
+      form.reset();
+      setStatus("success", "contact.form.success");
+      return;
+    }
+
+    const payload = {
+      name: String(data.get("name") || "").trim(),
+      email: String(data.get("email") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
+      message: String(data.get("message") || "").trim(),
+      started: startedAt,
+      turnstileToken: String(data.get("cf-turnstile-response") || "")
+    };
+
+    if (
+      payload.name.length < 2 ||
+      !payload.email ||
+      payload.message.length < 10 ||
+      !form.checkValidity()
+    ) {
+      form.reportValidity();
+      setStatus("error", "contact.form.invalid");
+      return;
+    }
+
+    const originalLabel = submitLabel ? submitLabel.innerHTML : "";
+    if (submit) submit.disabled = true;
+    if (submitLabel) submitLabel.textContent = dict()["contact.form.sending"] || "Enviando…";
+    setStatus("", "");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok || !body.ok) throw Object.assign(new Error(body.error || "send_failed"), { res, body });
+      form.reset();
+      resetTurnstile();
+      setStatus("success", "contact.form.success");
+    } catch (err) {
+      setStatus("error", errorKey(err && err.res, err && err.body));
+      resetTurnstile();
+    } finally {
+      if (submit) submit.disabled = false;
+      if (submitLabel) submitLabel.innerHTML = originalLabel || dict()["contact.form.submit"];
+      if (window.lucide) window.lucide.createIcons();
+    }
+  });
+
+  setupTurnstile();
+}
+
+function loadTurnstile() {
+  if (window.turnstile) return Promise.resolve();
+  if (window.__brusanTurnstileLoader) return window.__brusanTurnstileLoader;
+  window.__brusanTurnstileLoader = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+  return window.__brusanTurnstileLoader;
+}
 
 function initWorkLightbox() {
   const box = document.querySelector(".work-lightbox");

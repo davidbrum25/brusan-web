@@ -1,0 +1,9 @@
+{
+  "name": "brusan-web",
+  "pages_build_output_dir": ".",
+  "compatibility_date": "2026-05-03",
+  "vars": {
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAEdGH2TxUfpbm1pV",
+    "CF_ACCOUNT_ID": "73a70fae3dae5772486f0852dbd8a0b8"
+  }
+}
