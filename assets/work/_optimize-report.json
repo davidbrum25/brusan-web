@@ -1,0 +1,1289 @@
+[
+  {
+    "src": "el_pulpo_negro/3D Model/3DViewport_Sculpt.png",
+    "dst": "assets/work/el-pulpo-negro/3d-model/3dviewport-sculpt.webp",
+    "kind": "image",
+    "src_bytes": 996664,
+    "dst_bytes": 65262,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "el_pulpo_negro/3D Model/timelapse_3D_sculpt.mp4",
+    "dst": "assets/work/el-pulpo-negro/3d-model/timelapse-3d-sculpt.mp4",
+    "kind": "video",
+    "src_bytes": 177346459,
+    "dst_bytes": 150575038,
+    "pages_ok": false,
+    "ok": true
+  },
+  {
+    "src": "el_pulpo_negro/elpulponegro_reel.mp4",
+    "dst": "assets/work/el-pulpo-negro/elpulponegro-reel.mp4",
+    "kind": "video",
+    "src_bytes": 41533948,
+    "dst_bytes": 12183251,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "el_pulpo_negro/socials/social_post_01.jpg",
+    "dst": "assets/work/el-pulpo-negro/socials/social-post-01.webp",
+    "kind": "image",
+    "src_bytes": 1273482,
+    "dst_bytes": 316820,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "el_pulpo_negro/socials/social_post_02.jpg",
+    "dst": "assets/work/el-pulpo-negro/socials/social-post-02.webp",
+    "kind": "image",
+    "src_bytes": 457785,
+    "dst_bytes": 200764,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "el_pulpo_negro/socials/social_post_03.png",
+    "dst": "assets/work/el-pulpo-negro/socials/social-post-03.webp",
+    "kind": "image",
+    "src_bytes": 6924341,
+    "dst_bytes": 91704,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/18-11-27_Estelares_Usted.mp4",
+    "dst": "assets/work/estelares/music-clip/18-11-27-estelares-usted.mp4",
+    "kind": "video",
+    "src_bytes": 708340065,
+    "dst_bytes": 91488506,
+    "pages_ok": false,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/stills_01.png",
+    "dst": "assets/work/estelares/music-clip/stills-01.webp",
+    "kind": "image",
+    "src_bytes": 1397578,
+    "dst_bytes": 59366,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/stills_02.png",
+    "dst": "assets/work/estelares/music-clip/stills-02.webp",
+    "kind": "image",
+    "src_bytes": 1246097,
+    "dst_bytes": 52426,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/stills_03.png",
+    "dst": "assets/work/estelares/music-clip/stills-03.webp",
+    "kind": "image",
+    "src_bytes": 1202889,
+    "dst_bytes": 38476,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/stills_04.png",
+    "dst": "assets/work/estelares/music-clip/stills-04.webp",
+    "kind": "image",
+    "src_bytes": 2049951,
+    "dst_bytes": 91764,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/stills_05.png",
+    "dst": "assets/work/estelares/music-clip/stills-05.webp",
+    "kind": "image",
+    "src_bytes": 2363516,
+    "dst_bytes": 55852,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/stills_06.png",
+    "dst": "assets/work/estelares/music-clip/stills-06.webp",
+    "kind": "image",
+    "src_bytes": 1424544,
+    "dst_bytes": 39652,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/stills_07.png",
+    "dst": "assets/work/estelares/music-clip/stills-07.webp",
+    "kind": "image",
+    "src_bytes": 1280196,
+    "dst_bytes": 64812,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "estelares/music clip/storyboard.jpg",
+    "dst": "assets/work/estelares/music-clip/storyboard.webp",
+    "kind": "image",
+    "src_bytes": 3606076,
+    "dst_bytes": 178044,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/007.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/007.webp",
+    "kind": "image",
+    "src_bytes": 1673922,
+    "dst_bytes": 837500,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/00_Tapa.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/00-tapa.webp",
+    "kind": "image",
+    "src_bytes": 804042,
+    "dst_bytes": 330572,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/4-5_Estadio.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/4-5-estadio.webp",
+    "kind": "image",
+    "src_bytes": 713522,
+    "dst_bytes": 291498,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/5_y_48_La_Plata_-_821.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/5-y-48-la-plata-821.webp",
+    "kind": "image",
+    "src_bytes": 702199,
+    "dst_bytes": 164038,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/62-63_Catedral-Estadio.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/62-63-catedral-estadio.webp",
+    "kind": "image",
+    "src_bytes": 614849,
+    "dst_bytes": 214740,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/624.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/624.webp",
+    "kind": "image",
+    "src_bytes": 1824359,
+    "dst_bytes": 989380,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/678.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/678.webp",
+    "kind": "image",
+    "src_bytes": 1574442,
+    "dst_bytes": 479468,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/714.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/714.webp",
+    "kind": "image",
+    "src_bytes": 1676743,
+    "dst_bytes": 566602,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/8-9_Dardo_Rocha.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/8-9-dardo-rocha.webp",
+    "kind": "image",
+    "src_bytes": 977574,
+    "dst_bytes": 390454,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/898.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/898.webp",
+    "kind": "image",
+    "src_bytes": 1516497,
+    "dst_bytes": 704096,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/950.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/950.webp",
+    "kind": "image",
+    "src_bytes": 1187912,
+    "dst_bytes": 572784,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/9_de_Julio_Capital_Federal_-_1077.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/9-de-julio-capital-federal-1077.webp",
+    "kind": "image",
+    "src_bytes": 753247,
+    "dst_bytes": 282754,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/9_de_Julio_Capital_Federal_-_1108.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/9-de-julio-capital-federal-1108.webp",
+    "kind": "image",
+    "src_bytes": 615519,
+    "dst_bytes": 266064,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/9_de_Julio_Edificio_tal_-_1067.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/9-de-julio-edificio-tal-1067.webp",
+    "kind": "image",
+    "src_bytes": 975200,
+    "dst_bytes": 382024,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/Costanera_Parque_de_la_Memoria_-_1198.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/costanera-parque-de-la-memoria-1198.webp",
+    "kind": "image",
+    "src_bytes": 655967,
+    "dst_bytes": 274928,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/DAV_2211_piria.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/dav-2211-piria.webp",
+    "kind": "image",
+    "src_bytes": 810199,
+    "dst_bytes": 368406,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/DAV_2298_hipodromo.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/dav-2298-hipodromo.webp",
+    "kind": "image",
+    "src_bytes": 866059,
+    "dst_bytes": 398674,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/DAV_2325_biblioteca.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/dav-2325-biblioteca.webp",
+    "kind": "image",
+    "src_bytes": 525206,
+    "dst_bytes": 171738,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/DAV_2347_building.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/dav-2347-building.webp",
+    "kind": "image",
+    "src_bytes": 397144,
+    "dst_bytes": 119538,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/DAV_2369_villa-elisa.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/dav-2369-villa-elisa.webp",
+    "kind": "image",
+    "src_bytes": 382333,
+    "dst_bytes": 117610,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/DAV_2392_citybell.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/dav-2392-citybell.webp",
+    "kind": "image",
+    "src_bytes": 1283675,
+    "dst_bytes": 691146,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/Fuente_no_se_que_La_PLata_-_1055.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/fuente-no-se-que-la-plata-1055.webp",
+    "kind": "image",
+    "src_bytes": 953105,
+    "dst_bytes": 352686,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/Parque_de_la_Memoria_-_1212.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/parque-de-la-memoria-1212.webp",
+    "kind": "image",
+    "src_bytes": 691495,
+    "dst_bytes": 326756,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/Parque_de_la_Memoria_Capital_Federal_-_1175.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/parque-de-la-memoria-capital-federal-1175.webp",
+    "kind": "image",
+    "src_bytes": 706707,
+    "dst_bytes": 167004,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/Teatro_Argentino_La_Plata_-_842.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/teatro-argentino-la-plata-842.webp",
+    "kind": "image",
+    "src_bytes": 980389,
+    "dst_bytes": 381796,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "fotografia/La_Plata_area/Teatro_Malba_Capital_Federal_-_1132.jpg",
+    "dst": "assets/work/fotografia/la-plata-area/teatro-malba-capital-federal-1132.webp",
+    "kind": "image",
+    "src_bytes": 928798,
+    "dst_bytes": 323732,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DBackground_music_clip/scene_final.mp4",
+    "dst": "assets/work/model-showcase/3dbackground-music-clip/scene-final.mp4",
+    "kind": "video",
+    "src_bytes": 1666618,
+    "dst_bytes": 1268753,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DBackground_music_clip/scene_wip.mp4",
+    "dst": "assets/work/model-showcase/3dbackground-music-clip/scene-wip.mp4",
+    "kind": "video",
+    "src_bytes": 776053,
+    "dst_bytes": 655407,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DBackground_music_clip/screen_blender_process_01.png",
+    "dst": "assets/work/model-showcase/3dbackground-music-clip/screen-blender-process-01.webp",
+    "kind": "image",
+    "src_bytes": 4161376,
+    "dst_bytes": 148692,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DBackground_music_clip/screen_blender_process_02.png",
+    "dst": "assets/work/model-showcase/3dbackground-music-clip/screen-blender-process-02.webp",
+    "kind": "image",
+    "src_bytes": 7212796,
+    "dst_bytes": 221758,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DBackground_music_clip/screen_blender_process_03.png",
+    "dst": "assets/work/model-showcase/3dbackground-music-clip/screen-blender-process-03.webp",
+    "kind": "image",
+    "src_bytes": 6158880,
+    "dst_bytes": 131672,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DBackground_music_clip/stills_01.png",
+    "dst": "assets/work/model-showcase/3dbackground-music-clip/stills-01.webp",
+    "kind": "image",
+    "src_bytes": 2825509,
+    "dst_bytes": 140106,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DBackground_music_clip/stills_02.png",
+    "dst": "assets/work/model-showcase/3dbackground-music-clip/stills-02.webp",
+    "kind": "image",
+    "src_bytes": 2845663,
+    "dst_bytes": 174362,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DBackground_music_clip/wip_process.mp4",
+    "dst": "assets/work/model-showcase/3dbackground-music-clip/wip-process.mp4",
+    "kind": "video",
+    "src_bytes": 5620906,
+    "dst_bytes": 6772941,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/2.b.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/2.b.webp",
+    "kind": "image",
+    "src_bytes": 4294569,
+    "dst_bytes": 63252,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/2.c.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/2.c.webp",
+    "kind": "image",
+    "src_bytes": 4494706,
+    "dst_bytes": 88702,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/2.d.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/2.d.webp",
+    "kind": "image",
+    "src_bytes": 4400694,
+    "dst_bytes": 79486,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/22-06-27_BoxBike.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/22-06-27-boxbike.webp",
+    "kind": "image",
+    "src_bytes": 2360478,
+    "dst_bytes": 58594,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/capture.mp4",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/capture.mp4",
+    "kind": "video",
+    "src_bytes": 4676972,
+    "dst_bytes": 1549797,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/ins_a.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/ins-a.webp",
+    "kind": "image",
+    "src_bytes": 1315372,
+    "dst_bytes": 50464,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/ins_b.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/ins-b.webp",
+    "kind": "image",
+    "src_bytes": 1320269,
+    "dst_bytes": 44120,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/ins_c.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/ins-c.webp",
+    "kind": "image",
+    "src_bytes": 1293349,
+    "dst_bytes": 54844,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/long.a.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/long.a.webp",
+    "kind": "image",
+    "src_bytes": 3567337,
+    "dst_bytes": 37222,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/long.b.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/long.b.webp",
+    "kind": "image",
+    "src_bytes": 4140080,
+    "dst_bytes": 73060,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_1.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-1.webp",
+    "kind": "image",
+    "src_bytes": 2505978,
+    "dst_bytes": 151010,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_2.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-2.webp",
+    "kind": "image",
+    "src_bytes": 2201857,
+    "dst_bytes": 117212,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_3.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-3.webp",
+    "kind": "image",
+    "src_bytes": 2095106,
+    "dst_bytes": 107352,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_4.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-4.webp",
+    "kind": "image",
+    "src_bytes": 2018432,
+    "dst_bytes": 103086,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_5.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-5.webp",
+    "kind": "image",
+    "src_bytes": 1564357,
+    "dst_bytes": 47184,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_6.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-6.webp",
+    "kind": "image",
+    "src_bytes": 2132830,
+    "dst_bytes": 119506,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_7.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-7.webp",
+    "kind": "image",
+    "src_bytes": 1760058,
+    "dst_bytes": 67550,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_8.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-8.webp",
+    "kind": "image",
+    "src_bytes": 416667,
+    "dst_bytes": 44988,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "model_showcase/3DModel_Box_Bike/screen_9.png",
+    "dst": "assets/work/model-showcase/3dmodel-box-bike/screen-9.webp",
+    "kind": "image",
+    "src_bytes": 163569,
+    "dst_bytes": 22838,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/3D Viewport.png",
+    "dst": "assets/work/nonpalidece/3d-viewport.webp",
+    "kind": "image",
+    "src_bytes": 1363078,
+    "dst_bytes": 168720,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/music clip/Ponto de Equilibrio & Nonpalidece - Sou Latino.mp4",
+    "dst": "assets/work/nonpalidece/music-clip/ponto-de-equilibrio-and-nonpalidece-sou-latino.mp4",
+    "kind": "video",
+    "src_bytes": 581983958,
+    "dst_bytes": 190734378,
+    "pages_ok": false,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/reels/social_reels_01.mp4",
+    "dst": "assets/work/nonpalidece/reels/social-reels-01.mp4",
+    "kind": "video",
+    "src_bytes": 24956577,
+    "dst_bytes": 6955200,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/reels/social_reels_02.mp4",
+    "dst": "assets/work/nonpalidece/reels/social-reels-02.mp4",
+    "kind": "video",
+    "src_bytes": 28315181,
+    "dst_bytes": 8117700,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/reels/social_reels_03.mp4",
+    "dst": "assets/work/nonpalidece/reels/social-reels-03.mp4",
+    "kind": "video",
+    "src_bytes": 39737681,
+    "dst_bytes": 11235234,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/stills_01.png",
+    "dst": "assets/work/nonpalidece/stills-01.webp",
+    "kind": "image",
+    "src_bytes": 1524989,
+    "dst_bytes": 57916,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/stills_02.png",
+    "dst": "assets/work/nonpalidece/stills-02.webp",
+    "kind": "image",
+    "src_bytes": 1908831,
+    "dst_bytes": 75076,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/stills_03.png",
+    "dst": "assets/work/nonpalidece/stills-03.webp",
+    "kind": "image",
+    "src_bytes": 2256845,
+    "dst_bytes": 99400,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "nonpalidece/timelapse_3D/19-04-19_Nonpalidece_Timelapse.mp4",
+    "dst": "assets/work/nonpalidece/timelapse-3d/19-04-19-nonpalidece-timelapse.mp4",
+    "kind": "video",
+    "src_bytes": 329045689,
+    "dst_bytes": 95919947,
+    "pages_ok": false,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/_stills/001.jpeg",
+    "dst": "assets/work/product-showcase/alfajor-argentino/stills/001.webp",
+    "kind": "image",
+    "src_bytes": 2090802,
+    "dst_bytes": 55222,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/_stills/002.jpeg",
+    "dst": "assets/work/product-showcase/alfajor-argentino/stills/002.webp",
+    "kind": "image",
+    "src_bytes": 2493433,
+    "dst_bytes": 191980,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/_stills/003.jpeg",
+    "dst": "assets/work/product-showcase/alfajor-argentino/stills/003.webp",
+    "kind": "image",
+    "src_bytes": 825373,
+    "dst_bytes": 128218,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/_stills/004.jpeg",
+    "dst": "assets/work/product-showcase/alfajor-argentino/stills/004.webp",
+    "kind": "image",
+    "src_bytes": 2709325,
+    "dst_bytes": 225866,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/_stills/005.jpeg",
+    "dst": "assets/work/product-showcase/alfajor-argentino/stills/005.webp",
+    "kind": "image",
+    "src_bytes": 2453173,
+    "dst_bytes": 160428,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/_stills/006.jpeg",
+    "dst": "assets/work/product-showcase/alfajor-argentino/stills/006.webp",
+    "kind": "image",
+    "src_bytes": 2943115,
+    "dst_bytes": 251316,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/_stills/007.jpeg",
+    "dst": "assets/work/product-showcase/alfajor-argentino/stills/007.webp",
+    "kind": "image",
+    "src_bytes": 1790215,
+    "dst_bytes": 66902,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/_stills/008.png",
+    "dst": "assets/work/product-showcase/alfajor-argentino/stills/008.webp",
+    "kind": "image",
+    "src_bytes": 2277859,
+    "dst_bytes": 69748,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/bdvd_DC_003.alfajor.breakdown.mp4",
+    "dst": "assets/work/product-showcase/alfajor-argentino/bdvd-dc-003.alfajor.breakdown.mp4",
+    "kind": "video",
+    "src_bytes": 4373089,
+    "dst_bytes": 3160275,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/alfajor_argentino/bdvd_DC_003.alfajor.mp4",
+    "dst": "assets/work/product-showcase/alfajor-argentino/bdvd-dc-003.alfajor.mp4",
+    "kind": "video",
+    "src_bytes": 6813409,
+    "dst_bytes": 5985522,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/Frame_1__Extreme_close-up_of_202606061400.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/frame-1-extreme-close-up-of-202606061400.webp",
+    "kind": "image",
+    "src_bytes": 3078161,
+    "dst_bytes": 244602,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/Frame_2__A_smooth,_elastic_202606061400.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/frame-2-a-smooth-elastic-202606061400.webp",
+    "kind": "image",
+    "src_bytes": 1994335,
+    "dst_bytes": 24276,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/Frame_3__A_thin,_perfect_202606061400.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/frame-3-a-thin-perfect-202606061400.webp",
+    "kind": "image",
+    "src_bytes": 2826833,
+    "dst_bytes": 187746,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/Frame_5__Extreme_close-up_of_202606061400.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/frame-5-extreme-close-up-of-202606061400.webp",
+    "kind": "image",
+    "src_bytes": 2470278,
+    "dst_bytes": 136420,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/Frame_6__Close-up_of_the_202606061400.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/frame-6-close-up-of-the-202606061400.webp",
+    "kind": "image",
+    "src_bytes": 2659030,
+    "dst_bytes": 152422,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/Frame_7__A_finished_raw_202606061400.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/frame-7-a-finished-raw-202606061400.webp",
+    "kind": "image",
+    "src_bytes": 2194267,
+    "dst_bytes": 43776,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/Frame_8__Extreme_close-up_of_202606061400.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/frame-8-extreme-close-up-of-202606061400.webp",
+    "kind": "image",
+    "src_bytes": 3197808,
+    "dst_bytes": 150028,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/Top-down_overhead_view_of_the_202606061409.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/top-down-overhead-view-of-the-202606061409.webp",
+    "kind": "image",
+    "src_bytes": 2455282,
+    "dst_bytes": 202660,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/remove_the_table,_the_ground_202606061413.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/remove-the-table-the-ground-202606061413.webp",
+    "kind": "image",
+    "src_bytes": 2473348,
+    "dst_bytes": 192108,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/_stills/remove_the_table,_the_ground_202606061415.jpeg",
+    "dst": "assets/work/product-showcase/empanada-criolla/stills/remove-the-table-the-ground-202606061415.webp",
+    "kind": "image",
+    "src_bytes": 2460738,
+    "dst_bytes": 190018,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/bdvd_DC_001.empanadas.Breakdown.mp4",
+    "dst": "assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.breakdown.mp4",
+    "kind": "video",
+    "src_bytes": 4764403,
+    "dst_bytes": 3208380,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/empanada_criolla/bdvd_DC_001.empanadas.mp4",
+    "dst": "assets/work/product-showcase/empanada-criolla/bdvd-dc-001.empanadas.mp4",
+    "kind": "video",
+    "src_bytes": 7530576,
+    "dst_bytes": 6092081,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/veganis/Veganis_169_Rosa_short.mp4",
+    "dst": "assets/work/product-showcase/veganis/veganis-169-rosa-short.mp4",
+    "kind": "video",
+    "src_bytes": 14207994,
+    "dst_bytes": 3156024,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/veganis/stills/PNG_Rosa.png",
+    "dst": "assets/work/product-showcase/veganis/stills/png-rosa.webp",
+    "kind": "image",
+    "src_bytes": 3808175,
+    "dst_bytes": 96220,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/veganis/stills/PNG_Rosa_hojas.png",
+    "dst": "assets/work/product-showcase/veganis/stills/png-rosa-hojas.webp",
+    "kind": "image",
+    "src_bytes": 2642082,
+    "dst_bytes": 43110,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/veganis/stills/PNG_Verde.png",
+    "dst": "assets/work/product-showcase/veganis/stills/png-verde.webp",
+    "kind": "image",
+    "src_bytes": 4111148,
+    "dst_bytes": 132844,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "product_showcase/veganis/stills/PNG_Verde_hojas.png",
+    "dst": "assets/work/product-showcase/veganis/stills/png-verde-hojas.webp",
+    "kind": "image",
+    "src_bytes": 3080137,
+    "dst_bytes": 74372,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/Radio Cantilo FULL-07.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/radio-cantilo-full-07.webp",
+    "kind": "image",
+    "src_bytes": 1988900,
+    "dst_bytes": 136156,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/Radio Cantilo FULL-09.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/radio-cantilo-full-09.webp",
+    "kind": "image",
+    "src_bytes": 876100,
+    "dst_bytes": 48264,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/Radio Cantilo FULL-10.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/radio-cantilo-full-10.webp",
+    "kind": "image",
+    "src_bytes": 1825152,
+    "dst_bytes": 96998,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/grok-3c1314b1-617e-4c8a-8506-db68766c6fec.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/grok-3c1314b1-617e-4c8a-8506-db68766c6fec.webp",
+    "kind": "image",
+    "src_bytes": 520412,
+    "dst_bytes": 151020,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/grok-3f807d9b-934a-4658-9855-f0ae255f2417.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/grok-3f807d9b-934a-4658-9855-f0ae255f2417.webp",
+    "kind": "image",
+    "src_bytes": 783870,
+    "dst_bytes": 304376,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/grok-464e6094-0b86-4390-94eb-89afa4419866.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/grok-464e6094-0b86-4390-94eb-89afa4419866.webp",
+    "kind": "image",
+    "src_bytes": 708403,
+    "dst_bytes": 253536,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/grok-54d1fae3-1e20-4297-a0a0-57a3da9929c2.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/grok-54d1fae3-1e20-4297-a0a0-57a3da9929c2.webp",
+    "kind": "image",
+    "src_bytes": 596879,
+    "dst_bytes": 184972,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/grok-a45bc15d-56f9-46f0-8989-fb3ac1277297.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/grok-a45bc15d-56f9-46f0-8989-fb3ac1277297.webp",
+    "kind": "image",
+    "src_bytes": 588469,
+    "dst_bytes": 188718,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/archviz/grok-b25a0836-20dd-4bf1-b385-920d1de76f4b.jpg",
+    "dst": "assets/work/radiocantilo.com/archviz/grok-b25a0836-20dd-4bf1-b385-920d1de76f4b.webp",
+    "kind": "image",
+    "src_bytes": 591104,
+    "dst_bytes": 186022,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/branding/radiocantilo_branding.pdf",
+    "dst": "assets/work/radiocantilo.com/branding/radiocantilo-branding.pdf",
+    "kind": "pdf",
+    "src_bytes": 500660,
+    "dst_bytes": 500660,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/branding/radiocantilo_logo.png",
+    "dst": "assets/work/radiocantilo.com/branding/radiocantilo-logo.webp",
+    "kind": "image",
+    "src_bytes": 252292,
+    "dst_bytes": 63552,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "radiocantilo.com/social_reel_logo.mp4",
+    "dst": "assets/work/radiocantilo.com/social-reel-logo.mp4",
+    "kind": "video",
+    "src_bytes": 3700405,
+    "dst_bytes": 247020,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/mockups_search/Todas.png",
+    "dst": "assets/work/sybi.la/branding/mockups-search/todas.webp",
+    "kind": "image",
+    "src_bytes": 149360,
+    "dst_bytes": 38196,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/mockups_search/g1284.png",
+    "dst": "assets/work/sybi.la/branding/mockups-search/g1284.webp",
+    "kind": "image",
+    "src_bytes": 45679,
+    "dst_bytes": 18006,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/mockups_search/g1298.png",
+    "dst": "assets/work/sybi.la/branding/mockups-search/g1298.webp",
+    "kind": "image",
+    "src_bytes": 45855,
+    "dst_bytes": 17818,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/mockups_search/g1312.png",
+    "dst": "assets/work/sybi.la/branding/mockups-search/g1312.webp",
+    "kind": "image",
+    "src_bytes": 28390,
+    "dst_bytes": 11184,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/mockups_search/g1328.png",
+    "dst": "assets/work/sybi.la/branding/mockups-search/g1328.webp",
+    "kind": "image",
+    "src_bytes": 21310,
+    "dst_bytes": 8940,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/mockups_search/g1341.png",
+    "dst": "assets/work/sybi.la/branding/mockups-search/g1341.webp",
+    "kind": "image",
+    "src_bytes": 21219,
+    "dst_bytes": 9206,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/mockups_search/g1348.png",
+    "dst": "assets/work/sybi.la/branding/mockups-search/g1348.webp",
+    "kind": "image",
+    "src_bytes": 27289,
+    "dst_bytes": 10840,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/sybila_logo.png",
+    "dst": "assets/work/sybi.la/branding/sybila-logo.webp",
+    "kind": "image",
+    "src_bytes": 51983,
+    "dst_bytes": 21060,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/sybila_logo_alt.png",
+    "dst": "assets/work/sybi.la/branding/sybila-logo-alt.webp",
+    "kind": "image",
+    "src_bytes": 49077,
+    "dst_bytes": 25864,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybi.la/branding/sybila_mm.png",
+    "dst": "assets/work/sybi.la/branding/sybila-mm.webp",
+    "kind": "image",
+    "src_bytes": 281715,
+    "dst_bytes": 55742,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybpro.tv/branding/1.png",
+    "dst": "assets/work/sybpro.tv/branding/1.webp",
+    "kind": "image",
+    "src_bytes": 71861,
+    "dst_bytes": 9496,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybpro.tv/branding/2.png",
+    "dst": "assets/work/sybpro.tv/branding/2.webp",
+    "kind": "image",
+    "src_bytes": 66356,
+    "dst_bytes": 23184,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybpro.tv/branding/3.png",
+    "dst": "assets/work/sybpro.tv/branding/3.webp",
+    "kind": "image",
+    "src_bytes": 46184,
+    "dst_bytes": 17556,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybpro.tv/branding/4.png",
+    "dst": "assets/work/sybpro.tv/branding/4.webp",
+    "kind": "image",
+    "src_bytes": 114844,
+    "dst_bytes": 30272,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybpro.tv/branding/5.png",
+    "dst": "assets/work/sybpro.tv/branding/5.webp",
+    "kind": "image",
+    "src_bytes": 52236,
+    "dst_bytes": 11748,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "sybpro.tv/reel/sybproTV_Ad1.mp4",
+    "dst": "assets/work/sybpro.tv/reel/sybprotv-ad1.mp4",
+    "kind": "video",
+    "src_bytes": 5432728,
+    "dst_bytes": 6615337,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viaje_a_lo_inesperado/branding_manual-de-marca.pdf",
+    "dst": "assets/work/viaje-a-lo-inesperado/branding-manual-de-marca.pdf",
+    "kind": "pdf",
+    "src_bytes": 420931,
+    "dst_bytes": 420931,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viaje_a_lo_inesperado/reels/18-04-03_VAI-Clip_1.mp4",
+    "dst": "assets/work/viaje-a-lo-inesperado/reels/18-04-03-vai-clip-1.mp4",
+    "kind": "video",
+    "src_bytes": 29533607,
+    "dst_bytes": 21498817,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viaje_a_lo_inesperado/reels/18-04-03_VAI-Clip_2.mp4",
+    "dst": "assets/work/viaje-a-lo-inesperado/reels/18-04-03-vai-clip-2.mp4",
+    "kind": "video",
+    "src_bytes": 14889784,
+    "dst_bytes": 3813804,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viaje_a_lo_inesperado/reels/18-04-19_VAI-Clip_4-SONIDO.mp4",
+    "dst": "assets/work/viaje-a-lo-inesperado/reels/18-04-19-vai-clip-4-sonido.mp4",
+    "kind": "video",
+    "src_bytes": 26082274,
+    "dst_bytes": 8239197,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viaje_a_lo_inesperado/reels/VAI-Logo_animado-FULL-ALPHA.mp4",
+    "dst": "assets/work/viaje-a-lo-inesperado/reels/vai-logo-animado-full-alpha.mp4",
+    "kind": "video",
+    "src_bytes": 2182682,
+    "dst_bytes": 216731,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viajes_los_mellis/branding/1.jpg",
+    "dst": "assets/work/viajes-los-mellis/branding/1.webp",
+    "kind": "image",
+    "src_bytes": 170818,
+    "dst_bytes": 31936,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viajes_los_mellis/branding/2.jpg",
+    "dst": "assets/work/viajes-los-mellis/branding/2.webp",
+    "kind": "image",
+    "src_bytes": 851222,
+    "dst_bytes": 117470,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viajes_los_mellis/branding/3.jpg",
+    "dst": "assets/work/viajes-los-mellis/branding/3.webp",
+    "kind": "image",
+    "src_bytes": 146768,
+    "dst_bytes": 25566,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viajes_los_mellis/branding/4.jpg",
+    "dst": "assets/work/viajes-los-mellis/branding/4.webp",
+    "kind": "image",
+    "src_bytes": 316646,
+    "dst_bytes": 30776,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viajes_los_mellis/branding/5.jpg",
+    "dst": "assets/work/viajes-los-mellis/branding/5.webp",
+    "kind": "image",
+    "src_bytes": 186039,
+    "dst_bytes": 35030,
+    "pages_ok": true,
+    "ok": true
+  },
+  {
+    "src": "viajes_los_mellis/branding/6.jpg",
+    "dst": "assets/work/viajes-los-mellis/branding/6.webp",
+    "kind": "image",
+    "src_bytes": 928701,
+    "dst_bytes": 135220,
+    "pages_ok": true,
+    "ok": true
+  }
+]
