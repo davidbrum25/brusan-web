@@ -33,9 +33,9 @@
   /* Layout & Spacing */
   --max-width: 1380px;
   --header-height: 100vh;
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
   --radius-pill: 9999px;
 
   /* Motion & Easing */
@@ -100,7 +100,7 @@ textarea {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-surface);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   border: 2px solid var(--color-bg-dark);
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -333,7 +333,7 @@ img {
 .nav-badge .pulse-dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 0;
   background-color: var(--color-accent);
   box-shadow: 0 0 10px var(--color-accent);
   animation: pulse-glow 2s infinite ease-in-out;
@@ -610,7 +610,7 @@ img {
   width: 100%;
   height: 2px;
   background-color: var(--color-accent);
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow: 0 0 8px var(--color-accent);
 }
 
@@ -931,6 +931,7 @@ img {
 }
 
 .team-avatar-box {
+  position: relative;
   width: 130px;
   height: 130px;
   border-radius: var(--radius-md);
@@ -941,11 +942,23 @@ img {
 }
 
 .team-avatar-box img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: grayscale(80%) contrast(110%);
   transition: filter var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.team-avatar-box .team-avatar-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease, filter var(--transition-smooth), transform var(--transition-smooth);
+}
+
+.team-avatar-box:hover .team-avatar-hover {
+  opacity: 1;
 }
 
 .team-card:hover .team-avatar-box img {
@@ -1740,7 +1753,7 @@ img {
   max-width: min(1400px, 100%);
   max-height: 90vh;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .work-lightbox-close {
@@ -1954,7 +1967,7 @@ a.accordion-card {
   flex-wrap: nowrap;
   gap: clamp(0.55rem, 1.2vw, 1.5rem);
   padding: 0.6rem clamp(0.9rem, 1.8vw, 2rem);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: rgba(36, 32, 27, 0.8);
   border: 1px solid rgba(244, 241, 234, 0.1);
   font-size: 0.8rem;

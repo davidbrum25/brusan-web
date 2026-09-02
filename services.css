@@ -96,7 +96,7 @@
 .service-card {
   background: rgba(36, 32, 27, 0.55);
   border: 1px solid var(--color-border, rgba(244, 241, 234, 0.08));
-  border-radius: var(--radius-lg, 24px);
+  border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
@@ -112,7 +112,7 @@
 .service-icon {
   width: 42px;
   height: 42px;
-  border-radius: 10px;
+  border-radius: 0;
   background: rgba(212, 163, 89, 0.12);
   border: 1px solid rgba(212, 163, 89, 0.25);
   display: flex;
