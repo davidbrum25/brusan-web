@@ -21,10 +21,42 @@ PROJECTS = [
         "key": "qjmotor",
         "tag": "CGI · Cartelería",
         "title": "QJ Motor",
-        "desc": "Visualización de producto y vía pública para Fort 350.",
+        "desc": "Propuesta integral: reels, web, redes y vía pública para Fort 350.",
         "og_image": "assets/og/qjmotor.webp",
         "layout": "product",
         "sections": [
+            {
+                "title_key": "work.section.reels",
+                "title": "Reels",
+                "layout": "reels",
+                "media": [
+                    {"kind": "video", "src": "assets/work/qjmotor/reels/product-reveal-long.mp4", "poster": "assets/work/qjmotor/reels/product-reveal-long.webp", "portrait": True},
+                    {"kind": "video", "src": "assets/work/qjmotor/reels/product-reveal-short.mp4", "poster": "assets/work/qjmotor/reels/product-reveal-short.webp", "portrait": True},
+                ],
+            },
+            {
+                "title_key": "work.section.web",
+                "title": "Web",
+                "layout": "web",
+                "media": [
+                    {"kind": "image", "src": "assets/work/qjmotor/web/static-desktop-01.webp", "alt": "QJ Motor — propuesta web desktop", "contain": True},
+                    {"kind": "image", "src": "assets/work/qjmotor/web/static-mobile-01.webp", "alt": "QJ Motor — propuesta web mobile", "contain": True},
+                    {"kind": "image", "src": "assets/work/qjmotor/web/static-desktop-02.webp", "alt": "QJ Motor — propuesta web alternativa", "contain": True},
+                    {"kind": "image", "src": "assets/work/qjmotor/web/static-campaign.webp", "alt": "QJ Motor — pieza de campaña web", "contain": True},
+                    {"kind": "link", "href": "qjmotor-web.html", "label_key": "work.qjmotor.demo", "label": "Demo en vivo"},
+                ],
+            },
+            {
+                "title_key": "work.section.redes",
+                "title": "Redes",
+                "layout": "stories",
+                "media": [
+                    {"kind": "image", "src": "assets/work/qjmotor/redes/social-01.webp", "alt": "QJ Motor — pieza redes 01"},
+                    {"kind": "image", "src": "assets/work/qjmotor/redes/social-02.webp", "alt": "QJ Motor — pieza redes 02"},
+                    {"kind": "image", "src": "assets/work/qjmotor/redes/social-03.webp", "alt": "QJ Motor — pieza redes 03"},
+                    {"kind": "image", "src": "assets/work/qjmotor/redes/social-04.webp", "alt": "QJ Motor — pieza redes 04"},
+                ],
+            },
             {
                 "title_key": "work.section.product",
                 "title": "Product Showcase",
@@ -461,6 +493,14 @@ def render_media(item: dict) -> str:
         <i data-lucide="file-text"></i>
         <span>{item["label"]}</span>
       </a>'''
+    if kind == "link":
+        label = html.escape(item["label"])
+        label_key = item.get("label_key")
+        label_attr = f' data-i18n="{label_key}"' if label_key else ""
+        return f'''      <a class="work-file glass-pill work-demo-btn" href="{item["href"]}" target="_blank" rel="noopener">
+        <i data-lucide="external-link"></i>
+        <span{label_attr}>{label}</span>
+      </a>'''
     return f'''      <figure class="{class_attr}">
         <img src="{asset(item["src"])}" alt="{item.get("alt", "")}">
       </figure>'''
@@ -475,10 +515,11 @@ def render_gallery(project: dict) -> str:
             items = "\n".join(render_media(m) for m in section["media"])
             title = html.escape(section["title"])
             title_key = section["title_key"]
+            section_layout = section.get("layout", layout)
             blocks.append(
                 f'''      <section class="work-section">
         <h2 class="work-section-title" data-i18n="{title_key}">{title}</h2>
-        <div class="work-gallery work-gallery--{layout}">
+        <div class="work-gallery work-gallery--{section_layout}">
 {items}
         </div>
       </section>'''

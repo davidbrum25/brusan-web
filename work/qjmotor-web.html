@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QJ Motor · demo web · BRUSAN</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="canonical" href="https://brusan.ar/work/qjmotor"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#e5e2e1",
+                    "on-surface-variant": "#e5bdb7",
+                    "on-background": "#e5e2e1",
+                    "surface-container-highest": "#353534",
+                    "background": "#131313",
+                    "on-secondary-container": "#b7b5b4",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-primary-container": "#fff6f5",
+                    "surface": "#131313",
+                    "on-primary": "#690001",
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-error": "#690005",
+                    "surface-variant": "#353534",
+                    "on-secondary": "#313030",
+                    "surface-bright": "#393939",
+                    "secondary": "#c8c6c5",
+                    "tertiary": "#c8c6c5",
+                    "outline": "#ac8883",
+                    "surface-container": "#201f1f",
+                    "surface-tint": "#ffb4a8",
+                    "outline-variant": "#5c403b",
+                    "on-secondary-fixed-variant": "#474746",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#930002",
+                    "on-tertiary-container": "#faf7f6",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#e5e2e1",
+                    "secondary-container": "#474746",
+                    "primary-fixed": "#ffdad5",
+                    "surface-container-high": "#2a2a2a",
+                    "primary": "#ffb4a8",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "primary-container": "#d92d20",
+                    "error": "#ffb4ab",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary-fixed": "#410000",
+                    "surface-dim": "#131313",
+                    "tertiary-container": "#727171",
+                    "surface-container-lowest": "#0e0e0e",
+                    "inverse-primary": "#bc140d",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#303030"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "24px",
+                    "stack-lg": "48px",
+                    "stack-sm": "12px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-lg-mobile": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "headline-lg": ["Space Grotesk"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(to top, #131313 0%, transparent 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-dot {
+            box-shadow: 0 0 15px #d92d20;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<style>
+  .brusan-demo-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem 1.25rem;background:#121110;border-bottom:1px solid rgba(244,241,234,.12);font-family:"Plus Jakarta Sans",sans-serif;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#F4F1EA}
+  .brusan-demo-bar a{color:#D4A359;text-decoration:none;font-weight:700}
+  .brusan-demo-bar a:hover{color:#fff}
+  body{padding-top:42px}
+  header.fixed{top:42px}
+</style>
+<div class="brusan-demo-bar"><span>Propuesta BRUSAN · demo web</span><a href="qjmotor.html">← Volver a QJ Motor</a></div>
+
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-md border-b border-white/10">
+<div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="QJMOTOR logo" class="h-8 md:h-10" src="https://lh3.googleusercontent.com/aida/AP1WRLs2odd_AWnnFqNOc4w2Z3bezqi9UhIJUcDxMiVL0zRMvyK1w-VF1wVl05ydf8IaLMlIkxXtK1DWpb1Xdxo2jYIuC2DGL4ib_3cnEz4X7ocvSpppdIVrPsspDTbDD1e2oEzFUTyytPD691e-JKC-Us1u5mPkiOQwwCbZKwFz5cHgckLd4NIVtV7fQSEghXZJZJOhDUwGMHjQuHaKHwYJCb6vZYUKbCD6_mC0D9UsY3HlB5GIEfNCnDNq_sii"/>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#">Modelos</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors" href="#quienes-somos">¿Quiénes somos?</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors" href="#sucursales">Sucursales</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors" href="#cotizar">Contacto</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="bg-primary-container text-white px-6 py-2 font-headline-md text-[14px] hover:brightness-110 active:scale-95 transition-all" href="#cotizar">Cotizá tu QJ</a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Slider Section -->
+<section class="relative w-full h-[85vh] overflow-hidden group">
+<!-- Slide 1: SRT 800SX -->
+<div class="flex transition-transform duration-700 ease-out h-full" id="hero-slider" style="transform: translateX(0%);">
+<div class="min-w-full h-full relative flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="A high-end, professional studio photograph of the blue and white SRT 800SX adventure motorcycle. The lighting is dramatic and moody, emphasizing the sharp mechanical lines and the premium finish. The background is a dark, minimalist garage setting with subtle industrial textures. The overall atmosphere is powerful, precise, and sophisticated." src="../assets/work/qjmotor/web/header.webp"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 px-6 md:px-margin-desktop max-w-4xl">
+<span class="font-label-caps text-label-caps text-primary mb-4 block tracking-widest">NUEVO LANZAMIENTO</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 uppercase italic">SRT 800SX</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8">
+                            Motor Bicilíndrico 754 cc. Potencia 76,1 CV. Iluminación Full LED. Frenos Brembo ABS Bosch. Dashboard con pantalla TFT 7″ Multifunción.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary-container text-white px-10 py-4 font-headline-md text-[16px] hover:brightness-110 transition-all flex items-center gap-2" href="#cotizar">
+                                COTIZAR AHORA <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="glass-panel text-white px-10 py-4 font-headline-md text-[16px] hover:bg-white/10 transition-all" href="https://qjmotor.com.ar/wp-content/uploads/2024/06/Manual-de-Usuario-SRT-800S-SRT-800SX.pdf" target="_blank">
+                                FICHA TÉCNICA
+                            </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Slider Navigation -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+<button class="w-3 h-3 bg-primary rounded-full active-dot"></button>
+<button class="w-3 h-3 bg-white/20 rounded-full hover:bg-white/40 transition-colors"></button>
+<button class="w-3 h-3 bg-white/20 rounded-full hover:bg-white/40 transition-colors"></button>
+</div>
+<button class="absolute left-6 top-1/2 -translate-y-1/2 z-20 glass-panel p-4 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute right-6 top-1/2 -translate-y-1/2 z-20 glass-panel p-4 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</section>
+<!-- Our Models Grid -->
+<section class="py-stack-lg px-6 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<span class="font-label-caps text-label-caps text-primary">PORTFOLIO</span>
+<h2 class="font-headline-lg text-headline-lg text-white mt-2">Encuentra tu QJ</h2>
+</div>
+<div class="flex gap-4">
+<button class="font-label-caps text-label-caps text-primary border-b-2 border-primary">ADVENTURE</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-white transition-colors">STREET</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-white transition-colors">SCOOTER</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: SRT 700X -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all group overflow-hidden border border-white/5">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Dynamic shot of a black and red SRT 700X adventure motorcycle parked on a gravel mountain path at sunset. The warm orange light glints off the Marzocchi suspension components and the Brembo brake calipers. The motorcycle looks rugged, ready for extreme off-road performance in a premium technical aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT086LP3tHls_JBZp05uydHnUp_BhWiPUJjb0-vo72R5U1gZC7YhYNoS0EE3QW1ugt2gfwSsvsCgl_4e26or8c7e9yTPzThZg3b_n33bL5omyVEwH-hpSg6lTN6HZ4epozfWISUFiyKW7DjoEhKMU11UvHOEgjghiwSKx9MK7KJOgcsfFOLEYUAwdk-eBaZbuPM7ggHfA7lsW7CtIKtB9PjsjEqY-Q5vq-yTz4UA_P6ARX51vvzqGx4A')"></div>
+<div class="absolute top-4 right-4 bg-primary text-white font-label-caps text-[10px] px-2 py-1">POPULAR</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-white mb-2">SRT 700 X</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                            El equilibrio perfecto entre potencia, desempeño y precio. Con motor bicilíndrico de 698cc y suspensión Marzocchi.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">698 CC</span>
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">73.5 CV</span>
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">ABS BOSCH</span>
+</div>
+<a class="block w-full py-3 text-center border border-primary text-primary font-label-caps hover:bg-primary hover:text-white transition-all" href="#">VER FICHA TÉCNICA</a>
+</div>
+</div>
+<!-- Card 2: SRK 400 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all group overflow-hidden border border-white/5">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A studio photograph of the sleek, grey and black SRK 400 street motorcycle. The lighting creates sharp highlights on the tank and frame, showcasing its compact and aggressive urban design. The background is a clean, dark grey gradient that emphasizes the motorcycle's modern mechanical details and full LED lighting. High contrast, technical aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDH4vwLW0w3yrhd1-lfOo8BXEg7DdPJixzM6r4ucK7OoQwu3Zhf_yU8rtEXJgw6rLuE1VP6gXItjZF_u6gpOe51Ap3LYfv3I8OwvqRgzI9tOQHMPD_j1HcIG6-gNNjf_CECMH1WBgXPL_5nI1joPwEH3shIF9QFJJpEczlgLcVyHZTgoQcEDtDT6-jHVTuHWe4k3Paib9AqHxuJujunoAQRpe4FZI9fAk2zlHctynTtkqEtL7ET4fc3Sw')"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-white mb-2">SRK 400</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Motor Bicilíndrico 400 cc. Potencia 41 CV. Iluminación Full LED. Freno doble disco delantero.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">400 CC</span>
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">41 CV</span>
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">CARNET A2</span>
+</div>
+<a class="block w-full py-3 text-center border border-primary text-primary font-label-caps hover:bg-primary hover:text-white transition-all" href="#">VER FICHA TÉCNICA</a>
+</div>
+</div>
+<!-- Card 3: FORT 350 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all group overflow-hidden border border-white/5">
+<div class="relative h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="High-quality commercial image of the bronze-colored FORT 350 maxi-scooter in a modern urban plaza at night. The city lights reflect off the matte finish and the KYB suspension. The scooter is positioned dynamically, highlighting its comfortable ergonomics and advanced braking system. The mood is sophisticated, metropolitan, and technologically advanced." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqg6f5_b-LPNL2Q8M--ugAtFVBK6fBbtjVAQHITXv_62-T2H0D6xUek8MOe6eITV8w4wxJpMPTDls1oIUzsWOwv-6GBGX7wdOkIYOjM-gZVGng-x3isV_FC-_5w9GEd3AHJzUVvFnJJOQUt51e6YtMp0G57yRX1OWNTnI3wZCvZXfFENZcT6rJMg8JijP3u1GMUU2ei3IdBcZ2KfGtWE64N49L4cwL6Z4eW4zSd2n_jBiY8lHM-MILYQ')"></div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-white mb-2">FORT 350</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Monocilíndrico 4 válvulas, SOHC. Potencia 33,2 CV. Refrigeración líquida. Suspensiones KYB.
+                        </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">350 CC</span>
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">33.2 CV</span>
+<span class="bg-surface-bright text-on-surface font-label-caps text-[10px] px-3 py-1">MAXI SCOOTER</span>
+</div>
+<a class="block w-full py-3 text-center border border-primary text-primary font-label-caps hover:bg-primary hover:text-white transition-all" href="#">VER FICHA TÉCNICA</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Who We Are / Storytelling Section -->
+<section class="relative py-32 overflow-hidden" id="quienes-somos">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-fixed bg-center opacity-30" data-alt="A wide cinematic shot of two motorcyclists, a man and a woman in technical riding gear, standing next to their QJMOTOR adventure bikes under a concrete highway overpass. The scene is shot during twilight, with a moody, urban cinematic feel. The background architecture provides a structural, industrial frame to the composition. Dark tones dominate with subtle red accents from the bikes' LEDs." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaqthPKq32DI-nkmao7uNGupqQJEEZBkLaxDgRrkkd_RF8ncTXYHHnUPDoDSkWE4UI1iDY3VvXzIOyEFRobcPdeq-mGKzL0vksc8SBk6sC-Bz8Q0azXVQFPZpoyzr-kYpuhQz3QhSAHQBYPrf0Do6zTREavDx9LD1aSCGBwd-fhj5-y9Quh3OgGuRbLAVomaq9YyAO-Zo_ZwVmc42sM3BYmipConTgu0wOTPsz3K7PTkiX-gGEu46p4g')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 px-6 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">NUESTRA HISTORIA</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg text-white mb-8">Somos IGUALES A VOS!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed">
+                        Somos una gran familia, con más de 40 años de trayectoria y siempre en continuo crecimiento. Apasionados en la búsqueda de generar en VOS una experiencia única, inolvidable, de seguridad y confianza en tus decisiones de movilidad. Te ofrecemos todas las herramientas, posibilidades y servicios para que juntos podamos elegir tu próxima QJ.
+                    </p>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div>
+<div class="text-white font-headline-lg text-display-lg-mobile">+40</div>
+<div class="text-on-surface-variant font-label-caps">Años de Trayectoria</div>
+</div>
+<div>
+<div class="text-white font-headline-lg text-display-lg-mobile">100%</div>
+<div class="text-on-surface-variant font-label-caps">Pasión por Motos</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-4 text-primary font-headline-md hover:gap-6 transition-all" href="#cotizar">
+                        COTIZAR ONLINE <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Locations Section -->
+<section class="py-stack-lg bg-surface-container-lowest" id="sucursales">
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary">PRESENCIA</span>
+<h2 class="font-headline-lg text-headline-lg text-white mt-2">Tu QJ cada vez más cerca</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Gualeguaychú -->
+<div class="glass-panel p-8 rounded-none border-l-4 border-l-primary">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-white">Gualeguaychú</h3>
+<p class="text-primary font-label-caps text-[10px]">ENTRE RÍOS</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl">location_on</span>
+</div>
+<div class="space-y-6 mb-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">storefront</span>
+<div>
+<p class="font-label-caps text-on-surface text-[12px]">Punto de Venta y PostVenta</p>
+<p class="font-body-md text-on-surface-variant">Bvard Artigas 2530 (Acceso Sur)</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">engineering</span>
+<div>
+<p class="font-label-caps text-on-surface text-[12px]">PostVenta &amp; Repuestos</p>
+<p class="font-body-md text-on-surface-variant">Doello Jurado 672</p>
+</div>
+</div>
+</div>
+<a class="flex items-center justify-center gap-2 w-full py-4 bg-white/5 hover:bg-white/10 text-white font-label-caps transition-all" href="https://maps.app.goo.gl/DRBaf3QTnh8zeAA5A" target="_blank">
+                            VER EN GOOGLE MAPS <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+<!-- Escobar -->
+<div class="glass-panel p-8 rounded-none border-l-4 border-l-primary">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-white">Escobar</h3>
+<p class="text-primary font-label-caps text-[10px]">BUENOS AIRES</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl">location_on</span>
+</div>
+<div class="space-y-6 mb-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">storefront</span>
+<div>
+<p class="font-label-caps text-on-surface text-[12px]">Punto de Venta y PostVenta</p>
+<p class="font-body-md text-on-surface-variant">Int. O. Larghi 1390, B1625 Belén de Escobar</p>
+</div>
+</div>
+</div>
+<a class="flex items-center justify-center gap-2 w-full py-4 bg-white/5 hover:bg-white/10 text-white font-label-caps transition-all" href="https://maps.app.goo.gl/T5vHGfWDcV5yRQw99" target="_blank">
+                            VER EN GOOGLE MAPS <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote / Contact Form -->
+<section class="py-stack-lg relative" id="cotizar">
+
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="bg-surface-container-high p-8 md:p-16 border border-white/5 shadow-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<span class="font-label-caps text-label-caps text-primary">CONTACTO</span>
+<h2 class="font-headline-lg text-headline-lg text-white mt-2 mb-6 uppercase">Cotizá tu QJ</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                                Dejanos tus datos para que nuestros asesores se contacten y comiences tu próximo viaje con la mejor tecnología.
+                            </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-primary">phone_iphone</span>
+<span class="font-body-md">+54 9 11 2168 0862 (Escobar)</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-primary">phone_iphone</span>
+<span class="font-body-md">+54 9 3446 2000 84 (Gualeguaychú)</span>
+</div>
+</div>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-2">NOMBRE</label>
+<input class="w-full bg-background border-0 border-b border-white/30 text-white focus:ring-0 focus:border-primary transition-all p-3" placeholder="Tu nombre" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-2">APELLIDO</label>
+<input class="w-full bg-background border-0 border-b border-white/30 text-white focus:ring-0 focus:border-primary transition-all p-3" placeholder="Tu apellido" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-2">CELULAR</label>
+<input class="w-full bg-background border-0 border-b border-white/30 text-white focus:ring-0 focus:border-primary transition-all p-3" placeholder="+54..." type="tel"/>
+</div>
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-2">EMAIL</label>
+<input class="w-full bg-background border-0 border-b border-white/30 text-white focus:ring-0 focus:border-primary transition-all p-3" placeholder="correo@ejemplo.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-[10px] text-on-surface-variant mb-2">MODELO DE INTERÉS</label>
+<select class="w-full bg-background border-0 border-b border-white/30 text-white focus:ring-0 focus:border-primary transition-all p-3 appearance-none">
+<option>SRT 800SX</option>
+<option>SRT 700X</option>
+<option>SRK 400</option>
+<option>FORT 350</option>
+<option>SRV 300</option>
+</select>
+</div>
+<button class="w-full py-4 bg-primary-container text-white font-headline-md uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all" type="submit">
+                                COTIZAR ONLINE
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<img alt="QJMOTOR" class="h-10 mb-6 brightness-0 invert" src="https://lh3.googleusercontent.com/aida/AP1WRLs2odd_AWnnFqNOc4w2Z3bezqi9UhIJUcDxMiVL0zRMvyK1w-VF1wVl05ydf8IaLMlIkxXtK1DWpb1Xdxo2jYIuC2DGL4ib_3cnEz4X7ocvSpppdIVrPsspDTbDD1e2oEzFUTyytPD691e-JKC-Us1u5mPkiOQwwCbZKwFz5cHgckLd4NIVtV7fQSEghXZJZJOhDUwGMHjQuHaKHwYJCb6vZYUKbCD6_mC0D9UsY3HlB5GIEfNCnDNq_sii"/>
+<p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">
+                    Evolucionando el motociclismo con tecnología de vanguardia y diseño premium.
+                </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-white mb-6">NAVEGACIÓN</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Modelos</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#sucursales">Sucursales</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="https://wa.link/ge4ln3">Servicio Técnico</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Términos y Condiciones</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-white mb-6">POST VENTA</h4>
+<a class="flex items-center gap-3 bg-primary/10 text-primary p-4 border border-primary/20 hover:bg-primary/20 transition-all" href="https://wa.link/ge4ln3">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-caps">WhatsApp Post Venta</span>
+</a>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-white mb-6">NEWSLETTER</h4>
+<div class="flex border-b border-white/20">
+<input class="bg-transparent border-0 text-white focus:ring-0 p-2 w-full text-[14px]" placeholder="Email" type="text"/>
+<button class="text-primary p-2">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg px-6 md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">© 2024 QJMOTOR Argentina. Todos los derechos reservados.</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Desarrollado por Agencia Lader</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the slider
+        let currentSlide = 0;
+        const slider = document.getElementById('hero-slider');
+        const dots = document.querySelectorAll('.active-dot').length ? document.querySelectorAll('.active-dot') : null;
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 3;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Mouse move effect on glass panels
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', (e) => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                panel.style.setProperty('--mouse-x', `${x}px`);
+                panel.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

@@ -1671,6 +1671,62 @@ img {
   background: #000;
 }
 
+.work-gallery--reels {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+@media (min-width: 700px) {
+  .work-gallery--reels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.work-gallery--reels > .work-media--video.work-media--portrait {
+  grid-column: auto;
+  width: min(100%, calc(72vh * 9 / 16));
+  justify-self: center;
+}
+
+.work-gallery--stories {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 700px) {
+  .work-gallery--stories {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.work-gallery--stories > .work-media:not(.work-media--video) {
+  aspect-ratio: 9 / 16;
+}
+
+.work-gallery--web {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .work-gallery--web {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.work-gallery--web > .work-media:not(.work-media--video) {
+  aspect-ratio: 16 / 9;
+  background: #161412;
+}
+
+.work-gallery--web > .work-media img {
+  object-fit: contain;
+}
+
+.work-demo-btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 0.35rem;
+}
+
 .work-media--portrait video {
   width: 100%;
   height: 100%;
