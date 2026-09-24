@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema en uso · BRUSAN</title>
+  <meta name="description" content="Tablero del sistema visual que usa brusan.ar: Arena y Silicio, Outfit, Plus Jakarta Sans y los componentes del sitio.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://brusan.ar/design">
+  <link rel="icon" href="/assets/branding/brusan_favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/branding/brusan_apple-touch-icon.png">
+  <meta name="theme-color" content="#121110">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brusan.ar/design">
+  <meta property="og:title" content="Sistema en uso · BRUSAN">
+  <meta property="og:description" content="Tablero del sistema visual de brusan.ar.">
+  <meta property="og:image" content="https://brusan.ar/assets/og/default.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/services.css">
+  <link rel="stylesheet" href="/design.css">
+</head>
+<body class="design-page" data-keep-title="">
+
+  <header class="site-nav">
+    <div class="container site-nav-inner">
+      <a class="site-nav-logo" href="/" aria-label="BRUSAN inicio">
+        <img src="/assets/brusan_logo_blanco.svg" alt="BRUSAN">
+      </a>
+      <nav class="site-nav-links design-nav-links" aria-label="Secciones del sistema">
+        <a href="#color">Color</a>
+        <a href="#tipo">Tipo</a>
+        <a href="#logo">Logo</a>
+        <a href="#acciones">Acciones</a>
+        <a href="#navegacion">Navegación</a>
+        <a href="#tarjetas">Tarjetas</a>
+        <a href="#formularios">Formularios</a>
+        <a href="#estados">Estados</a>
+        <a href="#contenido">Contenido</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="nav-icon-btn" href="https://www.instagram.com/brusan.ar/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i data-lucide="instagram"></i>
+        </a>
+        <button class="lang-toggle-btn" id="lang-toggle-btn" type="button" aria-label="Cambiar idioma / Switch language">
+          <i data-lucide="globe"></i>
+          <span id="lang-label">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="design-hero" id="hero">
+    <div class="design-hero-grain" aria-hidden="true"></div>
+    <div class="container nav-badge"><span class="pulse-dot"></span> Contenido, desarrollo y diseño web/app</div>
+    <div class="design-hero-center">
+      <img src="/assets/brusan_logo_blanco.svg" alt="BRUSAN">
+    </div>
+    <div class="container design-hero-bar">
+      <p class="hero-tagline">Conectamos tu <strong>producto</strong> con su audiencia</p>
+      <div class="hero-actions">
+        <a class="glass-pill" href="#tarjetas" data-magnetic data-magnetic-distance="120" data-magnetic-strength="0.5">mira nuestro portfolio <i data-lucide="briefcase"></i></a>
+        <a class="glass-pill secondary" href="#formularios" data-magnetic data-magnetic-distance="120" data-magnetic-strength="0.5">nos queres contactar? <i data-lucide="message-circle"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="design-section" id="color">
+      <div class="container">
+        <p class="design-kicker">Arena &amp; Silicio</p>
+        <h2 class="services-header"><span>la <strong>paleta</strong></span> <i data-lucide="palette"></i></h2>
+        <p class="services-lead">Un solo tema, oscuro. Clic en una muestra para copiar el valor.</p>
+        <div class="swatches">
+          <button class="swatch" style="--swatch:#121110" type="button" data-copy="#121110"><span>Negro Grafito</span><small>#121110</small><em>Fondo</em></button>
+          <button class="swatch" style="--swatch:#24201B" type="button" data-copy="#24201B"><span>Gris Arena</span><small>#24201B</small><em>Superficie</em></button>
+          <button class="swatch" style="--swatch:#1E1B17" type="button" data-copy="#1E1B17"><span>Elevada</span><small>#1E1B17</small><em>Superficie</em></button>
+          <button class="swatch is-ink" style="--swatch:#F4F1EA" type="button" data-copy="#F4F1EA"><span>Blanco Humo</span><small>#F4F1EA</small><em>Texto</em></button>
+          <button class="swatch is-ink" style="--swatch:#D4A359" type="button" data-copy="#D4A359"><span>Dorado Silíceo</span><small>#D4A359</small><em>Acento</em></button>
+          <button class="swatch" style="--swatch:#2589BD" type="button" data-copy="#2589BD"><span>Cobalto</span><small>#2589BD</small><em>Secundario</em></button>
+          <button class="swatch" style="--swatch:#2F2D2B" type="button" data-copy="#2F2D2B"><span>Subtítulo fantasma</span><small>#2F2D2B</small><em>Manifiesto</em></button>
+          <button class="swatch is-ink" style="--swatch:#E8A0A0" type="button" data-copy="#E8A0A0"><span>Error</span><small>#E8A0A0</small><em>Solo formularios</em></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-section" id="tipo">
+      <div class="container">
+        <p class="design-kicker">Outfit · Plus Jakarta Sans</p>
+        <h2 class="services-header"><span>el <strong>tipo</strong></span> <i data-lucide="type"></i></h2>
+        <p class="services-lead">Display para títulos. Body para interfaz. Una sola palabra en dorado, salvo en Quiénes somos.</p>
+        <div class="type-row">
+          <div class="type-meta">Work title · Outfit 800 · −0.03em</div>
+          <p class="design-display">Alfajor Argentino</p>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Section title · Outfit 400 / 800</div>
+          <h2 class="services-header"><span>nuestro <strong>portfolio</strong></span> <i data-lucide="briefcase"></i></h2>
+          <h2 class="about-header"><span>quienes <strong>somos</strong></span> <i data-lucide="users"></i></h2>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Hero line · Jakarta 300 · palabra Outfit 700</div>
+          <p class="hero-tagline">Conectamos tu <strong>producto</strong> con su audiencia</p>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Lead · 1.05rem · humo 65%</div>
+          <p class="services-lead" style="margin:0">Cuatro frentes claros para dar presencia visual a tu producto y tu negocio.</p>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Body</div>
+          <p>Reels, piezas estáticas y secuencias pensadas para mostrar tu producto con claridad y peso visual.</p>
+        </div>
+        <div class="type-row">
+          <div class="type-meta">Eyebrow · 0.15em · uppercase</div>
+          <p class="slogan-divider" style="margin:0">Acompañamos el camino de tu negocio con contenido que impone respeto</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-section" id="logo">
+      <div class="container design-stack">
+        <div>
+          <p class="design-kicker">Lockup real</p>
+          <h2 class="services-header"><span>el <strong>logo</strong></span> <i data-lucide="hexagon"></i></h2>
+          <p class="services-lead">Isotipo de cuaderno más wordmark. Blanco sobre grafito. Sin recrearlo con una letra.</p>
+        </div>
+        <div class="logo-grid">
+          <div class="logo-stage">
+            <img class="lockup" src="/assets/brusan_logo_blanco.svg" alt="Lockup BRUSAN">
+            <span class="type-meta">Lockup · hero y footer</span>
+          </div>
+          <div class="logo-stage is-surface">
+            <img class="iso" src="/assets/branding/brusan_Isotipo_blanco.png" alt="Isotipo BRUSAN">
+            <span class="type-meta">Isotipo · favicon, 20px en el slogan</span>
+          </div>
+        </div>
+        <p class="slogan-divider"><img src="/assets/branding/brusan_Isotipo_blanco.png" alt=""> Acompañamos el camino de tu negocio con contenido que impone respeto</p>
+      </div>
+    </section>
+
+    <section class="design-section" id="acciones">
+      <div class="container design-stack">
+        <div>
+          <p class="design-kicker">Pills, íconos, enlaces</p>
+          <h2 class="services-header"><span>las <strong>acciones</strong></span> <i data-lucide="mouse-pointer-click"></i></h2>
+          <p class="services-lead">La curva vive solo en las pills. El resto de la interfaz es cuadrado.</p>
+        </div>
+        <div class="design-row">
+          <a class="glass-pill" href="#formularios" data-magnetic>mira nuestro portfolio <i data-lucide="briefcase"></i></a>
+          <a class="glass-pill secondary" href="#formularios" data-magnetic>nos queres contactar? <i data-lucide="message-circle"></i></a>
+          <button class="glass-pill contact-submit" type="button" data-magnetic><i data-lucide="send"></i> Enviar consulta</button>
+          <button class="glass-pill is-disabled" type="button" disabled>Enviando…</button>
+        </div>
+        <div class="design-row">
+          <a class="nav-icon-btn" href="https://www.instagram.com/brusan.ar/" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <span class="lang-toggle-btn"><i data-lucide="globe"></i> EN</span>
+          <a class="social-pill" href="#contenido">Instagram</a>
+          <a class="social-pill" href="#contenido">Behance</a>
+          <span class="tooltip-demo">
+            <a class="social-pill" href="#contenido">WhatsApp</a>
+            <span class="tip">Abrí el chat</span>
+          </span>
+        </div>
+        <div class="design-row">
+          <a class="work-back" href="/" style="margin:0"><i data-lucide="arrow-left"></i> Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-section" id="navegacion">
+      <div class="container design-stack">
+        <div>
+          <p class="design-kicker">Tabs, migas, pager</p>
+          <h2 class="services-header"><span>la <strong>navegación</strong></span> <i data-lucide="compass"></i></h2>
+          <p class="services-lead">Tabs en minúscula con subrayado dorado. Migas y “volver” en eyebrow.</p>
+        </div>
+        <div>
+          <div class="crumbs" aria-label="Migas">
+            <a href="/">Inicio</a><span>/</span><a href="/#nuestro-portfolio">Portfolio</a><span>/</span><span class="here">Alfajor Argentino</span>
+          </div>
+          <ul class="portfolio-tabs design-tabs-note" role="tablist">
+            <li><button class="tab-btn active" type="button" data-tab="todos">todos</button></li>
+            <li><button class="tab-btn" type="button" data-tab="reels">reels</button></li>
+            <li><button class="tab-btn" type="button" data-tab="cgi">cgi</button></li>
+            <li><button class="tab-btn" type="button" data-tab="branding">branding</button></li>
+            <li><button class="tab-btn" type="button" data-tab="foto">foto</button></li>
+          </ul>
+          <div class="tab-panel" data-panel="todos">Todos los casos: CGI, reels, branding y foto.</div>
+          <div class="tab-panel" data-panel="reels" hidden>Reels y piezas para redes.</div>
+          <div class="tab-panel" data-panel="cgi" hidden>Visualización de producto y clips CGI.</div>
+          <div class="tab-panel" data-panel="branding" hidden>Identidad, archviz y reels de marca.</div>
+          <div class="tab-panel" data-panel="foto" hidden>Serie fotográfica. En el sitio, La Plata.</div>
+        </div>
+        <nav class="work-pager" aria-label="Casos">
+          <a class="work-pager-link" href="/work/empanada-criolla"><span>Anterior</span><strong>Empanada Criolla</strong></a>
+          <a class="work-pager-link work-pager-link--next" href="/work/veganis"><span>Siguiente</span><strong>Veganis</strong></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="design-section" id="tarjetas">
+      <div class="container design-stack">
+        <div>
+          <p class="design-kicker">Servicios, media, equipo</p>
+          <h2 class="services-header"><span>las <strong>tarjetas</strong></span> <i data-lucide="layout-grid"></i></h2>
+          <p class="services-lead">Arena translúcida, borde al 8% y esquinas rectas. Al hover, el borde pasa a dorado o a cobalto.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon"><i data-lucide="clapperboard"></i></div>
+            <h3 class="service-name">Contenido en redes</h3>
+            <p class="service-desc">Reels, piezas estáticas y secuencias pensadas para mostrar tu producto con claridad y peso visual.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><i data-lucide="box"></i></div>
+            <h3 class="service-name">CGI &amp; Visualización</h3>
+            <p class="service-desc">Renders técnicos y fotorealistas para maquinaria, productos industriales y piezas que necesitan verse en detalle.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><i data-lucide="panel-top"></i></div>
+            <h3 class="service-name">Cartelería urbana</h3>
+            <p class="service-desc">Diseño para vía pública, totems, pantallas y espacios físicos.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><i data-lucide="monitor"></i></div>
+            <h3 class="service-name">Web &amp; Web Apps</h3>
+            <p class="service-desc">Landings y sitios modernos, rápidos y con dirección de arte clara.</p>
+          </article>
+        </div>
+        <div class="services-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <figure class="design-media">
+            <div class="design-media-fill"></div>
+            <figcaption><div class="showcase-tag">CGI · Producto</div><h3>Alfajor Argentino</h3></figcaption>
+          </figure>
+          <figure class="design-media">
+            <div class="design-media-fill"></div>
+            <figcaption><div class="showcase-tag">Cartelería · Hardware</div><h3>Totem Publicitario</h3></figcaption>
+          </figure>
+          <figure class="design-media">
+            <div class="design-media-fill"></div>
+            <figcaption><div class="showcase-tag">CGI · Clip</div><h3>2Veinte</h3></figcaption>
+          </figure>
+        </div>
+        <article class="team-card">
+          <div class="team-avatar-box"><div class="team-avatar-fallback">DB</div></div>
+          <div class="team-info">
+            <div>
+              <h3 class="team-name">David <span>Brum</span></h3>
+              <p class="team-role">Fundador, líder técnico y visual</p>
+            </div>
+            <div class="team-socials">
+              <a class="social-pill" href="https://www.instagram.com/hdavidbrum/" target="_blank" rel="noopener">Instagram</a>
+              <a class="social-pill" href="https://www.behance.net/davidbrum" target="_blank" rel="noopener">Behance</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="design-section" id="formularios">
+      <div class="container">
+        <p class="design-kicker">Contacto</p>
+        <h2 class="services-header"><span>el <strong>formulario</strong></span> <i data-lucide="message-circle"></i></h2>
+        <p class="services-lead">Labels en eyebrow dorado. Foco con halo dorado. El error es el único rosa del sistema.</p>
+        <div class="contact-box">
+        <form class="contact-form" id="design-form" novalidate>
+          <div class="contact-form-row">
+            <label class="contact-field"><span>Nombre</span><input name="name" required minlength="2" placeholder="Tu nombre" autocomplete="name"></label>
+            <label class="contact-field" id="email-field">
+              <span>Email</span>
+              <input name="email" type="email" required placeholder="diana.k@example.org" autocomplete="email">
+              <span class="field-error" hidden>Necesitamos un email válido.</span>
+            </label>
+          </div>
+          <label class="contact-field"><span>Teléfono <em>(opcional)</em></span><input name="phone" type="tel" placeholder="+54 9 …"></label>
+          <label class="contact-field"><span>Servicio</span>
+            <select name="service">
+              <option>Contenido en redes</option>
+              <option>CGI &amp; Visualización de producto</option>
+              <option>Cartelería urbana</option>
+              <option>Web &amp; Web Apps</option>
+            </select>
+          </label>
+          <label class="contact-field"><span>Mensaje</span><textarea name="message" required minlength="10" placeholder="Contanos qué necesitás"></textarea></label>
+          <div class="design-choices">
+            <label class="design-choice"><input type="checkbox" name="ok" checked> Pueden escribirme por WhatsApp</label>
+            <label class="design-choice"><input type="radio" name="cuando" checked> Esta semana</label>
+            <label class="design-choice"><input type="radio" name="cuando"> Más adelante</label>
+          </div>
+          <button class="glass-pill contact-submit" type="submit" data-magnetic><i data-lucide="send"></i> Enviar consulta</button>
+          <p class="contact-form-status is-success" id="form-status" hidden>Listo. Te respondemos sin vueltas.</p>
+        </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-section" id="estados">
+      <div class="container design-stack">
+        <div>
+          <p class="design-kicker">Avisos, vacío, diálogo</p>
+          <h2 class="services-header"><span>los <strong>estados</strong></span> <i data-lucide="bell"></i></h2>
+          <p class="services-lead">Éxito en dorado, error en #E8A0A0, información con borde cobalto. Sin paleta extra.</p>
+        </div>
+        <div class="design-alert success">Consulta enviada. Te escribimos a la brevedad.</div>
+        <div class="design-alert error">No pudimos enviar el mensaje. Revisá el email e intentá de nuevo.</div>
+        <div class="design-alert info">Estudio en Gualeguaychú. Respondemos en horario de semana.</div>
+        <div class="design-empty">
+          <p class="showcase-tag">Portfolio</p>
+          <p>No hay piezas en este filtro.</p>
+          <button class="glass-pill" type="button" id="show-all">ver todos</button>
+        </div>
+        <div>
+          <button class="glass-pill" type="button" id="open-dialog">abrir diálogo <i data-lucide="panels-top-left"></i></button>
+        </div>
+        <div>
+          <details class="disclosure" open>
+            <summary>Qué incluye un caso</summary>
+            <div class="body">Stills, reel y una ficha corta: cliente, año y qué se hizo.</div>
+          </details>
+          <details class="disclosure">
+            <summary>Plazos</summary>
+            <div class="body">Depende de la pieza. Lo conversamos en la primera llamada, sin vueltas.</div>
+          </details>
+        </div>
+        <div class="design-ghost">
+          <p class="design-manifesto">Hacer pie <b>con lo</b> propio</p>
+          <p class="design-subline">Le damos presencia visual al trabajo que mueve la zona todos los días.</p>
+          <p class="design-watermark">Desarrollo<br>Visual</p>
+          <p class="type-meta">Tipo fantasma: así se publica. No subirlo a blanco sólido.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-section" id="contenido">
+      <div class="container design-stack">
+        <div>
+          <p class="design-kicker">Ficha, lista, tabla</p>
+          <h2 class="services-header"><span>el <strong>contenido</strong></span> <i data-lucide="align-left"></i></h2>
+          <p class="services-lead">Etiquetas de ficha en dorado. Las viñetas son un trazo de 1px, no un círculo.</p>
+        </div>
+        <div class="work-case-panel" style="display:block">
+          <h3 class="work-title compact">Alfajor Argentino</h3>
+          <p class="work-lead">Visualización de producto y breakdown CGI.</p>
+          <dl class="work-case-facts">
+            <div class="work-case-fact"><dt>Cliente</dt><dd>Pieza de estudio</dd></div>
+            <div class="work-case-fact"><dt>Año</dt><dd>2026</dd></div>
+            <div class="work-case-fact"><dt>Formato</dt><dd>Reel + stills</dd></div>
+          </dl>
+        </div>
+        <div class="design-split">
+          <div class="work-case-panel" style="display:block">
+            <h3 class="work-case-heading">Qué hicimos</h3>
+            <div class="work-case-block">
+              <ul>
+                <li>Modelado y look del producto.</li>
+                <li>Reel de breakdown.</li>
+                <li>Stills para redes y presentación.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="work-case-panel" style="display:block;overflow-x:auto">
+            <table class="spec">
+              <thead><tr><th>Token</th><th>Uso</th></tr></thead>
+              <tbody>
+                <tr><td><code>--color-accent</code></td><td>Palabra fuerte, foco, tab activa</td></tr>
+                <tr><td><code>--color-secondary</code></td><td>Quiénes somos, apellidos, selección</td></tr>
+                <tr><td><code>--radius-lg</code></td><td>0 · paneles y media</td></tr>
+                <tr><td><code>--radius-pill</code></td><td>9999px · solo acciones</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-watermark-wrap">
+      <div class="footer-watermark">
+        <span class="watermark-line" data-i18n="footer.watermark.line1">DESARROLLO</span>
+        <span class="watermark-line" data-i18n="footer.watermark.line2">VISUAL</span>
+      </div>
+    </div>
+    <div class="container footer-bottom-bar">
+      <div class="footer-brand">
+        <img src="/assets/brusan_logo_blanco.svg" alt="BRUSAN">
+        <span data-i18n="footer.slogan">- desarrollo visual</span>
+      </div>
+      <div class="footer-sitemap-pill">
+        <a href="/#inicio" data-i18n="footer.nav.home">Inicio</a>
+        <a href="/#nuestro-portfolio" data-i18n="footer.nav.portfolio">Portfolio</a>
+        <a href="/#que-hacemos" data-i18n="footer.nav.services">Qué hacemos</a>
+        <a href="/#quienes-somos" data-i18n="footer.nav.about">Quienes Somos</a>
+        <a href="/#contacto" data-i18n="footer.nav.contact">Contacto</a>
+      </div>
+      <div class="footer-copy">
+        <span data-i18n="footer.location">Gualeguaychú</span>
+        <span class="footer-copy-sep">·</span>
+        <span>&copy; 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="sample-dialog">
+    <div class="dialog-body">
+      <h3>hablemos de tu <strong>proyecto</strong></h3>
+      <p class="work-lead">Contanos qué necesitás. Respondemos rápido y sin vueltas.</p>
+      <div class="dialog-actions">
+        <button class="glass-pill secondary" type="button" id="close-dialog">cerrar</button>
+        <a class="glass-pill contact-submit" href="#formularios" id="go-form">ir al formulario</a>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="design-toast" id="toast" role="status"></div>
+
+  <script src="/main.js"></script>
+  <script>
+    const toast = document.getElementById("toast");
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 1600);
+    }
+
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const value = button.dataset.copy;
+        try {
+          await navigator.clipboard.writeText(value);
+          showToast(value + " copiado");
+        } catch (err) {
+          showToast(value);
+        }
+      });
+    });
+
+    const tabs = document.querySelectorAll("[data-tab]");
+    const panels = document.querySelectorAll(".tab-panel");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((item) => item.classList.remove("active"));
+        tab.classList.add("active");
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.panel !== tab.dataset.tab;
+        });
+      });
+    });
+
+    document.getElementById("show-all").addEventListener("click", () => {
+      document.querySelector('[data-tab="todos"]').click();
+      document.getElementById("navegacion").scrollIntoView({ behavior: "smooth" });
+    });
+
+    const dialog = document.getElementById("sample-dialog");
+    document.getElementById("open-dialog").addEventListener("click", () => dialog.showModal());
+    document.getElementById("close-dialog").addEventListener("click", () => dialog.close());
+    document.getElementById("go-form").addEventListener("click", () => dialog.close());
+
+    const form = document.getElementById("design-form");
+    const emailField = document.getElementById("email-field");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const email = form.email.value.trim();
+      const valid = email.includes("@") && email.includes(".");
+      emailField.classList.toggle("is-error", !valid);
+      emailField.querySelector(".field-error").hidden = valid;
+      const status = document.getElementById("form-status");
+      status.hidden = !valid;
+      if (valid) showToast("Consulta de muestra enviada");
+    });
+  </script>
+</body>
+</html>

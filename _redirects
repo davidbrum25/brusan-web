@@ -16,6 +16,7 @@
 /work/qjmotor-web/            /work/qjmotor-web                  301
 /work/3d-background/          /work/3d-background                301
 /work/totem/                  /work/totem                        301
+/design/                      /design                            301
 
 # SPA-style 404 for everything else
 /*    /404.html   404

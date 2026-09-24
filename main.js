@@ -320,6 +320,8 @@ function applyLanguage(lang, smooth = false) {
   const workKey = document.body && document.body.dataset.workKey;
   if (workKey && dict["work." + workKey + ".title"]) {
     document.title = dict["work." + workKey + ".title"] + " · BRUSAN";
+  } else if (document.body && "keepTitle" in document.body.dataset) {
+    /* page owns its title */
   } else if (dict["doc.title"]) {
     document.title = dict["doc.title"];
   }
