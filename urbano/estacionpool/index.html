@@ -43,7 +43,13 @@
   </header>
 
   <main>
-    <section class="ep-section" id="portada">
+    <section class="ep-section ep-portada" id="portada">
+      <div class="ep-portada-video" aria-hidden="true">
+        <video muted loop playsinline autoplay preload="metadata" poster="/urbano/estacionpool/media/fachada-parque.webp">
+          <source src="/urbano/estacionpool/media/timelapse.webm" type="video/webm">
+          <source src="/urbano/estacionpool/media/timelapse.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="container">
         <div class="ep-hero">
           <div>
@@ -392,6 +398,12 @@
 
   <script src="/main.js"></script>
   <script>
+    const portadaVideo = document.querySelector(".ep-portada-video video");
+    if (portadaVideo) {
+      portadaVideo.muted = true;
+      portadaVideo.play().catch(() => {});
+    }
+
     const stages = [...document.querySelectorAll("[data-stage]")];
     const sections = stages.map((link) => document.getElementById(link.dataset.stage));
     const mark = () => {
